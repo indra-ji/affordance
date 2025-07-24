@@ -1,2 +1,2 @@
 # affordance
-Understand how well AI agents can use your software. 
+Developer Experience, but for AI agents.
