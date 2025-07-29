@@ -37,6 +37,7 @@ class Taskset(BaseEntity):
 @dataclass()
 class Test(BaseEntity):
     task: Task
+    content: str
 
 
 @dataclass()
@@ -65,6 +66,7 @@ class Agent(BaseEntity):
 class Answer(BaseEntity):
     agent: Agent
     task: Task
+    content: str
 
 
 @dataclass()
@@ -82,6 +84,7 @@ class Answerset(BaseEntity):
 class Result(BaseEntity):
     answer: Answer
     test: Test
+    passed: bool = False
 
 
 @dataclass()
@@ -91,8 +94,48 @@ class Evaluation(BaseEntity):
     answerset: Answerset
     results: list[Result] | None = None
 
+    @property
+    def size(self) -> int | None:
+        return len(self.results) if self.results else None
+
+    @property
+    def number_passed(self) -> int | None:
+        if not self.results:
+            return None
+        return sum(1 for result in self.results if result.passed)
+
+    @property
+    def percentage_passed(self) -> float | None:
+        if not self.results:
+            return None
+        return (self.number_passed / self.size) * 100 if self.size else None
+
 
 @dataclass()
 class Benchmark(BaseEntity):
     library: Library
     evaluations: list[Evaluation] | None = None
+
+    @property
+    def size(self) -> int | None:
+        return len(self.evaluations) if self.evaluations else None
+
+    @property
+    def total_size(self) -> int | None:
+        return (
+            sum(evaluation.size for evaluation in self.evaluations)
+            if self.evaluations
+            else None
+        )
+
+    @property
+    def number_passed(self) -> int | None:
+        if not self.evaluations:
+            return None
+        return sum(evaluation.number_passed for evaluation in self.evaluations)
+
+    @property
+    def percentage_passed(self) -> float | None:
+        if not self.evaluations:
+            return None
+        return (self.number_passed / self.total_size) * 100 if self.total_size else None

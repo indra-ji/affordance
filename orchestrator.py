@@ -1,6 +1,4 @@
-from pprint import pprint
-
-from classes import (
+from dataclasses import (
     Agent,
     Language,
     Library,
@@ -10,6 +8,7 @@ from classes import (
     Test,
     Testset,
 )
+from pprint import pprint
 
 
 def set_library() -> Library:
