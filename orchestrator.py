@@ -20,7 +20,7 @@ def create_dataset(library: Library) -> Dataset:
     dataset = Dataset(library=library, name="Test_Dataset", version="1.0.0")
 
     # Create 10 placeholder tasks
-    tasks = [Task(name=f"Task {i}", version="1.0.0", content="") for i in range(10)]
+    tasks = [Task(name=f"Task_{i}", version="1.0.0", content="") for i in range(10)]
     dataset.tasks = tasks
 
     return dataset
