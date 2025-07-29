@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from typing import List, Optional
 
 
 @dataclass
@@ -13,7 +12,7 @@ class Library:
     language: Language
     name: str
     version: str
-    description: Optional[str] = None
+    description: str | None = None
 
 
 @dataclass
@@ -21,16 +20,16 @@ class Task:
     name: str
     version: str
     content: str
-    description: Optional[str] = None
+    description: str | None = None
 
 
 @dataclass
-class Dataset:
+class Taskset:
     library: Library
     name: str
     version: str
-    tasks: Optional[List[Task]] = None
-    description: Optional[str] = None
+    tasks: list[Task] | None = None
+    description: str | None = None
 
 
 @dataclass
@@ -39,10 +38,28 @@ class Test:
     name: str
     version: str
     content: str
-    description: Optional[str] = None
+    description: str | None = None
 
 
 @dataclass
 class Testset:
-    dataset: Dataset
-    tests: Optional[List[Test]] = None
+    taskset: Taskset
+    tests: list[Test] | None = None
+
+
+@dataclass
+class Model:
+    name: str
+    provider: str
+    version: str
+    description: str | None = None
+
+
+@dataclass
+class Agent:
+    model: Model
+    name: str
+    version: str
+    configuration: str | None = None
+    scaffolding: str | None = None
+    description: str | None = None

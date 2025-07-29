@@ -9,15 +9,16 @@ Library - The specific library in said language
 
 **Build eval dataset**
 
-Dataset - Evaluation dataset of one library
+Taskset - Evaluation dataset of one library
 
 Task - Specific coding task within dataset
 
 **Build tests for dataset**
 
+Testset - Test dataset for one dataset
+
 Test - Individual test case for each task
 
-Testset - Set of tests, one for each dataset
 
 **Specify agent**
 
@@ -27,12 +28,15 @@ Agent - Model + scaffolding
 
 **Run evaluation**
 
-Attempt - Agent response to each task
+Answer - Agent response to each task
 
-Result - Result of running tests
+Answerset - Set of answers, one for each dataset
 
-**Display results**
+Result - Result of running tests, one for each task
 
-Evaluation - Collection of results
+Evaluation - Collection of results, one per dataset
 
-Run - Collection of evaluations
+
+**Get run**
+
+Benchmark - Collection of evaluations, one per library

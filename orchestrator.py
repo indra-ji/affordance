@@ -1,7 +1,18 @@
-from classes import Dataset, Language, Library, Task, Test, Testset
+from pprint import pprint
+
+from classes import (
+    Agent,
+    Language,
+    Library,
+    Model,
+    Task,
+    Taskset,
+    Test,
+    Testset,
+)
 
 
-def set_library():
+def set_library() -> Library:
     """Set the library to be used"""
 
     # Set language as python
@@ -13,27 +24,27 @@ def set_library():
     return library
 
 
-def create_dataset(library: Library) -> Dataset:
+def create_taskset(library: Library) -> Taskset:
     """Create the evaluation dataset"""
 
     # Set dataset
-    dataset = Dataset(library=library, name="Test_Dataset", version="1.0.0")
+    taskset = Taskset(library=library, name="Test_Dataset", version="1.0.0")
 
     # Create 10 placeholder tasks
     tasks = [Task(name=f"Task_{i}", version="1.0.0", content="") for i in range(10)]
-    dataset.tasks = tasks
+    taskset.tasks = tasks
 
-    return dataset
+    return taskset
 
 
-def create_tests(dataset: Dataset) -> Testset:
+def create_testset(taskset: Taskset) -> Testset:
     """Create the tests for the dataset"""
 
     # Extract tasks from dataset
-    tasks = dataset.tasks
+    tasks = taskset.tasks
 
     # Create testset
-    testset = Testset(dataset=dataset)
+    testset = Testset(taskset=taskset)
 
     # Create 10 placeholder tests
     tests = [
@@ -51,15 +62,28 @@ def create_tests(dataset: Dataset) -> Testset:
     return testset
 
 
+def set_agent() -> Agent:
+    """Set the agent to be used"""
+
+    # Set model
+    model = Model(name="GPT-4o", provider="OpenAI", version="1.0.0")
+
+    # Set agent
+    agent = Agent(model=model, name="GPT-4o-vanilla-agent", version="1.0.0")
+
+    return agent
+
+
 def benchmark():
     """Run benchmark for a given library"""
 
     library = set_library()
-    dataset = create_dataset(library)
-    testset = create_tests(dataset)
+    taskset = create_taskset(library)
+    testset = create_testset(taskset)
+    agent = set_agent()
 
-    return testset
+    return library, taskset, testset, agent
 
 
 if __name__ == "__main__":
-    print(benchmark())
+    pprint(benchmark())
