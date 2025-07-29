@@ -1,2 +1,2 @@
 # affordance
-Understand how well AI agents can use your software. 
+Understand how well software engineering agents can use your software library.
