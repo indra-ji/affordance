@@ -1,4 +1,6 @@
-from dataclasses import (
+from pprint import pprint
+
+from classes import (
     Agent,
     Language,
     Library,
@@ -8,22 +10,17 @@ from dataclasses import (
     Test,
     Testset,
 )
-from pprint import pprint
 
 
-def set_library() -> Library:
-    """Set the library to be used"""
-
-    # Set language as python
+def create_library() -> Library:
     language = Language(
         name="Python", version="3.13", description="Latest version of Python"
     )
 
-    # Set library as numpy
     library = Library(
         name="Numpy",
         version="3.2.3",
-        description="Numpy is a library for numerical computing with Python.",
+        description="Numpy is a library for numerical computing.",
         language=language,
     )
 
@@ -31,9 +28,6 @@ def set_library() -> Library:
 
 
 def create_taskset(library: Library) -> Taskset:
-    """Create the evaluation dataset"""
-
-    # Set dataset
     taskset = Taskset(
         name="Test_Dataset",
         version="1.0.0",
@@ -43,14 +37,13 @@ def create_taskset(library: Library) -> Taskset:
 
     number_tasks = 10
 
-    # Create 10 placeholder tasks
     tasks = [
         Task(
             name=f"Task_{i}",
             version="1.0.0",
             description=f"Placeholder description for task {i}",
-            content="Placeholder content for task {i}",
             library=library,
+            content="Placeholder content for task {i}",
         )
         for i in range(number_tasks)
     ]
@@ -61,12 +54,6 @@ def create_taskset(library: Library) -> Taskset:
 
 
 def create_testset(taskset: Taskset) -> Testset:
-    """Create the tests for the dataset"""
-
-    # Extract tasks from dataset
-    tasks = taskset.tasks
-
-    # Create testset
     testset = Testset(
         name="Test_Testset",
         version="1.0.0",
@@ -74,13 +61,15 @@ def create_testset(taskset: Taskset) -> Testset:
         taskset=taskset,
     )
 
-    # Create placeholder tests
+    tasks = taskset.tasks
+
     tests = [
         Test(
             name=f"Test_{task.name}",
             version="1.0.0",
             description=f"Placeholder description for test {task.name}",
             task=task,
+            content="Placeholder content for test {task.name}",
         )
         for task in tasks
     ]
@@ -90,41 +79,35 @@ def create_testset(taskset: Taskset) -> Testset:
     return testset
 
 
-def set_agent() -> Agent:
-    """Set the agent to be used"""
-
-    # Set model
+def create_agent() -> Agent:
     model = Model(
         name="GPT-4o",
-        provider="OpenAI",
         version="1.0.0",
-        description="GPT-4o is a large language model developed by OpenAI.",
+        description="Daily use model",
+        provider="OpenAI",
     )
 
-    # Set agent
     agent = Agent(
-        model=model,
-        name="GPT-4o-vanilla-agent",
+        name="vanilla-agent",
         version="1.0.0",
-        description="GPT-4o-vanilla-agent is a vanilla agent that uses GPT-4o as its model.",
+        description="Vanilla agent that calls the model.",
+        model=model,
     )
 
     return agent
 
 
-def benchmark():
-    """Run benchmark for a given library"""
-
-    library = set_library()
+def run():
+    library = create_library()
     taskset = create_taskset(library)
     testset = create_testset(taskset)
-    agent = set_agent()
+    agent = create_agent()
 
     return library, taskset, testset, agent
 
 
 if __name__ == "__main__":
-    library, taskset, testset, agent = benchmark()
+    library, taskset, testset, agent = run()
 
     pprint(library)
     pprint(taskset)
