@@ -108,7 +108,11 @@ class Evaluation(BaseEntity):
     def percentage_passed(self) -> float | None:
         if not self.results:
             return None
-        return (self.number_passed / self.size) * 100 if self.size else None
+        return (
+            (float(self.number_passed) / float(self.size)) * 100.0
+            if self.size
+            else None
+        )
 
 
 @dataclass()
@@ -138,4 +142,8 @@ class Benchmark(BaseEntity):
     def percentage_passed(self) -> float | None:
         if not self.evaluations:
             return None
-        return (self.number_passed / self.total_size) * 100 if self.total_size else None
+        return (
+            (float(self.number_passed) / float(self.total_size)) * 100.0
+            if self.total_size
+            else None
+        )
