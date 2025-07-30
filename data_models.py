@@ -145,3 +145,15 @@ class Benchmark(BaseEntity):
             if self.total_size
             else None
         )
+
+
+class Evaluation(BaseEntity):
+    language: Language
+    library: Library
+    taskset: Taskset
+    testset: Testset
+    model: Model
+    agent: Agent
+    answerset: Answerset
+    resultset: Resultset
+    benchmark: Benchmark

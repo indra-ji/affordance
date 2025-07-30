@@ -3,6 +3,7 @@ from data_models import (
     Answer,
     Answerset,
     Benchmark,
+    Evaluation,
     Language,
     Library,
     Model,
@@ -15,7 +16,7 @@ from data_models import (
 )
 
 
-def create_library() -> Library:
+def create_library() -> [Language, Library]:
     language = Language(
         name="Python", version="3.13", description="Latest version of Python"
     )
@@ -27,7 +28,7 @@ def create_library() -> Library:
         language=language,
     )
 
-    return library
+    return language, library
 
 
 def create_taskset(library: Library) -> Taskset:
@@ -82,7 +83,7 @@ def create_testset(taskset: Taskset) -> Testset:
     return testset
 
 
-def create_agent() -> Agent:
+def create_agent() -> [Model, Agent]:
     model = Model(
         name="GPT-4o",
         version="1.0.0",
@@ -97,7 +98,7 @@ def create_agent() -> Agent:
         model=model,
     )
 
-    return agent
+    return model, agent
 
 
 def create_answerset(agent: Agent, taskset: Taskset) -> Answerset:
@@ -173,17 +174,31 @@ def create_benchmark(library: Library, resultsets: list[Resultset]) -> Benchmark
     return benchmark
 
 
-def run():
-    library = create_library()
+def create_evaluation() -> Evaluation:
+    language, library = create_library()
     taskset = create_taskset(library)
     testset = create_testset(taskset)
-    agent = create_agent()
+    model, agent = create_agent()
     answerset = create_answerset(agent, taskset)
     resultset = create_resultset(taskset, testset, answerset)
     benchmark = create_benchmark(library, [resultset])
 
-    return library, taskset, testset, agent, answerset, resultset, benchmark
+    evaluation = Evaluation(
+        name="Test_Evaluation",
+        version="1.0.0",
+        description="Test benchmark evaluation with all components",
+        language=language,
+        library=library,
+        taskset=taskset,
+        testset=testset,
+        model=model,
+        agent=agent,
+        answerset=answerset,
+        resultset=resultset,
+        benchmark=benchmark,
+    )
+    return evaluation
 
 
 if __name__ == "__main__":
-    library, taskset, testset, agent, answerset, resultset, benchmark = run()
+    evaluation = create_evaluation()

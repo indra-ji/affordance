@@ -36,6 +36,8 @@ Answerset - Set of answers, one for each dataset
 
 Result - Result of running tests, one for each task
 
-Evaluation - Collection of results, one per dataset
+Resultset - Collection of results, one per dataset
 
 Benchmark - Collection of evaluations, one per library
+
+Evaluation - Model with a full snapshot of the evaluation
