@@ -187,15 +187,3 @@ def run():
 
 if __name__ == "__main__":
     library, taskset, testset, agent, answerset, resultset, benchmark = run()
-
-"""
-    pprint(library)
-    pprint(taskset)
-    print(f"Taskset size: {taskset.size}")
-    pprint(testset)
-    print(f"Testset size: {testset.size}")
-    pprint(agent)
-    pprint(answerset)
-    pprint(resultset)
-    pprint(benchmark)
-"""
