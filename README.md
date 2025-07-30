@@ -41,3 +41,4 @@ Resultset - Collection of results, one per dataset
 Benchmark - Collection of evaluations, one per library
 
 Evaluation - Model with a full snapshot of the evaluation
+
