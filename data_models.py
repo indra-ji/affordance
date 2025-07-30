@@ -88,7 +88,7 @@ class Result(BaseEntity):
 
 
 @dataclass()
-class Evaluation(BaseEntity):
+class Resultset(BaseEntity):
     taskset: Taskset
     testset: Testset
     answerset: Answerset
@@ -118,29 +118,29 @@ class Evaluation(BaseEntity):
 @dataclass()
 class Benchmark(BaseEntity):
     library: Library
-    evaluations: list[Evaluation] | None = None
+    resultsets: list[Resultset] | None = None
 
     @property
     def size(self) -> int | None:
-        return len(self.evaluations) if self.evaluations else None
+        return len(self.resultsets) if self.resultsets else None
 
     @property
     def total_size(self) -> int | None:
         return (
-            sum(evaluation.size for evaluation in self.evaluations)
-            if self.evaluations
+            sum(resultset.size for resultset in self.resultsets)
+            if self.resultsets
             else None
         )
 
     @property
     def number_passed(self) -> int | None:
-        if not self.evaluations:
+        if not self.resultsets:
             return None
-        return sum(evaluation.number_passed for evaluation in self.evaluations)
+        return sum(resultset.number_passed for resultset in self.resultsets)
 
     @property
     def percentage_passed(self) -> float | None:
-        if not self.evaluations:
+        if not self.resultsets:
             return None
         return (
             (float(self.number_passed) / float(self.total_size)) * 100.0
