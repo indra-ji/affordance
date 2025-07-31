@@ -18,7 +18,9 @@ from data_models import (
 
 def create_library() -> [Language, Library]:
     language = Language(
-        name="Python", version="3.13", description="Latest version of Python"
+        name="Python",
+        version="3.13",
+        description="Latest version of Python",
     )
 
     library = Library(
