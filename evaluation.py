@@ -1,3 +1,5 @@
+from pprint import pprint
+
 from data_models import (
     Agent,
     Answer,
@@ -18,7 +20,9 @@ from data_models import (
 
 def create_library() -> [Language, Library]:
     language = Language(
-        name="Python", version="3.13", description="Latest version of Python"
+        name="Python",
+        version="3.13",
+        description="Latest version of Python",
     )
 
     library = Library(
@@ -202,3 +206,4 @@ def create_evaluation() -> Evaluation:
 
 if __name__ == "__main__":
     evaluation = create_evaluation()
+    pprint(evaluation)

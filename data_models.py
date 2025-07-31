@@ -1,9 +1,7 @@
-from pydantic import BaseModel, ConfigDict, computed_field
+from pydantic import BaseModel, computed_field
 
 
-class BaseEntity(BaseModel):
-    model_config = ConfigDict(strict=True, extra="forbid")
-
+class BaseEntity(BaseModel, strict=True, extra="forbid"):
     name: str
     version: str
     description: str
