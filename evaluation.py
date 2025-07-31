@@ -1,3 +1,5 @@
+from pprint import pprint
+
 from data_models import (
     Agent,
     Answer,
@@ -204,3 +206,4 @@ def create_evaluation() -> Evaluation:
 
 if __name__ == "__main__":
     evaluation = create_evaluation()
+    pprint(evaluation)
