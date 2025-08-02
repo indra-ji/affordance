@@ -51,8 +51,8 @@ class Model(BaseEntity):
 
 class Agent(BaseEntity):
     model: Model
-    configuration: str | None = None
-    scaffolding: str | None = None
+    configuration: str
+    scaffolding: str
 
 
 class Answer(BaseEntity):
@@ -75,7 +75,7 @@ class Answerset(BaseEntity):
 class Result(BaseEntity):
     answer: Answer
     test: Test
-    passed: bool = False
+    passed: bool
 
 
 class Resultset(BaseEntity):
