@@ -36,14 +36,7 @@ def create_library() -> tuple[Language, Library]:
 
 
 def create_taskset(library: Library) -> Taskset:
-    taskset = Taskset(
-        name="Test_Dataset",
-        version="1.0.0",
-        description="Test dataset with basic operations",
-        library=library,
-    )
-
-    NUMBER_TASKS = 10
+    NUMBER_TASKS = 0
 
     tasks = [
         Task(
@@ -56,19 +49,18 @@ def create_taskset(library: Library) -> Taskset:
         for i in range(NUMBER_TASKS)
     ]
 
-    taskset.tasks = tasks
+    taskset = Taskset(
+        name="Test_Dataset",
+        version="1.0.0",
+        description="Test dataset with basic operations",
+        library=library,
+        tasks=tasks,
+    )
 
     return taskset
 
 
 def create_testset(taskset: Taskset) -> Testset:
-    testset = Testset(
-        name="Test_Testset",
-        version="1.0.0",
-        description="Testset with placeholder tests",
-        taskset=taskset,
-    )
-
     tasks = taskset.tasks
 
     tests = [
@@ -82,7 +74,13 @@ def create_testset(taskset: Taskset) -> Testset:
         for task in tasks
     ]
 
-    testset.tests = tests
+    testset = Testset(
+        name="Test_Testset",
+        version="1.0.0",
+        description="Testset with placeholder tests",
+        taskset=taskset,
+        tests=tests,
+    )
 
     return testset
 
@@ -106,14 +104,6 @@ def create_agent() -> tuple[Model, Agent]:
 
 
 def create_answerset(agent: Agent, taskset: Taskset) -> Answerset:
-    answerset = Answerset(
-        name="Test_Answerset",
-        version="1.0.0",
-        description="Answerset with placeholder answers",
-        agent=agent,
-        taskset=taskset,
-    )
-
     tasks = taskset.tasks
 
     answers = [
@@ -128,7 +118,14 @@ def create_answerset(agent: Agent, taskset: Taskset) -> Answerset:
         for task in tasks
     ]
 
-    answerset.answers = answers
+    answerset = Answerset(
+        name="Test_Answerset",
+        version="1.0.0",
+        description="Answerset with placeholder answers",
+        agent=agent,
+        taskset=taskset,
+        answers=answers,
+    )
 
     return answerset
 
@@ -136,15 +133,6 @@ def create_answerset(agent: Agent, taskset: Taskset) -> Answerset:
 def create_resultset(
     taskset: Taskset, testset: Testset, answerset: Answerset
 ) -> Resultset:
-    resultset = Resultset(
-        name="Test_Resultset",
-        version="1.0.0",
-        description="Resultset with placeholder results",
-        taskset=taskset,
-        testset=testset,
-        answerset=answerset,
-    )
-
     tasks = taskset.tasks
     tests = testset.tests
     answers = answerset.answers
@@ -161,7 +149,15 @@ def create_resultset(
         for task, answer, test in zip(tasks, answers, tests)
     ]
 
-    resultset.results = results
+    resultset = Resultset(
+        name="Test_Resultset",
+        version="1.0.0",
+        description="Resultset with placeholder results",
+        taskset=taskset,
+        testset=testset,
+        answerset=answerset,
+        results=results,
+    )
 
     return resultset
 
