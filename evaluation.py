@@ -96,6 +96,8 @@ def create_agent() -> tuple[Model, Agent]:
         version="1.0.0",
         description="Vanilla agent that calls the model.",
         model=model,
+        configuration="Default configuration",
+        scaffolding="No scaffolding",
     )
 
     return model, agent
