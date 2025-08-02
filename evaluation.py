@@ -1,3 +1,5 @@
+import datetime
+
 from data_models import (
     Agent,
     Answer,
@@ -14,6 +16,7 @@ from data_models import (
     Test,
     Testset,
 )
+from json_utils import serialize_data_model
 
 
 def create_library() -> tuple[Language, Library]:
@@ -48,7 +51,7 @@ def create_taskset(library: Library) -> Taskset:
     )
 
     taskset = Taskset(
-        name="Test_Dataset",
+        name="demo_taskset",
         version="1.0.0",
         description="Test dataset with basic operations",
         library=library,
@@ -73,7 +76,7 @@ def create_testset(taskset: Taskset) -> Testset:
     )
 
     testset = Testset(
-        name="Test_Testset",
+        name="demo_testset",
         version="1.0.0",
         description="Testset with placeholder tests",
         taskset=taskset,
@@ -119,7 +122,7 @@ def create_answerset(agent: Agent, taskset: Taskset) -> Answerset:
     )
 
     answerset = Answerset(
-        name="Test_Answerset",
+        name="demo_answerset",
         version="1.0.0",
         description="Answerset with placeholder answers",
         agent=agent,
@@ -150,7 +153,7 @@ def create_resultset(
     )
 
     resultset = Resultset(
-        name="Test_Resultset",
+        name="demo_resultset",
         version="1.0.0",
         description="Resultset with placeholder results",
         taskset=taskset,
@@ -164,7 +167,7 @@ def create_resultset(
 
 def create_benchmark(library: Library, resultsets: tuple[Resultset, ...]) -> Benchmark:
     benchmark = Benchmark(
-        name="Test_Benchmark",
+        name="demo_benchmark",
         version="1.0.0",
         description="Benchmark with placeholder resultsets",
         library=library,
@@ -184,7 +187,7 @@ def create_evaluation() -> Evaluation:
     benchmark = create_benchmark(library, (resultset,))
 
     evaluation = Evaluation(
-        name="Test_Evaluation",
+        name="demo_evaluation",
         version="1.0.0",
         description="Test benchmark evaluation with all components",
         language=language,
@@ -202,3 +205,7 @@ def create_evaluation() -> Evaluation:
 
 if __name__ == "__main__":
     evaluation = create_evaluation()
+
+    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    output_path = f"{evaluation.name}_{timestamp}.json"
+    serialize_data_model(evaluation, output_path)
