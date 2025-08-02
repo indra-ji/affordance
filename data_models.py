@@ -1,7 +1,7 @@
 from pydantic import BaseModel, computed_field
 
 
-class BaseEntity(BaseModel, strict=True, extra="forbid"):
+class BaseEntity(BaseModel, frozen=True, strict=True, extra="forbid"):
     name: str
     version: str
     description: str
@@ -22,7 +22,7 @@ class Task(BaseEntity):
 
 class Taskset(BaseEntity):
     library: Library
-    tasks: list[Task]
+    tasks: tuple[Task, ...]
 
     @computed_field
     @property
@@ -37,7 +37,7 @@ class Test(BaseEntity):
 
 class Testset(BaseEntity):
     taskset: Taskset
-    tests: list[Test]
+    tests: tuple[Test, ...]
 
     @computed_field
     @property
@@ -64,7 +64,7 @@ class Answer(BaseEntity):
 class Answerset(BaseEntity):
     agent: Agent
     taskset: Taskset
-    answers: list[Answer]
+    answers: tuple[Answer, ...]
 
     @computed_field
     @property
@@ -82,7 +82,7 @@ class Resultset(BaseEntity):
     taskset: Taskset
     testset: Testset
     answerset: Answerset
-    results: list[Result]
+    results: tuple[Result, ...]
 
     @computed_field
     @property
@@ -106,7 +106,7 @@ class Resultset(BaseEntity):
 
 class Benchmark(BaseEntity):
     library: Library
-    resultsets: list[Resultset]
+    resultsets: tuple[Resultset, ...]
 
     @computed_field
     @property

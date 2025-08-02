@@ -1,5 +1,3 @@
-from pprint import pprint
-
 from data_models import (
     Agent,
     Answer,
@@ -36,9 +34,9 @@ def create_library() -> tuple[Language, Library]:
 
 
 def create_taskset(library: Library) -> Taskset:
-    NUMBER_TASKS = 0
+    NUMBER_TASKS = 100
 
-    tasks = [
+    tasks = tuple(
         Task(
             name=f"Task_{i}",
             version="1.0.0",
@@ -47,7 +45,7 @@ def create_taskset(library: Library) -> Taskset:
             content="Placeholder content for task {i}",
         )
         for i in range(NUMBER_TASKS)
-    ]
+    )
 
     taskset = Taskset(
         name="Test_Dataset",
@@ -63,7 +61,7 @@ def create_taskset(library: Library) -> Taskset:
 def create_testset(taskset: Taskset) -> Testset:
     tasks = taskset.tasks
 
-    tests = [
+    tests = tuple(
         Test(
             name=f"Test_{task.name}",
             version="1.0.0",
@@ -72,7 +70,7 @@ def create_testset(taskset: Taskset) -> Testset:
             content="Placeholder content for test {task.name}",
         )
         for task in tasks
-    ]
+    )
 
     testset = Testset(
         name="Test_Testset",
@@ -106,7 +104,7 @@ def create_agent() -> tuple[Model, Agent]:
 def create_answerset(agent: Agent, taskset: Taskset) -> Answerset:
     tasks = taskset.tasks
 
-    answers = [
+    answers = tuple(
         Answer(
             name=f"Answer_{task.name}",
             version="1.0.0",
@@ -116,7 +114,7 @@ def create_answerset(agent: Agent, taskset: Taskset) -> Answerset:
             content=f"Placeholder content for answer {task.name}",
         )
         for task in tasks
-    ]
+    )
 
     answerset = Answerset(
         name="Test_Answerset",
@@ -137,7 +135,7 @@ def create_resultset(
     tests = testset.tests
     answers = answerset.answers
 
-    results = [
+    results = tuple(
         Result(
             name=f"Result_{task.name}",
             version="1.0.0",
@@ -147,7 +145,7 @@ def create_resultset(
             passed=False,
         )
         for task, answer, test in zip(tasks, answers, tests)
-    ]
+    )
 
     resultset = Resultset(
         name="Test_Resultset",
@@ -162,7 +160,7 @@ def create_resultset(
     return resultset
 
 
-def create_benchmark(library: Library, resultsets: list[Resultset]) -> Benchmark:
+def create_benchmark(library: Library, resultsets: tuple[Resultset, ...]) -> Benchmark:
     benchmark = Benchmark(
         name="Test_Benchmark",
         version="1.0.0",
@@ -181,7 +179,7 @@ def create_evaluation() -> Evaluation:
     model, agent = create_agent()
     answerset = create_answerset(agent, taskset)
     resultset = create_resultset(taskset, testset, answerset)
-    benchmark = create_benchmark(library, [resultset])
+    benchmark = create_benchmark(library, (resultset,))
 
     evaluation = Evaluation(
         name="Test_Evaluation",
@@ -202,4 +200,3 @@ def create_evaluation() -> Evaluation:
 
 if __name__ == "__main__":
     evaluation = create_evaluation()
-    pprint(evaluation)
