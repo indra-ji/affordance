@@ -18,7 +18,7 @@ from data_models import (
 )
 
 
-def create_library() -> [Language, Library]:
+def create_library() -> tuple[Language, Library]:
     language = Language(
         name="Python",
         version="3.13",
@@ -87,7 +87,7 @@ def create_testset(taskset: Taskset) -> Testset:
     return testset
 
 
-def create_agent() -> [Model, Agent]:
+def create_agent() -> tuple[Model, Agent]:
     model = Model(
         name="GPT-4o",
         version="1.0.0",
