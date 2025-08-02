@@ -1,7 +1,7 @@
 from pydantic import BaseModel, computed_field
 
 
-class BaseEntity(BaseModel, strict=True, extra="forbid"):
+class BaseEntity(BaseModel, frozen=True, strict=True, extra="forbid"):
     name: str
     version: str
     description: str
@@ -22,12 +22,12 @@ class Task(BaseEntity):
 
 class Taskset(BaseEntity):
     library: Library
-    tasks: list[Task] | None = None
+    tasks: tuple[Task, ...]
 
     @computed_field
     @property
-    def size(self) -> int | None:
-        return len(self.tasks) if self.tasks else None
+    def size(self) -> int:
+        return len(self.tasks)
 
 
 class Test(BaseEntity):
@@ -37,12 +37,12 @@ class Test(BaseEntity):
 
 class Testset(BaseEntity):
     taskset: Taskset
-    tests: list[Test] | None = None
+    tests: tuple[Test, ...]
 
     @computed_field
     @property
-    def size(self) -> int | None:
-        return len(self.tests) if self.tests else None
+    def size(self) -> int:
+        return len(self.tests)
 
 
 class Model(BaseEntity):
@@ -51,8 +51,8 @@ class Model(BaseEntity):
 
 class Agent(BaseEntity):
     model: Model
-    configuration: str | None = None
-    scaffolding: str | None = None
+    configuration: str
+    scaffolding: str
 
 
 class Answer(BaseEntity):
@@ -64,84 +64,72 @@ class Answer(BaseEntity):
 class Answerset(BaseEntity):
     agent: Agent
     taskset: Taskset
-    answers: list[Answer] | None = None
+    answers: tuple[Answer, ...]
 
     @computed_field
     @property
-    def size(self) -> int | None:
-        return len(self.answers) if self.answers else None
+    def size(self) -> int:
+        return len(self.answers)
 
 
 class Result(BaseEntity):
     answer: Answer
     test: Test
-    passed: bool = False
+    passed: bool
 
 
 class Resultset(BaseEntity):
     taskset: Taskset
     testset: Testset
     answerset: Answerset
-    results: list[Result] | None = None
+    results: tuple[Result, ...]
 
     @computed_field
     @property
-    def size(self) -> int | None:
-        return len(self.results) if self.results else None
+    def size(self) -> int:
+        return len(self.results)
 
     @computed_field
     @property
-    def number_passed(self) -> int | None:
-        if not self.results:
-            return None
+    def number_passed(self) -> int:
         return sum(1 for result in self.results if result.passed)
 
     @computed_field
     @property
-    def percentage_passed(self) -> float | None:
-        if not self.results:
-            return None
+    def percentage_passed(self) -> float:
         return (
             (float(self.number_passed) / float(self.size)) * 100.0
-            if self.size
-            else None
+            if self.size > 0
+            else 0.0
         )
 
 
 class Benchmark(BaseEntity):
     library: Library
-    resultsets: list[Resultset] | None = None
+    resultsets: tuple[Resultset, ...]
 
     @computed_field
     @property
-    def size(self) -> int | None:
-        return len(self.resultsets) if self.resultsets else None
+    def size(self) -> int:
+        return len(self.resultsets)
 
     @computed_field
     @property
-    def total_size(self) -> int | None:
-        return (
-            sum(resultset.size for resultset in self.resultsets)
-            if self.resultsets
-            else None
-        )
+    def total_size(self) -> int:
+        return sum(resultset.size for resultset in self.resultsets)
 
     @computed_field
     @property
-    def number_passed(self) -> int | None:
-        if not self.resultsets:
-            return None
+    def number_passed(self) -> int:
         return sum(resultset.number_passed for resultset in self.resultsets)
 
     @computed_field
     @property
-    def percentage_passed(self) -> float | None:
-        if not self.resultsets:
-            return None
+    def percentage_passed(self) -> float:
         return (
             (float(self.number_passed) / float(self.total_size)) * 100.0
-            if self.total_size
-            else None
+            if self.total_size > 0
+            else 0.0
         )
 
 
