@@ -30,12 +30,6 @@ def create_language() -> Language:
     return language
 
 
-def load_language(evaluation: Evaluation) -> Language:
-    language = evaluation.language
-
-    return language
-
-
 def create_library(language: Language) -> Library:
     library = Library(
         name="Numpy",
@@ -43,12 +37,6 @@ def create_library(language: Language) -> Library:
         description="Numpy is a library for numerical computing.",
         language=language,
     )
-
-    return library
-
-
-def load_library(evaluation: Evaluation) -> Library:
-    library = evaluation.library
 
     return library
 
@@ -78,12 +66,6 @@ def create_taskset(library: Library) -> Taskset:
     return taskset
 
 
-def load_taskset(evaluation: Evaluation) -> Taskset:
-    taskset = evaluation.taskset
-
-    return taskset
-
-
 def create_testset(taskset: Taskset) -> Testset:
     tasks = taskset.tasks
 
@@ -109,12 +91,6 @@ def create_testset(taskset: Taskset) -> Testset:
     return testset
 
 
-def load_testset(evaluation: Evaluation) -> Testset:
-    testset = evaluation.testset
-
-    return testset
-
-
 def create_model() -> Model:
     model = Model(
         name="GPT-4o",
@@ -122,12 +98,6 @@ def create_model() -> Model:
         description="Daily use model",
         provider="OpenAI",
     )
-
-    return model
-
-
-def load_model(evaluation: Evaluation) -> Model:
-    model = evaluation.model
 
     return model
 
@@ -141,12 +111,6 @@ def create_agent(model: Model) -> Agent:
         configuration="Default configuration",
         scaffolding="No scaffolding",
     )
-
-    return agent
-
-
-def load_agent(evaluation: Evaluation) -> Agent:
-    agent = evaluation.agent
 
     return agent
 
@@ -174,12 +138,6 @@ def create_answerset(agent: Agent, taskset: Taskset) -> Answerset:
         taskset=taskset,
         answers=answers,
     )
-
-    return answerset
-
-
-def load_answerset(evaluation: Evaluation) -> Answerset:
-    answerset = evaluation.answerset
 
     return answerset
 
@@ -216,12 +174,6 @@ def create_resultset(
     return resultset
 
 
-def load_resultset(evaluation: Evaluation) -> Resultset:
-    resultset = evaluation.resultset
-
-    return resultset
-
-
 def create_benchmark(library: Library, resultsets: tuple[Resultset, ...]) -> Benchmark:
     benchmark = Benchmark(
         name="demo_benchmark",
@@ -230,12 +182,6 @@ def create_benchmark(library: Library, resultsets: tuple[Resultset, ...]) -> Ben
         library=library,
         resultsets=resultsets,
     )
-
-    return benchmark
-
-
-def load_benchmark(evaluation: Evaluation) -> Benchmark:
-    benchmark = evaluation.benchmark
 
     return benchmark
 
@@ -271,50 +217,30 @@ def create_evaluation() -> Evaluation:
 def load_evaluation(input_path: str) -> Evaluation:
     evaluation = deserialize_data_model(input_path, Evaluation)
 
-    language = load_language(evaluation)
-    library = load_library(evaluation)
-    taskset = load_taskset(evaluation)
-    testset = load_testset(evaluation)
-    model = load_model(evaluation)
-    agent = load_agent(evaluation)
-    answerset = load_answerset(evaluation)
-    resultset = load_resultset(evaluation)
-    benchmark = load_benchmark(evaluation)
-
-    evaluation = Evaluation(
-        name=evaluation.name,
-        version=evaluation.version,
-        description=evaluation.description,
-        language=language,
-        library=library,
-        taskset=taskset,
-        testset=testset,
-        model=model,
-        agent=agent,
-        answerset=answerset,
-        resultset=resultset,
-        benchmark=benchmark,
-    )
     return evaluation
 
 
 def rerun_evaluation(input_path: str) -> Evaluation:
     evaluation = deserialize_data_model(input_path, Evaluation)
 
-    language = load_language(evaluation)
-    library = load_library(evaluation)
-    taskset = load_taskset(evaluation)
-    testset = load_testset(evaluation)
-    model = load_model(evaluation)
-    agent = load_agent(evaluation)
+    name = evaluation.name
+    version = evaluation.version
+    description = evaluation.description
+    language = evaluation.language
+    library = evaluation.library
+    taskset = evaluation.taskset
+    testset = evaluation.testset
+    model = evaluation.model
+    agent = evaluation.agent
+
     answerset = create_answerset(agent, taskset)
     resultset = create_resultset(taskset, testset, answerset)
     benchmark = create_benchmark(library, (resultset,))
 
     evaluation = Evaluation(
-        name=evaluation.name,
-        version=evaluation.version,
-        description=evaluation.description,
+        name=name,
+        version=version,
+        description=description,
         language=language,
         library=library,
         taskset=taskset,
@@ -332,15 +258,17 @@ if __name__ == "__main__":
     match sys.argv[1:]:
         case ["--create"]:
             evaluation = create_evaluation()
+            timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+            output_path = f"{evaluation.name}_{timestamp}.json"
+            serialize_data_model(evaluation, output_path)
         case ["--load", input_path]:
             evaluation = load_evaluation(input_path)
         case ["--rerun", input_path]:
             evaluation = rerun_evaluation(input_path)
+            timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+            output_path = f"{evaluation.name}_{timestamp}.json"
+            serialize_data_model(evaluation, output_path)
         case _:
             raise Exception(
                 "Usage: python evaluation.py --create OR python evaluation.py --load <input_path> OR python evaluation.py --rerun <input_path>"
             )
-
-    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_path = f"{evaluation.name}_{timestamp}.json"
-    serialize_data_model(evaluation, output_path)
