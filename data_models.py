@@ -1,7 +1,7 @@
 from pydantic import BaseModel, computed_field
 
 
-class BaseEntity(BaseModel, frozen=True, strict=True, extra="forbid"):
+class BaseEntity(BaseModel, frozen=True, strict=True, extra="ignore"):
     name: str
     version: str
     description: str

@@ -8,8 +8,9 @@ def serialize_data_model(data_model: BaseEntity, output_path: str) -> None:
         f.write(json_output)
 
 
-def deserialize_data_model(input_path: str) -> BaseEntity:
+def deserialize_data_model(
+    input_path: str, model_class: type[BaseEntity]
+) -> BaseEntity:
     with open(input_path, "r") as f:
         json_data = f.read()
-
-    return BaseEntity.model_validate_json(json_data)
+    return model_class.model_validate_json(json_data)
