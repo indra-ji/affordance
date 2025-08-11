@@ -1,0 +1,19 @@
+{
+  "name": "Demo Taskset",
+  "version": "1.0.0",
+  "description": "Two simple NLP tasks used for demo evaluation",
+  "tasks": [
+    {
+      "name": "SummarizeText",
+      "version": "1.0.0",
+      "description": "Summarize a paragraph into one sentence",
+      "content": "Summarize the following text into one concise sentence: 'Large language models are transforming software development by automating routine coding tasks and improving developer productivity.'"
+    },
+    {
+      "name": "ClassifySentiment",
+      "version": "1.0.0",
+      "description": "Classify sentiment of a short review as Positive or Negative",
+      "content": "Classify the sentiment: 'The battery life is incredible and the screen is gorgeous.'"
+    }
+  ]
+}
