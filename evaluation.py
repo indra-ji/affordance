@@ -1,6 +1,7 @@
 import datetime
 import sys
 
+from config_utils import find_config_file
 from data_models import (
     Agent,
     Answer,
@@ -17,73 +18,74 @@ from data_models import (
     Test,
     Testset,
 )
-from json_utils import deserialize_data_model, serialize_data_model
+from json_utils import (
+    deserialize_data_model,
+    deserialize_dict,
+    serialize_data_model,
+)
 
 
-def create_language() -> Language:
-    language = Language(
-        name="Python",
-        version="3.13",
-        description="Latest version of Python",
-    )
-
+def create_language(configs_dir: str) -> Language:
+    language = deserialize_data_model(configs_dir, Language)
     return language
 
 
-def create_library(language: Language) -> Library:
+def create_library(configs_dir: str, language: Language) -> Library:
+    library_dict = deserialize_dict(configs_dir)
+
     library = Library(
-        name="Numpy",
-        version="3.2.3",
-        description="Numpy is a library for numerical computing.",
+        name=library_dict["name"],
+        version=library_dict["version"],
+        description=library_dict["description"],
         language=language,
     )
 
     return library
 
 
-def create_taskset(library: Library) -> Taskset:
-    NUMBER_TASKS = 10
+def create_taskset(configs_dir: str, library: Library) -> Taskset:
+    taskset_dict = deserialize_dict(configs_dir)
 
     tasks = tuple(
         Task(
-            name=f"Task_{i}",
-            version="1.0.0",
-            description=f"Placeholder description for task {i}",
+            name=task_dict["name"],
+            version=task_dict["version"],
+            description=task_dict["description"],
             library=library,
-            content=f"Placeholder content for task {i}",
+            content=task_dict["content"],
         )
-        for i in range(1, NUMBER_TASKS + 1)
+        for task_dict in taskset_dict["tasks"]
     )
 
     taskset = Taskset(
-        name="demo_taskset",
-        version="1.0.0",
-        description="Test dataset with basic operations",
+        name=taskset_dict["name"],
+        version=taskset_dict["version"],
+        description=taskset_dict["description"],
         library=library,
         tasks=tasks,
     )
-
     return taskset
 
 
-def create_testset(taskset: Taskset) -> Testset:
+def create_testset(configs_dir: str, taskset: Taskset) -> Testset:
+    testset_dict = deserialize_dict(configs_dir)
     tasks = taskset.tasks
 
     tests = tuple(
         Test(
-            name=f"Test_{task.name}",
-            version="1.0.0",
-            description=f"Placeholder description for test {task.name}",
+            name=test_dict["name"],
+            version=test_dict["version"],
+            description=test_dict["description"],
             task=task,
-            content=f"Placeholder content for test {task.name}",
+            content=test_dict["content"],
         )
-        for task in tasks
+        for test_dict, task in zip(testset_dict["tests"], tasks)
     )
 
     testset = Testset(
-        name="demo_testset",
-        version="1.0.0",
-        description="Testset with placeholder tests",
+        name=testset_dict["name"],
+        version=testset_dict["version"],
+        description=testset_dict["description"],
         taskset=taskset,
         tests=tests,
     )
@@ -91,25 +93,22 @@ def create_testset(taskset: Taskset) -> Testset:
     return testset
 
 
-def create_model() -> Model:
-    model = Model(
-        name="GPT-4o",
-        version="1.0.0",
-        description="Daily use model",
-        provider="OpenAI",
-    )
+def create_model(configs_dir: str) -> Model:
+    model = deserialize_data_model(configs_dir, Model)
 
     return model
 
 
-def create_agent(model: Model) -> Agent:
+def create_agent(configs_dir: str, model: Model) -> Agent:
+    agent_dict = deserialize_dict(configs_dir)
+
     agent = Agent(
-        name="vanilla-agent",
-        version="1.0.0",
-        description="Vanilla agent that calls the model.",
+        name=agent_dict["name"],
+        version=agent_dict["version"],
+        description=agent_dict["description"],
         model=model,
-        configuration="Default configuration",
-        scaffolding="No scaffolding",
+        configuration=agent_dict["configuration"],
+        scaffolding=agent_dict["scaffolding"],
     )
 
     return agent
@@ -186,13 +185,26 @@ def create_benchmark(library: Library, resultsets: tuple[Resultset, ...]) -> Ben
     return benchmark
 
 
-def create_evaluation() -> Evaluation:
-    language = create_language()
-    library = create_library(language)
-    taskset = create_taskset(library)
-    testset = create_testset(taskset)
-    model = create_model()
-    agent = create_agent(model)
+def create_evaluation(configs_dir: str) -> Evaluation:
+    language = create_language(
+        configs_dir=find_config_file(configs_dir, "language_*.json")
+    )
+    library = create_library(
+        configs_dir=find_config_file(configs_dir, "library_*.json"),
+        language=language,
+    )
+    taskset = create_taskset(
+        configs_dir=find_config_file(configs_dir, "taskset_*.json"),
+        library=library,
+    )
+    testset = create_testset(
+        configs_dir=find_config_file(configs_dir, "testset_*.json"),
+        taskset=taskset,
+    )
+    model = create_model(configs_dir=find_config_file(configs_dir, "model_*.json"))
+    agent = create_agent(
+        configs_dir=find_config_file(configs_dir, "agent_*.json"), model=model
+    )
     answerset = create_answerset(agent, taskset)
     resultset = create_resultset(taskset, testset, answerset)
     benchmark = create_benchmark(library, (resultset,))
@@ -214,14 +226,14 @@ def create_evaluation() -> Evaluation:
     return evaluation
 
 
-def load_evaluation(input_path: str) -> Evaluation:
-    evaluation = deserialize_data_model(input_path, Evaluation)
+def load_evaluation(eval_path: str) -> Evaluation:
+    evaluation = deserialize_data_model(eval_path, Evaluation)
 
     return evaluation
 
 
-def rerun_evaluation(input_path: str) -> Evaluation:
-    evaluation = deserialize_data_model(input_path, Evaluation)
+def rerun_evaluation(eval_path: str) -> Evaluation:
+    evaluation = deserialize_data_model(eval_path, Evaluation)
 
     name = evaluation.name
     version = evaluation.version
@@ -256,19 +268,19 @@ def rerun_evaluation(input_path: str) -> Evaluation:
 
 if __name__ == "__main__":
     match sys.argv[1:]:
-        case ["--create"]:
-            evaluation = create_evaluation()
+        case ["--create", configs_dir]:
+            evaluation = create_evaluation(configs_dir)
             timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
             output_path = f"{evaluation.name}_{timestamp}.json"
-            serialize_data_model(evaluation, output_path)
-        case ["--load", input_path]:
-            evaluation = load_evaluation(input_path)
-        case ["--rerun", input_path]:
-            evaluation = rerun_evaluation(input_path)
+            serialize_data_model(output_path, evaluation)
+        case ["--load", eval_path]:
+            evaluation = load_evaluation(eval_path)
+        case ["--rerun", eval_path]:
+            evaluation = rerun_evaluation(eval_path)
             timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
             output_path = f"{evaluation.name}_{timestamp}.json"
-            serialize_data_model(evaluation, output_path)
+            serialize_data_model(output_path, evaluation)
         case _:
             raise Exception(
-                "Usage: python evaluation.py --create OR python evaluation.py --load <input_path> OR python evaluation.py --rerun <input_path>"
+                "Usage: python evaluation.py --create <configs_dir> OR python evaluation.py --load <eval_path> OR python evaluation.py --rerun <eval_path>"
             )

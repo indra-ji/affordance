@@ -1,0 +1,6 @@
+{
+  "name": "DemoModel",
+  "version": "1.0.0",
+  "description": "Mock model used for the demo evaluation",
+  "provider": "local"
+}
