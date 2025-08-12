@@ -1,10 +1,10 @@
-import json
 import os
 
 import openai
 from dotenv import load_dotenv
 
 from data_models import Agent, Task
+from json_utils import clean_code
 
 load_dotenv()
 
@@ -20,7 +20,10 @@ def generate_openai_answer(agent: Agent, task: Task) -> str:
             input=full_prompt,
         )
 
-        return json.dumps(response.output_text, indent=2)
+        output = response.output_text
+        output = clean_code(output)
+
+        return output
 
     except Exception as e:
         return f"Error generating answer using OpenAI API: {str(e)}"

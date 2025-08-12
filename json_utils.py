@@ -1,4 +1,5 @@
 import json
+import re
 
 from data_models import BaseEntity
 
@@ -22,3 +23,7 @@ def deserialize_dict(input_path: str) -> dict:
     with open(input_path, "r", encoding="utf-8") as f:
         json_data = f.read()
     return json.loads(json_data)
+
+
+def clean_code(text: str) -> str:
+    return re.sub(r"```[ \t]*[A-Za-z0-9_+\-]*", "", text)

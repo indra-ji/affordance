@@ -292,7 +292,7 @@
           },
           "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100."
         },
-        "content": "\"```python\\nimport numpy as np\\n\\narray = np.random.randint(0, 101, size=(3, 4))\\n```\""
+        "content": "\nimport numpy as np\n\narray = np.random.randint(0, 101, size=(3, 4))\n"
       },
       {
         "name": "Answer_Calculate mean",
@@ -328,7 +328,7 @@
           },
           "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean."
         },
-        "content": "\"```python\\nimport numpy as np\\n\\narray = np.random.rand(10)\\nmean_value = np.mean(array)\\n```\""
+        "content": "\nimport numpy as np\n\n# Create a 1D array with 10 random floating-point numbers between 0 and 1\nrandom_numbers = np.random.rand(10)\n\n# Calculate the mean\nmean_value = np.mean(random_numbers)\n"
       }
     ],
     "size": 2
@@ -592,7 +592,7 @@
             },
             "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100."
           },
-          "content": "\"```python\\nimport numpy as np\\n\\narray = np.random.randint(0, 101, size=(3, 4))\\n```\""
+          "content": "\nimport numpy as np\n\narray = np.random.randint(0, 101, size=(3, 4))\n"
         },
         {
           "name": "Answer_Calculate mean",
@@ -628,7 +628,7 @@
             },
             "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean."
           },
-          "content": "\"```python\\nimport numpy as np\\n\\narray = np.random.rand(10)\\nmean_value = np.mean(array)\\n```\""
+          "content": "\nimport numpy as np\n\n# Create a 1D array with 10 random floating-point numbers between 0 and 1\nrandom_numbers = np.random.rand(10)\n\n# Calculate the mean\nmean_value = np.mean(random_numbers)\n"
         }
       ],
       "size": 2
@@ -672,7 +672,7 @@
             },
             "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100."
           },
-          "content": "\"```python\\nimport numpy as np\\n\\narray = np.random.randint(0, 101, size=(3, 4))\\n```\""
+          "content": "\nimport numpy as np\n\narray = np.random.randint(0, 101, size=(3, 4))\n"
         },
         "test": {
           "name": "Create 2D array test",
@@ -736,7 +736,7 @@
             },
             "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean."
           },
-          "content": "\"```python\\nimport numpy as np\\n\\narray = np.random.rand(10)\\nmean_value = np.mean(array)\\n```\""
+          "content": "\nimport numpy as np\n\n# Create a 1D array with 10 random floating-point numbers between 0 and 1\nrandom_numbers = np.random.rand(10)\n\n# Calculate the mean\nmean_value = np.mean(random_numbers)\n"
         },
         "test": {
           "name": "Calculate mean test",
@@ -1041,7 +1041,7 @@
                 },
                 "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100."
               },
-              "content": "\"```python\\nimport numpy as np\\n\\narray = np.random.randint(0, 101, size=(3, 4))\\n```\""
+              "content": "\nimport numpy as np\n\narray = np.random.randint(0, 101, size=(3, 4))\n"
             },
             {
               "name": "Answer_Calculate mean",
@@ -1077,7 +1077,7 @@
                 },
                 "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean."
               },
-              "content": "\"```python\\nimport numpy as np\\n\\narray = np.random.rand(10)\\nmean_value = np.mean(array)\\n```\""
+              "content": "\nimport numpy as np\n\n# Create a 1D array with 10 random floating-point numbers between 0 and 1\nrandom_numbers = np.random.rand(10)\n\n# Calculate the mean\nmean_value = np.mean(random_numbers)\n"
             }
           ],
           "size": 2
@@ -1121,7 +1121,7 @@
                 },
                 "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100."
               },
-              "content": "\"```python\\nimport numpy as np\\n\\narray = np.random.randint(0, 101, size=(3, 4))\\n```\""
+              "content": "\nimport numpy as np\n\narray = np.random.randint(0, 101, size=(3, 4))\n"
             },
             "test": {
               "name": "Create 2D array test",
@@ -1185,7 +1185,7 @@
                 },
                 "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean."
               },
-              "content": "\"```python\\nimport numpy as np\\n\\narray = np.random.rand(10)\\nmean_value = np.mean(array)\\n```\""
+              "content": "\nimport numpy as np\n\n# Create a 1D array with 10 random floating-point numbers between 0 and 1\nrandom_numbers = np.random.rand(10)\n\n# Calculate the mean\nmean_value = np.mean(random_numbers)\n"
             },
             "test": {
               "name": "Calculate mean test",
