@@ -7,13 +7,13 @@
       "name": "Create 2D array",
       "version": "1.0.0",
       "description": "Create a NumPy array with specified dimensions and values",
-      "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100."
+      "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100. Array should be assigned to a variable called `array`."
     },
     {
       "name": "Calculate mean",
       "version": "1.0.0",
       "description": "Calculate the mean of a NumPy array",
-      "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean."
+      "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean. Array should be assigned to a variable called `array`. Mean should be assigned to a variable called `mean`."
     }
   ]
 }
