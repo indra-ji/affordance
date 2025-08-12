@@ -1,7 +1,8 @@
 {
-  "name": "DemoAgent",
+  "name": "Pure LLM agent",
   "version": "1.0.0",
-  "description": "Mock agent configuration for the demo model",
-  "configuration": "temperature=0.2; max_tokens=256",
-  "scaffolding": "simple_prompting"
+  "description": "Agent that uses a raw LLM to solve the tasks",
+  "prompt": "Solve the task below, and return the solution in the specified language.",
+  "configuration": "Default configuration",
+  "scaffolding": "No scaffolding"
 }

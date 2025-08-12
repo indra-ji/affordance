@@ -1,5 +1,5 @@
 {
-  "name": "NLP Demo Library",
-  "version": "1.0.0",
-  "description": "Collection of demo NLP tasks for evaluation"
+  "name": "NumPy",
+  "version": "2.3.2",
+  "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices"
 }

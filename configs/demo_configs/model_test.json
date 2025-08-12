@@ -1,6 +1,6 @@
 {
-  "name": "DemoModel",
-  "version": "1.0.0",
-  "description": "Mock model used for the demo evaluation",
-  "provider": "local"
+  "name": "gpt-4o-mini",
+  "version": "0.1.0",
+  "description": "Small and fast model used for the demo evaluation",
+  "provider": "openai"
 }
