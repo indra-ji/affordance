@@ -51,6 +51,7 @@ class Model(BaseEntity):
 
 class Agent(BaseEntity):
     model: Model
+    prompt: str
     configuration: str
     scaffolding: str
 

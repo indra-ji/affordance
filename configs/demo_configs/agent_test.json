@@ -1,7 +1,0 @@
-{
-  "name": "DemoAgent",
-  "version": "1.0.0",
-  "description": "Mock agent configuration for the demo model",
-  "configuration": "temperature=0.2; max_tokens=256",
-  "scaffolding": "simple_prompting"
-}

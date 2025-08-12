@@ -1,0 +1,19 @@
+{
+  "name": "NumPy Demo Testset",
+  "version": "1.0.0",
+  "description": "Tests aligned with demo NumPy tasks",
+  "tests": [
+    {
+      "name": "Create 2D array test",
+      "version": "1.0.0",
+      "description": "Test creation of a NumPy array with specified dimensions and values",
+      "content": "Placeholder content for test"
+    },
+    {
+      "name": "Calculate mean test",
+      "version": "1.0.0",
+      "description": "Test calculation of the mean of a NumPy array",
+      "content": "Placeholder content for test"
+    }
+  ]
+}
