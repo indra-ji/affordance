@@ -10,7 +10,12 @@ load_dotenv()
 
 
 def generate_openai_answer(agent: Agent, task: Task) -> str:
-    full_prompt = f"{agent.prompt}\n\nTask: {task.content}\n\nLibrary: {task.library.name} {task.library.version}\nLanguage: {task.library.language.name} {task.library.language.version}"
+    full_prompt = (
+        f"{agent.prompt}\n\n"
+        f"Task: {task.content}\n\n"
+        f"Library: {task.library.name} {task.library.version}\n"
+        f"Language: {task.library.language.name} {task.library.language.version}"
+    )
 
     try:
         client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
