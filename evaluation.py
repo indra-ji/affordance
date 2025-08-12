@@ -23,6 +23,7 @@ from json_utils import (
     deserialize_dict,
     serialize_data_model,
 )
+from llm import generate_answer
 
 
 def create_language(configs_dir: str) -> Language:
@@ -125,7 +126,7 @@ def create_answerset(agent: Agent, taskset: Taskset) -> Answerset:
             description=f"Answer generated for {task.name}",
             agent=agent,
             task=task,
-            content=f"Placeholder content for answer {task.name}",
+            content=generate_answer(agent, task),
         )
         for task in tasks
     )
@@ -272,14 +273,14 @@ if __name__ == "__main__":
         case ["--create", configs_dir]:
             evaluation = create_evaluation(configs_dir)
             timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-            output_path = f"{evaluation.name}_{timestamp}.json"
+            output_path = f"{evaluation.name.replace(' ', '_')}_{timestamp}.json"
             serialize_data_model(output_path, evaluation)
         case ["--load", eval_path]:
             evaluation = load_evaluation(eval_path)
         case ["--rerun", eval_path]:
             evaluation = rerun_evaluation(eval_path)
             timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-            output_path = f"{evaluation.name}_{timestamp}.json"
+            output_path = f"{evaluation.name.replace(' ', '_')}_{timestamp}.json"
             serialize_data_model(output_path, evaluation)
         case _:
             raise Exception(

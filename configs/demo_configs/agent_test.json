@@ -2,7 +2,7 @@
   "name": "Pure LLM agent",
   "version": "1.0.0",
   "description": "Agent that uses a raw LLM to solve the tasks",
-  "prompt": "Solve the task below, and return the solution in the specified language.",
+  "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
   "configuration": "Default configuration",
   "scaffolding": "No scaffolding"
 }

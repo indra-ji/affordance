@@ -1,0 +1,1225 @@
+{
+  "name": "NumPy evaluation",
+  "version": "1.0.0",
+  "description": "Evaluation for benchmark NumPy benchmark",
+  "language": {
+    "name": "Python",
+    "version": "3.13.5",
+    "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+  },
+  "library": {
+    "name": "NumPy",
+    "version": "2.3.2",
+    "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+    "language": {
+      "name": "Python",
+      "version": "3.13.5",
+      "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+    }
+  },
+  "taskset": {
+    "name": "NumPy Demo Taskset",
+    "version": "1.0.0",
+    "description": "Two simple NumPy tasks used for demo evaluation",
+    "library": {
+      "name": "NumPy",
+      "version": "2.3.2",
+      "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+      "language": {
+        "name": "Python",
+        "version": "3.13.5",
+        "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+      }
+    },
+    "tasks": [
+      {
+        "name": "Create 2D array",
+        "version": "1.0.0",
+        "description": "Create a NumPy array with specified dimensions and values",
+        "library": {
+          "name": "NumPy",
+          "version": "2.3.2",
+          "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+          "language": {
+            "name": "Python",
+            "version": "3.13.5",
+            "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+          }
+        },
+        "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100."
+      },
+      {
+        "name": "Calculate mean",
+        "version": "1.0.0",
+        "description": "Calculate the mean of a NumPy array",
+        "library": {
+          "name": "NumPy",
+          "version": "2.3.2",
+          "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+          "language": {
+            "name": "Python",
+            "version": "3.13.5",
+            "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+          }
+        },
+        "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean."
+      }
+    ],
+    "size": 2
+  },
+  "testset": {
+    "name": "NumPy Demo Testset",
+    "version": "1.0.0",
+    "description": "Tests aligned with demo NumPy tasks",
+    "taskset": {
+      "name": "NumPy Demo Taskset",
+      "version": "1.0.0",
+      "description": "Two simple NumPy tasks used for demo evaluation",
+      "library": {
+        "name": "NumPy",
+        "version": "2.3.2",
+        "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+        "language": {
+          "name": "Python",
+          "version": "3.13.5",
+          "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+        }
+      },
+      "tasks": [
+        {
+          "name": "Create 2D array",
+          "version": "1.0.0",
+          "description": "Create a NumPy array with specified dimensions and values",
+          "library": {
+            "name": "NumPy",
+            "version": "2.3.2",
+            "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+            "language": {
+              "name": "Python",
+              "version": "3.13.5",
+              "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+            }
+          },
+          "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100."
+        },
+        {
+          "name": "Calculate mean",
+          "version": "1.0.0",
+          "description": "Calculate the mean of a NumPy array",
+          "library": {
+            "name": "NumPy",
+            "version": "2.3.2",
+            "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+            "language": {
+              "name": "Python",
+              "version": "3.13.5",
+              "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+            }
+          },
+          "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean."
+        }
+      ],
+      "size": 2
+    },
+    "tests": [
+      {
+        "name": "Create 2D array test",
+        "version": "1.0.0",
+        "description": "Test creation of a NumPy array with specified dimensions and values",
+        "task": {
+          "name": "Create 2D array",
+          "version": "1.0.0",
+          "description": "Create a NumPy array with specified dimensions and values",
+          "library": {
+            "name": "NumPy",
+            "version": "2.3.2",
+            "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+            "language": {
+              "name": "Python",
+              "version": "3.13.5",
+              "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+            }
+          },
+          "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100."
+        },
+        "content": "Placeholder content for test"
+      },
+      {
+        "name": "Calculate mean test",
+        "version": "1.0.0",
+        "description": "Test calculation of the mean of a NumPy array",
+        "task": {
+          "name": "Calculate mean",
+          "version": "1.0.0",
+          "description": "Calculate the mean of a NumPy array",
+          "library": {
+            "name": "NumPy",
+            "version": "2.3.2",
+            "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+            "language": {
+              "name": "Python",
+              "version": "3.13.5",
+              "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+            }
+          },
+          "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean."
+        },
+        "content": "Placeholder content for test"
+      }
+    ],
+    "size": 2
+  },
+  "model": {
+    "name": "gpt-4o-mini",
+    "version": "0.1.0",
+    "description": "Small and fast model used for the demo evaluation",
+    "provider": "openai"
+  },
+  "agent": {
+    "name": "Pure LLM agent",
+    "version": "1.0.0",
+    "description": "Agent that uses a raw LLM to solve the tasks",
+    "model": {
+      "name": "gpt-4o-mini",
+      "version": "0.1.0",
+      "description": "Small and fast model used for the demo evaluation",
+      "provider": "openai"
+    },
+    "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
+    "configuration": "Default configuration",
+    "scaffolding": "No scaffolding"
+  },
+  "answerset": {
+    "name": "NumPy Demo Taskset answerset",
+    "version": "1.0.0",
+    "description": "Answerset for Pure LLM agent on NumPy Demo Taskset",
+    "agent": {
+      "name": "Pure LLM agent",
+      "version": "1.0.0",
+      "description": "Agent that uses a raw LLM to solve the tasks",
+      "model": {
+        "name": "gpt-4o-mini",
+        "version": "0.1.0",
+        "description": "Small and fast model used for the demo evaluation",
+        "provider": "openai"
+      },
+      "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
+      "configuration": "Default configuration",
+      "scaffolding": "No scaffolding"
+    },
+    "taskset": {
+      "name": "NumPy Demo Taskset",
+      "version": "1.0.0",
+      "description": "Two simple NumPy tasks used for demo evaluation",
+      "library": {
+        "name": "NumPy",
+        "version": "2.3.2",
+        "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+        "language": {
+          "name": "Python",
+          "version": "3.13.5",
+          "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+        }
+      },
+      "tasks": [
+        {
+          "name": "Create 2D array",
+          "version": "1.0.0",
+          "description": "Create a NumPy array with specified dimensions and values",
+          "library": {
+            "name": "NumPy",
+            "version": "2.3.2",
+            "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+            "language": {
+              "name": "Python",
+              "version": "3.13.5",
+              "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+            }
+          },
+          "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100."
+        },
+        {
+          "name": "Calculate mean",
+          "version": "1.0.0",
+          "description": "Calculate the mean of a NumPy array",
+          "library": {
+            "name": "NumPy",
+            "version": "2.3.2",
+            "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+            "language": {
+              "name": "Python",
+              "version": "3.13.5",
+              "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+            }
+          },
+          "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean."
+        }
+      ],
+      "size": 2
+    },
+    "answers": [
+      {
+        "name": "Answer_Create 2D array",
+        "version": "1.0.0",
+        "description": "Answer generated for Create 2D array",
+        "agent": {
+          "name": "Pure LLM agent",
+          "version": "1.0.0",
+          "description": "Agent that uses a raw LLM to solve the tasks",
+          "model": {
+            "name": "gpt-4o-mini",
+            "version": "0.1.0",
+            "description": "Small and fast model used for the demo evaluation",
+            "provider": "openai"
+          },
+          "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
+          "configuration": "Default configuration",
+          "scaffolding": "No scaffolding"
+        },
+        "task": {
+          "name": "Create 2D array",
+          "version": "1.0.0",
+          "description": "Create a NumPy array with specified dimensions and values",
+          "library": {
+            "name": "NumPy",
+            "version": "2.3.2",
+            "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+            "language": {
+              "name": "Python",
+              "version": "3.13.5",
+              "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+            }
+          },
+          "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100."
+        },
+        "content": "\"```python\\nimport numpy as np\\n\\narray = np.random.randint(0, 101, size=(3, 4))\\n```\""
+      },
+      {
+        "name": "Answer_Calculate mean",
+        "version": "1.0.0",
+        "description": "Answer generated for Calculate mean",
+        "agent": {
+          "name": "Pure LLM agent",
+          "version": "1.0.0",
+          "description": "Agent that uses a raw LLM to solve the tasks",
+          "model": {
+            "name": "gpt-4o-mini",
+            "version": "0.1.0",
+            "description": "Small and fast model used for the demo evaluation",
+            "provider": "openai"
+          },
+          "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
+          "configuration": "Default configuration",
+          "scaffolding": "No scaffolding"
+        },
+        "task": {
+          "name": "Calculate mean",
+          "version": "1.0.0",
+          "description": "Calculate the mean of a NumPy array",
+          "library": {
+            "name": "NumPy",
+            "version": "2.3.2",
+            "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+            "language": {
+              "name": "Python",
+              "version": "3.13.5",
+              "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+            }
+          },
+          "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean."
+        },
+        "content": "\"```python\\nimport numpy as np\\n\\narray = np.random.rand(10)\\nmean_value = np.mean(array)\\n```\""
+      }
+    ],
+    "size": 2
+  },
+  "resultset": {
+    "name": "NumPy Demo Taskset answerset resultset",
+    "version": "1.0.0",
+    "description": "Resultset for NumPy Demo Taskset answerset on NumPy Demo Taskset using NumPy Demo Testset",
+    "taskset": {
+      "name": "NumPy Demo Taskset",
+      "version": "1.0.0",
+      "description": "Two simple NumPy tasks used for demo evaluation",
+      "library": {
+        "name": "NumPy",
+        "version": "2.3.2",
+        "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+        "language": {
+          "name": "Python",
+          "version": "3.13.5",
+          "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+        }
+      },
+      "tasks": [
+        {
+          "name": "Create 2D array",
+          "version": "1.0.0",
+          "description": "Create a NumPy array with specified dimensions and values",
+          "library": {
+            "name": "NumPy",
+            "version": "2.3.2",
+            "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+            "language": {
+              "name": "Python",
+              "version": "3.13.5",
+              "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+            }
+          },
+          "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100."
+        },
+        {
+          "name": "Calculate mean",
+          "version": "1.0.0",
+          "description": "Calculate the mean of a NumPy array",
+          "library": {
+            "name": "NumPy",
+            "version": "2.3.2",
+            "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+            "language": {
+              "name": "Python",
+              "version": "3.13.5",
+              "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+            }
+          },
+          "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean."
+        }
+      ],
+      "size": 2
+    },
+    "testset": {
+      "name": "NumPy Demo Testset",
+      "version": "1.0.0",
+      "description": "Tests aligned with demo NumPy tasks",
+      "taskset": {
+        "name": "NumPy Demo Taskset",
+        "version": "1.0.0",
+        "description": "Two simple NumPy tasks used for demo evaluation",
+        "library": {
+          "name": "NumPy",
+          "version": "2.3.2",
+          "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+          "language": {
+            "name": "Python",
+            "version": "3.13.5",
+            "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+          }
+        },
+        "tasks": [
+          {
+            "name": "Create 2D array",
+            "version": "1.0.0",
+            "description": "Create a NumPy array with specified dimensions and values",
+            "library": {
+              "name": "NumPy",
+              "version": "2.3.2",
+              "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+              "language": {
+                "name": "Python",
+                "version": "3.13.5",
+                "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+              }
+            },
+            "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100."
+          },
+          {
+            "name": "Calculate mean",
+            "version": "1.0.0",
+            "description": "Calculate the mean of a NumPy array",
+            "library": {
+              "name": "NumPy",
+              "version": "2.3.2",
+              "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+              "language": {
+                "name": "Python",
+                "version": "3.13.5",
+                "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+              }
+            },
+            "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean."
+          }
+        ],
+        "size": 2
+      },
+      "tests": [
+        {
+          "name": "Create 2D array test",
+          "version": "1.0.0",
+          "description": "Test creation of a NumPy array with specified dimensions and values",
+          "task": {
+            "name": "Create 2D array",
+            "version": "1.0.0",
+            "description": "Create a NumPy array with specified dimensions and values",
+            "library": {
+              "name": "NumPy",
+              "version": "2.3.2",
+              "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+              "language": {
+                "name": "Python",
+                "version": "3.13.5",
+                "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+              }
+            },
+            "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100."
+          },
+          "content": "Placeholder content for test"
+        },
+        {
+          "name": "Calculate mean test",
+          "version": "1.0.0",
+          "description": "Test calculation of the mean of a NumPy array",
+          "task": {
+            "name": "Calculate mean",
+            "version": "1.0.0",
+            "description": "Calculate the mean of a NumPy array",
+            "library": {
+              "name": "NumPy",
+              "version": "2.3.2",
+              "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+              "language": {
+                "name": "Python",
+                "version": "3.13.5",
+                "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+              }
+            },
+            "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean."
+          },
+          "content": "Placeholder content for test"
+        }
+      ],
+      "size": 2
+    },
+    "answerset": {
+      "name": "NumPy Demo Taskset answerset",
+      "version": "1.0.0",
+      "description": "Answerset for Pure LLM agent on NumPy Demo Taskset",
+      "agent": {
+        "name": "Pure LLM agent",
+        "version": "1.0.0",
+        "description": "Agent that uses a raw LLM to solve the tasks",
+        "model": {
+          "name": "gpt-4o-mini",
+          "version": "0.1.0",
+          "description": "Small and fast model used for the demo evaluation",
+          "provider": "openai"
+        },
+        "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
+        "configuration": "Default configuration",
+        "scaffolding": "No scaffolding"
+      },
+      "taskset": {
+        "name": "NumPy Demo Taskset",
+        "version": "1.0.0",
+        "description": "Two simple NumPy tasks used for demo evaluation",
+        "library": {
+          "name": "NumPy",
+          "version": "2.3.2",
+          "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+          "language": {
+            "name": "Python",
+            "version": "3.13.5",
+            "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+          }
+        },
+        "tasks": [
+          {
+            "name": "Create 2D array",
+            "version": "1.0.0",
+            "description": "Create a NumPy array with specified dimensions and values",
+            "library": {
+              "name": "NumPy",
+              "version": "2.3.2",
+              "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+              "language": {
+                "name": "Python",
+                "version": "3.13.5",
+                "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+              }
+            },
+            "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100."
+          },
+          {
+            "name": "Calculate mean",
+            "version": "1.0.0",
+            "description": "Calculate the mean of a NumPy array",
+            "library": {
+              "name": "NumPy",
+              "version": "2.3.2",
+              "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+              "language": {
+                "name": "Python",
+                "version": "3.13.5",
+                "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+              }
+            },
+            "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean."
+          }
+        ],
+        "size": 2
+      },
+      "answers": [
+        {
+          "name": "Answer_Create 2D array",
+          "version": "1.0.0",
+          "description": "Answer generated for Create 2D array",
+          "agent": {
+            "name": "Pure LLM agent",
+            "version": "1.0.0",
+            "description": "Agent that uses a raw LLM to solve the tasks",
+            "model": {
+              "name": "gpt-4o-mini",
+              "version": "0.1.0",
+              "description": "Small and fast model used for the demo evaluation",
+              "provider": "openai"
+            },
+            "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
+            "configuration": "Default configuration",
+            "scaffolding": "No scaffolding"
+          },
+          "task": {
+            "name": "Create 2D array",
+            "version": "1.0.0",
+            "description": "Create a NumPy array with specified dimensions and values",
+            "library": {
+              "name": "NumPy",
+              "version": "2.3.2",
+              "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+              "language": {
+                "name": "Python",
+                "version": "3.13.5",
+                "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+              }
+            },
+            "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100."
+          },
+          "content": "\"```python\\nimport numpy as np\\n\\narray = np.random.randint(0, 101, size=(3, 4))\\n```\""
+        },
+        {
+          "name": "Answer_Calculate mean",
+          "version": "1.0.0",
+          "description": "Answer generated for Calculate mean",
+          "agent": {
+            "name": "Pure LLM agent",
+            "version": "1.0.0",
+            "description": "Agent that uses a raw LLM to solve the tasks",
+            "model": {
+              "name": "gpt-4o-mini",
+              "version": "0.1.0",
+              "description": "Small and fast model used for the demo evaluation",
+              "provider": "openai"
+            },
+            "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
+            "configuration": "Default configuration",
+            "scaffolding": "No scaffolding"
+          },
+          "task": {
+            "name": "Calculate mean",
+            "version": "1.0.0",
+            "description": "Calculate the mean of a NumPy array",
+            "library": {
+              "name": "NumPy",
+              "version": "2.3.2",
+              "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+              "language": {
+                "name": "Python",
+                "version": "3.13.5",
+                "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+              }
+            },
+            "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean."
+          },
+          "content": "\"```python\\nimport numpy as np\\n\\narray = np.random.rand(10)\\nmean_value = np.mean(array)\\n```\""
+        }
+      ],
+      "size": 2
+    },
+    "results": [
+      {
+        "name": "Result_Create 2D array",
+        "version": "1.0.0",
+        "description": "Result for Answer_Create 2D array on Create 2D array using Create 2D array test",
+        "answer": {
+          "name": "Answer_Create 2D array",
+          "version": "1.0.0",
+          "description": "Answer generated for Create 2D array",
+          "agent": {
+            "name": "Pure LLM agent",
+            "version": "1.0.0",
+            "description": "Agent that uses a raw LLM to solve the tasks",
+            "model": {
+              "name": "gpt-4o-mini",
+              "version": "0.1.0",
+              "description": "Small and fast model used for the demo evaluation",
+              "provider": "openai"
+            },
+            "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
+            "configuration": "Default configuration",
+            "scaffolding": "No scaffolding"
+          },
+          "task": {
+            "name": "Create 2D array",
+            "version": "1.0.0",
+            "description": "Create a NumPy array with specified dimensions and values",
+            "library": {
+              "name": "NumPy",
+              "version": "2.3.2",
+              "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+              "language": {
+                "name": "Python",
+                "version": "3.13.5",
+                "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+              }
+            },
+            "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100."
+          },
+          "content": "\"```python\\nimport numpy as np\\n\\narray = np.random.randint(0, 101, size=(3, 4))\\n```\""
+        },
+        "test": {
+          "name": "Create 2D array test",
+          "version": "1.0.0",
+          "description": "Test creation of a NumPy array with specified dimensions and values",
+          "task": {
+            "name": "Create 2D array",
+            "version": "1.0.0",
+            "description": "Create a NumPy array with specified dimensions and values",
+            "library": {
+              "name": "NumPy",
+              "version": "2.3.2",
+              "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+              "language": {
+                "name": "Python",
+                "version": "3.13.5",
+                "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+              }
+            },
+            "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100."
+          },
+          "content": "Placeholder content for test"
+        },
+        "passed": false
+      },
+      {
+        "name": "Result_Calculate mean",
+        "version": "1.0.0",
+        "description": "Result for Answer_Calculate mean on Calculate mean using Calculate mean test",
+        "answer": {
+          "name": "Answer_Calculate mean",
+          "version": "1.0.0",
+          "description": "Answer generated for Calculate mean",
+          "agent": {
+            "name": "Pure LLM agent",
+            "version": "1.0.0",
+            "description": "Agent that uses a raw LLM to solve the tasks",
+            "model": {
+              "name": "gpt-4o-mini",
+              "version": "0.1.0",
+              "description": "Small and fast model used for the demo evaluation",
+              "provider": "openai"
+            },
+            "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
+            "configuration": "Default configuration",
+            "scaffolding": "No scaffolding"
+          },
+          "task": {
+            "name": "Calculate mean",
+            "version": "1.0.0",
+            "description": "Calculate the mean of a NumPy array",
+            "library": {
+              "name": "NumPy",
+              "version": "2.3.2",
+              "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+              "language": {
+                "name": "Python",
+                "version": "3.13.5",
+                "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+              }
+            },
+            "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean."
+          },
+          "content": "\"```python\\nimport numpy as np\\n\\narray = np.random.rand(10)\\nmean_value = np.mean(array)\\n```\""
+        },
+        "test": {
+          "name": "Calculate mean test",
+          "version": "1.0.0",
+          "description": "Test calculation of the mean of a NumPy array",
+          "task": {
+            "name": "Calculate mean",
+            "version": "1.0.0",
+            "description": "Calculate the mean of a NumPy array",
+            "library": {
+              "name": "NumPy",
+              "version": "2.3.2",
+              "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+              "language": {
+                "name": "Python",
+                "version": "3.13.5",
+                "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+              }
+            },
+            "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean."
+          },
+          "content": "Placeholder content for test"
+        },
+        "passed": false
+      }
+    ],
+    "size": 2,
+    "number_passed": 0,
+    "percentage_passed": 0.0
+  },
+  "benchmark": {
+    "name": "NumPy benchmark",
+    "version": "1.0.0",
+    "description": "Benchmark for NumPy on NumPy Demo Taskset",
+    "library": {
+      "name": "NumPy",
+      "version": "2.3.2",
+      "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+      "language": {
+        "name": "Python",
+        "version": "3.13.5",
+        "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+      }
+    },
+    "resultsets": [
+      {
+        "name": "NumPy Demo Taskset answerset resultset",
+        "version": "1.0.0",
+        "description": "Resultset for NumPy Demo Taskset answerset on NumPy Demo Taskset using NumPy Demo Testset",
+        "taskset": {
+          "name": "NumPy Demo Taskset",
+          "version": "1.0.0",
+          "description": "Two simple NumPy tasks used for demo evaluation",
+          "library": {
+            "name": "NumPy",
+            "version": "2.3.2",
+            "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+            "language": {
+              "name": "Python",
+              "version": "3.13.5",
+              "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+            }
+          },
+          "tasks": [
+            {
+              "name": "Create 2D array",
+              "version": "1.0.0",
+              "description": "Create a NumPy array with specified dimensions and values",
+              "library": {
+                "name": "NumPy",
+                "version": "2.3.2",
+                "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+                "language": {
+                  "name": "Python",
+                  "version": "3.13.5",
+                  "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+                }
+              },
+              "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100."
+            },
+            {
+              "name": "Calculate mean",
+              "version": "1.0.0",
+              "description": "Calculate the mean of a NumPy array",
+              "library": {
+                "name": "NumPy",
+                "version": "2.3.2",
+                "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+                "language": {
+                  "name": "Python",
+                  "version": "3.13.5",
+                  "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+                }
+              },
+              "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean."
+            }
+          ],
+          "size": 2
+        },
+        "testset": {
+          "name": "NumPy Demo Testset",
+          "version": "1.0.0",
+          "description": "Tests aligned with demo NumPy tasks",
+          "taskset": {
+            "name": "NumPy Demo Taskset",
+            "version": "1.0.0",
+            "description": "Two simple NumPy tasks used for demo evaluation",
+            "library": {
+              "name": "NumPy",
+              "version": "2.3.2",
+              "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+              "language": {
+                "name": "Python",
+                "version": "3.13.5",
+                "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+              }
+            },
+            "tasks": [
+              {
+                "name": "Create 2D array",
+                "version": "1.0.0",
+                "description": "Create a NumPy array with specified dimensions and values",
+                "library": {
+                  "name": "NumPy",
+                  "version": "2.3.2",
+                  "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+                  "language": {
+                    "name": "Python",
+                    "version": "3.13.5",
+                    "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+                  }
+                },
+                "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100."
+              },
+              {
+                "name": "Calculate mean",
+                "version": "1.0.0",
+                "description": "Calculate the mean of a NumPy array",
+                "library": {
+                  "name": "NumPy",
+                  "version": "2.3.2",
+                  "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+                  "language": {
+                    "name": "Python",
+                    "version": "3.13.5",
+                    "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+                  }
+                },
+                "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean."
+              }
+            ],
+            "size": 2
+          },
+          "tests": [
+            {
+              "name": "Create 2D array test",
+              "version": "1.0.0",
+              "description": "Test creation of a NumPy array with specified dimensions and values",
+              "task": {
+                "name": "Create 2D array",
+                "version": "1.0.0",
+                "description": "Create a NumPy array with specified dimensions and values",
+                "library": {
+                  "name": "NumPy",
+                  "version": "2.3.2",
+                  "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+                  "language": {
+                    "name": "Python",
+                    "version": "3.13.5",
+                    "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+                  }
+                },
+                "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100."
+              },
+              "content": "Placeholder content for test"
+            },
+            {
+              "name": "Calculate mean test",
+              "version": "1.0.0",
+              "description": "Test calculation of the mean of a NumPy array",
+              "task": {
+                "name": "Calculate mean",
+                "version": "1.0.0",
+                "description": "Calculate the mean of a NumPy array",
+                "library": {
+                  "name": "NumPy",
+                  "version": "2.3.2",
+                  "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+                  "language": {
+                    "name": "Python",
+                    "version": "3.13.5",
+                    "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+                  }
+                },
+                "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean."
+              },
+              "content": "Placeholder content for test"
+            }
+          ],
+          "size": 2
+        },
+        "answerset": {
+          "name": "NumPy Demo Taskset answerset",
+          "version": "1.0.0",
+          "description": "Answerset for Pure LLM agent on NumPy Demo Taskset",
+          "agent": {
+            "name": "Pure LLM agent",
+            "version": "1.0.0",
+            "description": "Agent that uses a raw LLM to solve the tasks",
+            "model": {
+              "name": "gpt-4o-mini",
+              "version": "0.1.0",
+              "description": "Small and fast model used for the demo evaluation",
+              "provider": "openai"
+            },
+            "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
+            "configuration": "Default configuration",
+            "scaffolding": "No scaffolding"
+          },
+          "taskset": {
+            "name": "NumPy Demo Taskset",
+            "version": "1.0.0",
+            "description": "Two simple NumPy tasks used for demo evaluation",
+            "library": {
+              "name": "NumPy",
+              "version": "2.3.2",
+              "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+              "language": {
+                "name": "Python",
+                "version": "3.13.5",
+                "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+              }
+            },
+            "tasks": [
+              {
+                "name": "Create 2D array",
+                "version": "1.0.0",
+                "description": "Create a NumPy array with specified dimensions and values",
+                "library": {
+                  "name": "NumPy",
+                  "version": "2.3.2",
+                  "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+                  "language": {
+                    "name": "Python",
+                    "version": "3.13.5",
+                    "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+                  }
+                },
+                "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100."
+              },
+              {
+                "name": "Calculate mean",
+                "version": "1.0.0",
+                "description": "Calculate the mean of a NumPy array",
+                "library": {
+                  "name": "NumPy",
+                  "version": "2.3.2",
+                  "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+                  "language": {
+                    "name": "Python",
+                    "version": "3.13.5",
+                    "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+                  }
+                },
+                "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean."
+              }
+            ],
+            "size": 2
+          },
+          "answers": [
+            {
+              "name": "Answer_Create 2D array",
+              "version": "1.0.0",
+              "description": "Answer generated for Create 2D array",
+              "agent": {
+                "name": "Pure LLM agent",
+                "version": "1.0.0",
+                "description": "Agent that uses a raw LLM to solve the tasks",
+                "model": {
+                  "name": "gpt-4o-mini",
+                  "version": "0.1.0",
+                  "description": "Small and fast model used for the demo evaluation",
+                  "provider": "openai"
+                },
+                "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
+                "configuration": "Default configuration",
+                "scaffolding": "No scaffolding"
+              },
+              "task": {
+                "name": "Create 2D array",
+                "version": "1.0.0",
+                "description": "Create a NumPy array with specified dimensions and values",
+                "library": {
+                  "name": "NumPy",
+                  "version": "2.3.2",
+                  "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+                  "language": {
+                    "name": "Python",
+                    "version": "3.13.5",
+                    "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+                  }
+                },
+                "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100."
+              },
+              "content": "\"```python\\nimport numpy as np\\n\\narray = np.random.randint(0, 101, size=(3, 4))\\n```\""
+            },
+            {
+              "name": "Answer_Calculate mean",
+              "version": "1.0.0",
+              "description": "Answer generated for Calculate mean",
+              "agent": {
+                "name": "Pure LLM agent",
+                "version": "1.0.0",
+                "description": "Agent that uses a raw LLM to solve the tasks",
+                "model": {
+                  "name": "gpt-4o-mini",
+                  "version": "0.1.0",
+                  "description": "Small and fast model used for the demo evaluation",
+                  "provider": "openai"
+                },
+                "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
+                "configuration": "Default configuration",
+                "scaffolding": "No scaffolding"
+              },
+              "task": {
+                "name": "Calculate mean",
+                "version": "1.0.0",
+                "description": "Calculate the mean of a NumPy array",
+                "library": {
+                  "name": "NumPy",
+                  "version": "2.3.2",
+                  "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+                  "language": {
+                    "name": "Python",
+                    "version": "3.13.5",
+                    "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+                  }
+                },
+                "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean."
+              },
+              "content": "\"```python\\nimport numpy as np\\n\\narray = np.random.rand(10)\\nmean_value = np.mean(array)\\n```\""
+            }
+          ],
+          "size": 2
+        },
+        "results": [
+          {
+            "name": "Result_Create 2D array",
+            "version": "1.0.0",
+            "description": "Result for Answer_Create 2D array on Create 2D array using Create 2D array test",
+            "answer": {
+              "name": "Answer_Create 2D array",
+              "version": "1.0.0",
+              "description": "Answer generated for Create 2D array",
+              "agent": {
+                "name": "Pure LLM agent",
+                "version": "1.0.0",
+                "description": "Agent that uses a raw LLM to solve the tasks",
+                "model": {
+                  "name": "gpt-4o-mini",
+                  "version": "0.1.0",
+                  "description": "Small and fast model used for the demo evaluation",
+                  "provider": "openai"
+                },
+                "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
+                "configuration": "Default configuration",
+                "scaffolding": "No scaffolding"
+              },
+              "task": {
+                "name": "Create 2D array",
+                "version": "1.0.0",
+                "description": "Create a NumPy array with specified dimensions and values",
+                "library": {
+                  "name": "NumPy",
+                  "version": "2.3.2",
+                  "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+                  "language": {
+                    "name": "Python",
+                    "version": "3.13.5",
+                    "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+                  }
+                },
+                "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100."
+              },
+              "content": "\"```python\\nimport numpy as np\\n\\narray = np.random.randint(0, 101, size=(3, 4))\\n```\""
+            },
+            "test": {
+              "name": "Create 2D array test",
+              "version": "1.0.0",
+              "description": "Test creation of a NumPy array with specified dimensions and values",
+              "task": {
+                "name": "Create 2D array",
+                "version": "1.0.0",
+                "description": "Create a NumPy array with specified dimensions and values",
+                "library": {
+                  "name": "NumPy",
+                  "version": "2.3.2",
+                  "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+                  "language": {
+                    "name": "Python",
+                    "version": "3.13.5",
+                    "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+                  }
+                },
+                "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100."
+              },
+              "content": "Placeholder content for test"
+            },
+            "passed": false
+          },
+          {
+            "name": "Result_Calculate mean",
+            "version": "1.0.0",
+            "description": "Result for Answer_Calculate mean on Calculate mean using Calculate mean test",
+            "answer": {
+              "name": "Answer_Calculate mean",
+              "version": "1.0.0",
+              "description": "Answer generated for Calculate mean",
+              "agent": {
+                "name": "Pure LLM agent",
+                "version": "1.0.0",
+                "description": "Agent that uses a raw LLM to solve the tasks",
+                "model": {
+                  "name": "gpt-4o-mini",
+                  "version": "0.1.0",
+                  "description": "Small and fast model used for the demo evaluation",
+                  "provider": "openai"
+                },
+                "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
+                "configuration": "Default configuration",
+                "scaffolding": "No scaffolding"
+              },
+              "task": {
+                "name": "Calculate mean",
+                "version": "1.0.0",
+                "description": "Calculate the mean of a NumPy array",
+                "library": {
+                  "name": "NumPy",
+                  "version": "2.3.2",
+                  "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+                  "language": {
+                    "name": "Python",
+                    "version": "3.13.5",
+                    "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+                  }
+                },
+                "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean."
+              },
+              "content": "\"```python\\nimport numpy as np\\n\\narray = np.random.rand(10)\\nmean_value = np.mean(array)\\n```\""
+            },
+            "test": {
+              "name": "Calculate mean test",
+              "version": "1.0.0",
+              "description": "Test calculation of the mean of a NumPy array",
+              "task": {
+                "name": "Calculate mean",
+                "version": "1.0.0",
+                "description": "Calculate the mean of a NumPy array",
+                "library": {
+                  "name": "NumPy",
+                  "version": "2.3.2",
+                  "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
+                  "language": {
+                    "name": "Python",
+                    "version": "3.13.5",
+                    "description": "A high-level, interpreted programming language known for its simplicity and versatility"
+                  }
+                },
+                "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean."
+              },
+              "content": "Placeholder content for test"
+            },
+            "passed": false
+          }
+        ],
+        "size": 2,
+        "number_passed": 0,
+        "percentage_passed": 0.0
+      }
+    ],
+    "size": 1,
+    "total_size": 2,
+    "number_passed": 0,
+    "percentage_passed": 0.0
+  }
+}
