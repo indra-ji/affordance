@@ -1,7 +1,7 @@
 {
   "name": "NumPy Demo Taskset",
   "version": "1.0.0",
-  "description": "Two simple NumPy tasks used for demo evaluation",
+  "description": "Ten NumPy tasks progressing from beginner to expert level",
   "tasks": [
     {
       "name": "Create 2D array",
@@ -14,6 +14,54 @@
       "version": "1.0.0",
       "description": "Calculate the mean of a NumPy array",
       "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean. Array should be assigned to a variable called `array`. Mean should be assigned to a variable called `mean`."
+    },
+    {
+      "name": "Array slicing",
+      "version": "1.0.0",
+      "description": "Extract specific elements from a NumPy array using slicing",
+      "content": "Create a 1D NumPy array with values from 0 to 19 (inclusive). Extract every second element starting from index 1. Original array should be assigned to a variable called `original_array`. Sliced array should be assigned to a variable called `sliced_array`."
+    },
+    {
+      "name": "Array reshaping",
+      "version": "1.0.0",
+      "description": "Reshape a NumPy array to different dimensions",
+      "content": "Create a 1D NumPy array with 12 consecutive integers starting from 1. Reshape it into a 3x4 matrix. Original array should be assigned to a variable called `original_array`. Reshaped array should be assigned to a variable called `reshaped_array`."
+    },
+    {
+      "name": "Element-wise operations",
+      "version": "1.0.0",
+      "description": "Perform element-wise mathematical operations on arrays",
+      "content": "Create two 2x3 NumPy arrays filled with random integers between 1 and 10. Calculate their element-wise product and sum. First array should be assigned to `array1`, second array to `array2`, element-wise product to `product`, and element-wise sum to `sum_array`."
+    },
+    {
+      "name": "Boolean indexing",
+      "version": "1.0.0",
+      "description": "Use boolean conditions to filter array elements",
+      "content": "Create a 1D NumPy array with 15 random integers between -10 and 10. Extract all positive values using boolean indexing. Original array should be assigned to `original_array`. Array of positive values should be assigned to `positive_values`."
+    },
+    {
+      "name": "Linear algebra operations",
+      "version": "1.0.0",
+      "description": "Perform matrix multiplication and find eigenvalues",
+      "content": "Create a 3x3 NumPy array filled with random floating-point numbers between 0 and 1. Calculate its matrix multiplication with itself (A @ A). Then find the eigenvalues of the original matrix. Original matrix should be assigned to `matrix`, matrix multiplication result to `matrix_squared`, and eigenvalues to `eigenvalues`."
+    },
+    {
+      "name": "Statistical analysis",
+      "version": "1.0.0",
+      "description": "Calculate comprehensive statistics for array data",
+      "content": "Create a 4x5 NumPy array with random integers between 1 and 100. Calculate the mean, median, standard deviation, and variance along axis 0 (columns). Array should be assigned to `data`, column means to `col_means`, column medians to `col_medians`, column standard deviations to `col_stds`, and column variances to `col_vars`."
+    },
+    {
+      "name": "Broadcasting and vectorization",
+      "version": "1.0.0",
+      "description": "Use NumPy broadcasting to perform operations on arrays of different shapes",
+      "content": "Create a 4x1 NumPy array with values [1, 2, 3, 4] and a 1x3 array with values [10, 20, 30]. Use broadcasting to add them together, creating a 4x3 result matrix. First array should be assigned to `array_4x1`, second array to `array_1x3`, and the broadcasted sum to `broadcasted_result`."
+    },
+    {
+      "name": "Advanced indexing and sorting",
+      "version": "1.0.0",
+      "description": "Use advanced indexing techniques and multi-dimensional sorting",
+      "content": "Create a 5x3 NumPy array with random integers between 0 and 50. Sort each row independently in descending order. Find the indices that would sort the entire array in ascending order when flattened. Original array should be assigned to `original_array`, row-wise sorted array to `sorted_rows`, flattened array to `flattened`, and sorting indices to `sort_indices`."
     }
   ]
 }
