@@ -276,6 +276,7 @@ if __name__ == "__main__":
             timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
             output_path = f"{evaluation.name.replace(' ', '_')}_{timestamp}.json"
             serialize_data_model(output_path, evaluation)
+
         case ["--load", eval_path]:
             evaluation = load_evaluation(eval_path)
         case ["--rerun", eval_path]:
