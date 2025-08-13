@@ -1,4 +1,3 @@
-import datetime
 import sys
 
 from data_models import (
@@ -23,6 +22,7 @@ from utils import (
     deserialize_data_model,
     deserialize_dict,
     find_config_file,
+    generate_evaluation_output_path,
     serialize_data_model,
 )
 
@@ -266,6 +266,7 @@ def rerun_evaluation(eval_path: str) -> Evaluation:
         resultset=resultset,
         benchmark=benchmark,
     )
+
     return evaluation
 
 
@@ -273,13 +274,15 @@ if __name__ == "__main__":
     match sys.argv[1:]:
         case ["--create", configs_dir]:
             evaluation = create_evaluation(configs_dir)
-            timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-            output_path = f"evals/{evaluation.name.replace(' ', '_')}_{evaluation.model.name}_{timestamp}.json"
+            output_path = generate_evaluation_output_path(
+                evaluation.name, evaluation.model.name
+            )
             serialize_data_model(output_path, evaluation)
         case ["--rerun", eval_path]:
             evaluation = rerun_evaluation(eval_path)
-            timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-            output_path = f"evals/{evaluation.name.replace(' ', '_')}_{evaluation.model.name}_{timestamp}.json"
+            output_path = generate_evaluation_output_path(
+                evaluation.name, evaluation.model.name
+            )
             serialize_data_model(output_path, evaluation)
         case _:
             raise Exception(

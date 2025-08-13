@@ -1,3 +1,4 @@
+import datetime
 import glob
 import json
 import re
@@ -37,3 +38,11 @@ def deserialize_dict(input_path: str) -> dict:
 
 def clean_code(text: str) -> str:
     return re.sub(r"```[ \t]*[A-Za-z0-9_+\-]*", "", text)
+
+
+def generate_evaluation_output_path(
+    evaluation_name: str, model_name: str, eval_dir: str = "evals"
+) -> str:
+    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    safe_eval_name = evaluation_name.replace(" ", "_")
+    return f"{eval_dir}/{safe_eval_name}_{model_name}_{timestamp}.json"
