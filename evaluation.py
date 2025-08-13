@@ -24,6 +24,7 @@ from json_utils import (
     serialize_data_model,
 )
 from llm import generate_answer
+from tester import generate_result
 
 
 def create_language(configs_dir: str) -> Language:
@@ -157,7 +158,7 @@ def create_resultset(
             description=f"Result for {task.name} using {test.name} and {answer.name}",
             answer=answer,
             test=test,
-            passed=False,
+            passed=generate_result(answer, test),
         )
         for task, answer, test in zip(tasks, answers, tests)
     )

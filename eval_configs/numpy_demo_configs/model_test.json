@@ -1,5 +1,5 @@
 {
-  "name": "gpt-4.1-nano",
+  "name": "gpt-4.1",
   "version": "0.1.0",
   "description": "Small and fast model used for the demo evaluation",
   "provider": "openai"

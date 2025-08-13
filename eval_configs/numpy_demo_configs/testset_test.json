@@ -7,13 +7,13 @@
       "name": "Create 2D array test",
       "version": "1.0.0",
       "description": "Test creation of a NumPy array with specified dimensions and values",
-      "content": "Placeholder content for test"
+      "content": "import numpy as np\n\n# Test that array variable exists\nassert 'array' in locals() or 'array' in globals(), 'Variable \"array\" must be defined'\n\n# Test that array is a numpy array\nassert isinstance(array, np.ndarray), 'Variable \"array\" must be a numpy array'\n\n# Test that array has correct shape (3 rows, 4 columns)\nassert array.shape == (3, 4), f'Array must have shape (3, 4), but got {array.shape}'\n\n# Test that array contains integers\nassert np.issubdtype(array.dtype, np.integer), f'Array must contain integers, but got dtype {array.dtype}'\n\n# Test that all values are between 0 and 100 (inclusive)\nassert np.all((array >= 0) & (array <= 100)), 'All array values must be between 0 and 100'"
     },
     {
-      "name": "Calculate mean test",
+      "name": "Calculate mean test", 
       "version": "1.0.0",
       "description": "Test calculation of the mean of a NumPy array",
-      "content": "Placeholder content for test"
+      "content": "import numpy as np\n\n# Test that array variable exists\nassert 'array' in locals() or 'array' in globals(), 'Variable \"array\" must be defined'\n\n# Test that mean variable exists\nassert 'mean' in locals() or 'mean' in globals(), 'Variable \"mean\" must be defined'\n\n# Test that array is a numpy array\nassert isinstance(array, np.ndarray), 'Variable \"array\" must be a numpy array'\n\n# Test that array is 1D\nassert array.ndim == 1, f'Array must be 1-dimensional, but got {array.ndim} dimensions'\n\n# Test that array has 10 elements\nassert len(array) == 10, f'Array must have 10 elements, but got {len(array)}'\n\n# Test that array contains floating-point numbers\nassert np.issubdtype(array.dtype, np.floating), f'Array must contain floating-point numbers, but got dtype {array.dtype}'\n\n# Test that all values are between 0 and 1\nassert np.all((array >= 0) & (array <= 1)), 'All array values must be between 0 and 1'\n\n# Test that mean is calculated correctly\nexpected_mean = np.mean(array)\nassert np.isclose(mean, expected_mean), f'Mean should be {expected_mean}, but got {mean}'\n\n# Test that mean is a scalar (not an array)\nassert np.isscalar(mean), 'Mean must be a scalar value'"
     }
   ]
 }
