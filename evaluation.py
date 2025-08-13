@@ -121,9 +121,9 @@ def create_answerset(agent: Agent, taskset: Taskset) -> Answerset:
 
     answers = tuple(
         Answer(
-            name=f"Answer_{task.name}",
+            name=f"Answer for {task.name}",
             version="1.0.0",
-            description=f"Answer generated for {task.name}",
+            description=f"Answer generated for {task.name} using {agent.name} and {agent.model.name}",
             agent=agent,
             task=task,
             content=generate_answer(agent, task),
@@ -132,9 +132,9 @@ def create_answerset(agent: Agent, taskset: Taskset) -> Answerset:
     )
 
     answerset = Answerset(
-        name=f"{taskset.name} answerset",
+        name=f"Answerset for {taskset.name}",
         version="1.0.0",
-        description=f"Answerset for {agent.name} on {taskset.name}",
+        description=f"Answerset for {taskset.name} using {agent.name} and {agent.model.name}",
         agent=agent,
         taskset=taskset,
         answers=answers,
@@ -152,9 +152,9 @@ def create_resultset(
 
     results = tuple(
         Result(
-            name=f"Result_{task.name}",
+            name=f"Result for {task.name}",
             version="1.0.0",
-            description=f"Result for {answer.name} on {task.name} using {test.name}",
+            description=f"Result for {task.name} using {test.name} and {answer.name}",
             answer=answer,
             test=test,
             passed=False,
@@ -163,9 +163,9 @@ def create_resultset(
     )
 
     resultset = Resultset(
-        name=f"{answerset.name} resultset",
+        name=f"Resultset for {answerset.name}",
         version="1.0.0",
-        description=f"Resultset for {answerset.name} on {taskset.name} using {testset.name}",
+        description=f"Resultset for {answerset.name} using {taskset.name} and {testset.name}",
         taskset=taskset,
         testset=testset,
         answerset=answerset,
@@ -177,9 +177,9 @@ def create_resultset(
 
 def create_benchmark(library: Library, resultsets: tuple[Resultset, ...]) -> Benchmark:
     benchmark = Benchmark(
-        name=f"{library.name} benchmark",
+        name=f"Benchmark for {library.name}",
         version="1.0.0",
-        description=f"Benchmark for {library.name} on {resultsets[0].taskset.name}",
+        description=f"Benchmark for {library.name} using {resultsets[0].taskset.name} and {resultsets[0].testset.name}",
         library=library,
         resultsets=resultsets,
     )
@@ -212,9 +212,9 @@ def create_evaluation(configs_dir: str) -> Evaluation:
     benchmark = create_benchmark(library, (resultset,))
 
     evaluation = Evaluation(
-        name=f"{library.name} evaluation",
+        name=f"Evaluation for {library.name}",
         version="1.0.0",
-        description=f"Evaluation for benchmark {benchmark.name}",
+        description=f"Evaluation for {library.name} using {taskset.name} and {testset.name}",
         language=language,
         library=library,
         taskset=taskset,
