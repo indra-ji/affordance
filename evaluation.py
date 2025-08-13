@@ -23,6 +23,8 @@ from json_utils import (
     deserialize_dict,
     serialize_data_model,
 )
+from llm import generate_answer
+from tester import generate_result
 
 
 def create_language(configs_dir: str) -> Language:
@@ -107,6 +109,7 @@ def create_agent(configs_dir: str, model: Model) -> Agent:
         version=agent_dict["version"],
         description=agent_dict["description"],
         model=model,
+        prompt=agent_dict["prompt"],
         configuration=agent_dict["configuration"],
         scaffolding=agent_dict["scaffolding"],
     )
@@ -119,20 +122,20 @@ def create_answerset(agent: Agent, taskset: Taskset) -> Answerset:
 
     answers = tuple(
         Answer(
-            name=f"Answer_{task.name}",
+            name=f"Answer for {task.name}",
             version="1.0.0",
-            description=f"Placeholder description for answer {task.name}",
+            description=f"Answer generated for {task.name} using {agent.name} and {agent.model.name}",
             agent=agent,
             task=task,
-            content=f"Placeholder content for answer {task.name}",
+            content=generate_answer(agent, task),
         )
         for task in tasks
     )
 
     answerset = Answerset(
-        name="demo_answerset",
+        name=f"Answerset for {taskset.name}",
         version="1.0.0",
-        description="Answerset with placeholder answers",
+        description=f"Answerset for {taskset.name} using {agent.name} and {agent.model.name}",
         agent=agent,
         taskset=taskset,
         answers=answers,
@@ -150,20 +153,20 @@ def create_resultset(
 
     results = tuple(
         Result(
-            name=f"Result_{task.name}",
+            name=f"Result for {task.name}",
             version="1.0.0",
-            description=f"Placeholder description for result {task.name}",
+            description=f"Result for {task.name} using {test.name} and {answer.name}",
             answer=answer,
             test=test,
-            passed=False,
+            passed=generate_result(answer, test),
         )
         for task, answer, test in zip(tasks, answers, tests)
     )
 
     resultset = Resultset(
-        name="demo_resultset",
+        name=f"Resultset for {answerset.name}",
         version="1.0.0",
-        description="Resultset with placeholder results",
+        description=f"Resultset for {answerset.name} using {taskset.name} and {testset.name}",
         taskset=taskset,
         testset=testset,
         answerset=answerset,
@@ -175,9 +178,9 @@ def create_resultset(
 
 def create_benchmark(library: Library, resultsets: tuple[Resultset, ...]) -> Benchmark:
     benchmark = Benchmark(
-        name="demo_benchmark",
+        name=f"Benchmark for {library.name}",
         version="1.0.0",
-        description="Benchmark with placeholder resultsets",
+        description=f"Benchmark for {library.name} using {resultsets[0].taskset.name} and {resultsets[0].testset.name}",
         library=library,
         resultsets=resultsets,
     )
@@ -210,9 +213,9 @@ def create_evaluation(configs_dir: str) -> Evaluation:
     benchmark = create_benchmark(library, (resultset,))
 
     evaluation = Evaluation(
-        name="demo_evaluation",
+        name=f"Evaluation for {library.name}",
         version="1.0.0",
-        description="Test benchmark evaluation with all components",
+        description=f"Evaluation for {library.name} using {taskset.name} and {testset.name}",
         language=language,
         library=library,
         taskset=taskset,
@@ -271,16 +274,14 @@ if __name__ == "__main__":
         case ["--create", configs_dir]:
             evaluation = create_evaluation(configs_dir)
             timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-            output_path = f"{evaluation.name}_{timestamp}.json"
+            output_path = f"evals/{evaluation.name.replace(' ', '_')}_{evaluation.model.name}_{timestamp}.json"
             serialize_data_model(output_path, evaluation)
-        case ["--load", eval_path]:
-            evaluation = load_evaluation(eval_path)
         case ["--rerun", eval_path]:
             evaluation = rerun_evaluation(eval_path)
             timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-            output_path = f"{evaluation.name}_{timestamp}.json"
+            output_path = f"evals/{evaluation.name.replace(' ', '_')}_{evaluation.model.name}_{timestamp}.json"
             serialize_data_model(output_path, evaluation)
         case _:
             raise Exception(
-                "Usage: python evaluation.py --create <configs_dir> OR python evaluation.py --load <eval_path> OR python evaluation.py --rerun <eval_path>"
+                "Usage: python evaluation.py --create <configs_dir> OR python evaluation.py --rerun <eval_path>"
             )
