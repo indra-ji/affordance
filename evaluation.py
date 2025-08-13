@@ -1,4 +1,5 @@
 import datetime
+import subprocess
 import sys
 
 from config_utils import find_config_file
@@ -277,13 +278,42 @@ if __name__ == "__main__":
             output_path = f"{evaluation.name.replace(' ', '_')}_{timestamp}.json"
             serialize_data_model(output_path, evaluation)
 
+            launch = (
+                input("🚀 Launch Streamlit dashboard? (y/n): ").lower().startswith("y")
+            )
+            if launch:
+                print("🌐 Starting Streamlit dashboard...")
+                subprocess.run(
+                    [sys.executable, "-m", "streamlit", "run", "dashboard.py"]
+                )
+
         case ["--load", eval_path]:
             evaluation = load_evaluation(eval_path)
+
+            launch = (
+                input("🚀 Launch Streamlit dashboard? (y/n): ").lower().startswith("y")
+            )
+            if launch:
+                print("🌐 Starting Streamlit dashboard...")
+                subprocess.run(
+                    [sys.executable, "-m", "streamlit", "run", "dashboard.py"]
+                )
+
         case ["--rerun", eval_path]:
             evaluation = rerun_evaluation(eval_path)
             timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
             output_path = f"{evaluation.name.replace(' ', '_')}_{timestamp}.json"
             serialize_data_model(output_path, evaluation)
+
+            launch = (
+                input("🚀 Launch Streamlit dashboard? (y/n): ").lower().startswith("y")
+            )
+            if launch:
+                print("🌐 Starting Streamlit dashboard...")
+                subprocess.run(
+                    [sys.executable, "-m", "streamlit", "run", "dashboard.py"]
+                )
+
         case _:
             raise Exception(
                 "Usage: python evaluation.py --create <configs_dir> OR python evaluation.py --load <eval_path> OR python evaluation.py --rerun <eval_path>"
