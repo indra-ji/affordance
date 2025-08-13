@@ -4,7 +4,7 @@ import openai
 from dotenv import load_dotenv
 
 from data_models import Agent, Task
-from json_utils import clean_code
+from utils import clean_code
 
 load_dotenv()
 

@@ -1,7 +1,17 @@
+import glob
 import json
 import re
 
 from data_models import BaseEntity
+
+
+def find_config_file(configs_dir: str, pattern: str) -> str:
+    matches = sorted(glob.glob(f"{configs_dir}/{pattern}"))
+    if not matches:
+        raise FileNotFoundError(
+            f"No config file matching pattern '{pattern}' found in '{configs_dir}'"
+        )
+    return matches[0]
 
 
 def serialize_data_model(output_path: str, data_model: type[BaseEntity]) -> None:

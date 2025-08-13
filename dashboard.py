@@ -4,7 +4,7 @@ from typing import Optional, Union
 import streamlit as st
 
 from data_models import Evaluation
-from json_utils import deserialize_data_model
+from utils import deserialize_data_model
 
 
 def display_entity_info(entity_data: dict, title: str, icon: str = ""):
