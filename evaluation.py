@@ -229,12 +229,6 @@ def create_evaluation(configs_dir: str) -> Evaluation:
     return evaluation
 
 
-def load_evaluation(eval_path: str) -> Evaluation:
-    evaluation = deserialize_data_model(eval_path, Evaluation)
-
-    return evaluation
-
-
 def rerun_evaluation(eval_path: str) -> Evaluation:
     evaluation = deserialize_data_model(eval_path, Evaluation)
 

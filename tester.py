@@ -29,5 +29,4 @@ def generate_result(answer: Answer, test: Test) -> bool:
         print(f"Test failed for task - {answer.task.name}: {e}")
         return False
     except Exception as e:
-        print(f"Error generating result: {e}")
-        return False
+        raise e

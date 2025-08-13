@@ -8,8 +8,6 @@ from utils import deserialize_data_model
 
 
 def display_entity_info(entity_data: dict, title: str, icon: str = ""):
-    """Display entity information in minimal text format, styled as a badge."""
-    # Inject minimal, self-contained styles for badges (always inject to ensure styling works)
     st.markdown(
         """
         <style>
@@ -49,7 +47,6 @@ def display_entity_info(entity_data: dict, title: str, icon: str = ""):
 
 
 def render_overview_section(data: dict):
-    # Push the overview down from the very top of the page
     st.markdown("<div style='height:32px'></div>", unsafe_allow_html=True)
 
     st.header("Evaluation Overview")
@@ -57,26 +54,19 @@ def render_overview_section(data: dict):
 
     st.divider()
 
-    # vertical space between heading and information
     st.markdown("<div style='height:16px'></div>", unsafe_allow_html=True)
 
     display_entity_info(data, "Evaluation", "🔬")
-
-    # Language and Library
     col1, col2 = st.columns(2)
     with col1:
         display_entity_info(data["language"], "Language", "🔤")
     with col2:
         display_entity_info(data["library"], "Library", "📚")
-
-    # Model and Agent
     col1, col2 = st.columns(2)
     with col1:
         display_entity_info(data["model"], "Model", "🤖")
     with col2:
         display_entity_info(data["agent"], "Agent", "🕵️")
-
-    # Taskset and Testset with task counts
     col1, col2 = st.columns(2)
     with col1:
         display_entity_info(data["taskset"], "Taskset", "🧩")
@@ -86,8 +76,6 @@ def render_overview_section(data: dict):
 
 
 def render_metrics_section(data: dict):
-    """Render the performance metrics section"""
-    # Push the performance section down from the very top of the page
     st.markdown("<div style='height:32px'></div>", unsafe_allow_html=True)
 
     st.header("Metrics")
@@ -95,10 +83,8 @@ def render_metrics_section(data: dict):
 
     st.divider()
 
-    # vertical space between heading and information
     st.markdown("<div style='height:16px'></div>", unsafe_allow_html=True)
 
-    # Benchmark performance
     st.subheader("Evaluation performance")
 
     col1, col2, col3 = st.columns(3)
@@ -114,7 +100,6 @@ def render_metrics_section(data: dict):
 
     st.divider()
 
-    # Core size metrics
     st.subheader("Dataset sizes")
     col1, col2, col3, col4 = st.columns(4)
 
@@ -141,11 +126,6 @@ def render_metrics_section(data: dict):
 
 
 def render_detailed_view_section(data: dict):
-    """Render the detailed view section"""
-
-    # inject_detail_styles()
-
-    # vertical space between heading and information
     st.markdown("<div style='height:16px'></div>", unsafe_allow_html=True)
     st.header("Detailed view")
     st.caption("Inspect tasks, answers, tests, and results")
@@ -178,7 +158,6 @@ def render_detailed_view_section(data: dict):
     if selected_task_idx is not None:
         result = results[selected_task_idx]
 
-        # Task header
         col1, col2 = st.columns([3, 1])
         with col1:
             st.subheader(f"{result['answer']['task']['name']}")
@@ -188,7 +167,6 @@ def render_detailed_view_section(data: dict):
             else:
                 st.error("🔴 FAILED")
 
-        # Task details tabs
         st.markdown(
             """
         <style>
@@ -208,7 +186,6 @@ def render_detailed_view_section(data: dict):
         tab1, tab2, tab3 = st.tabs(["Task", "Answer", "Test"])
 
         with tab1:
-            # Restore original task textarea styling (black bg, white text)
             st.markdown(
                 """
             <style>
@@ -228,7 +205,6 @@ def render_detailed_view_section(data: dict):
                 disabled=True,
             )
 
-            # Plain metadata (no styled cards)
             col1, col2 = st.columns(2)
             with col1:
                 st.write(f"**Task name:** {result['answer']['task']['name']}")
@@ -269,7 +245,6 @@ def render_detailed_view_section(data: dict):
 
 @st.cache_data
 def load_evaluation_from_file(file_path: str) -> Optional[dict]:
-    """Load evaluation data from JSON file"""
     try:
         evaluation = deserialize_data_model(file_path, Evaluation)
         return evaluation.model_dump()
@@ -279,12 +254,6 @@ def load_evaluation_from_file(file_path: str) -> Optional[dict]:
 
 
 def show_dashboard(evaluation_data: Optional[Union[dict, Evaluation]] = None):
-    """
-    Main dashboard function that can be called from evaluation.py
-
-    Args:
-        evaluation_data: Either an Evaluation object or dict, or None to load from file
-    """
     st.set_page_config(
         page_title="Evaluation Dashboard",
         page_icon=None,
@@ -292,14 +261,7 @@ def show_dashboard(evaluation_data: Optional[Union[dict, Evaluation]] = None):
         initial_sidebar_state="expanded",
     )
 
-    # Global styles
-    # inject_global_styles()
-
-    # Removed main title per request
-
-    # Handle different input types
     if evaluation_data is None:
-        # File selection mode
         st.sidebar.header("File Selection")
         eval_files = list(Path("evals").glob("Evaluation_*.json"))
 
@@ -309,7 +271,6 @@ def show_dashboard(evaluation_data: Optional[Union[dict, Evaluation]] = None):
             )
             return
 
-        # Dropdown for file selection; widen menu so long filenames are visible
         st.sidebar.markdown(
             """
             <style>
@@ -334,11 +295,9 @@ def show_dashboard(evaluation_data: Optional[Union[dict, Evaluation]] = None):
             return
 
     elif isinstance(evaluation_data, Evaluation):
-        # Pydantic model input
         data = evaluation_data.model_dump()
 
     elif isinstance(evaluation_data, dict):
-        # Dictionary input
         data = evaluation_data
 
     else:
@@ -347,18 +306,14 @@ def show_dashboard(evaluation_data: Optional[Union[dict, Evaluation]] = None):
         )
         return
 
-    # Sidebar navigation
-    # Navigation: use a menu that highlights the active page
     st.sidebar.header("Navigation")
     sections = [
         "Overview",
         "Metrics",
         "Detailed view",
     ]
-    # Use radio for clear highlighting of the current page
     selected_section = st.sidebar.radio("", sections, label_visibility="collapsed")
 
-    # Render selected section
     if selected_section == "Overview":
         render_overview_section(data)
     elif selected_section == "Metrics":
@@ -368,7 +323,6 @@ def show_dashboard(evaluation_data: Optional[Union[dict, Evaluation]] = None):
 
 
 def main():
-    """Main function for standalone usage"""
     show_dashboard()
 
 
