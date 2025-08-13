@@ -7,27 +7,196 @@ from data_models import Evaluation
 from json_utils import deserialize_data_model
 
 
-def display_entity_info(entity_data: dict, title: str, icon: str = "📋"):
-    """Display entity information in minimal text format"""
-    st.write(f"**{icon} {title}:** {entity_data['name']} (v{entity_data['version']})")
+def inject_global_styles():
+    """Inject global CSS to enhance visuals without changing displayed data."""
+    st.markdown(
+        """
+        <style>
+        :root {
+            --bg-0: #0b1120;
+            --bg-1: #0f172a;
+            --surface: rgba(148, 163, 184, 0.06);
+            --border: rgba(148, 163, 184, 0.18);
+            --text: #e5e7eb;
+            --muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-2: #22d3ee;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --radius: 12px;
+        }
+
+        html, body, [class*="css"] {
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji" !important;
+        }
+
+        /* App background and header */
+        .stApp {
+            background: radial-gradient(1200px 600px at 50% -100px, rgba(56,189,248,0.08), transparent),
+                        linear-gradient(180deg, var(--bg-1) 0%, var(--bg-0) 100%);
+            color: var(--text);
+        }
+        [data-testid="stHeader"] {
+            background-color: rgba(2, 6, 23, 0.5);
+            backdrop-filter: saturate(120%) blur(8px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* Sidebar */
+        [data-testid="stSidebar"] {
+            background: linear-gradient(180deg, rgba(2,6,23,0.7) 0%, rgba(2,8,23,0.5) 100%);
+            border-right: 1px solid var(--border);
+        }
+        [data-testid="stSidebar"] .stMarkdown, [data-testid="stSidebar"] label { color: var(--text); }
+
+        /* Typography & spacing */
+        h1, h2, h3, h4, h5, h6 { color: var(--text); letter-spacing: .2px; }
+        .stMarkdown, .stMarkdown p { color: #cbd5e1; }
+        .stCaption { color: var(--muted) !important; }
+        .block-container { padding-top: 1.2rem; padding-bottom: 2rem; }
+
+        /* Badges */
+        .af-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text);
+            font-weight: 600;
+        }
+        .af-badge small { color: #93c5fd; font-weight: 500; }
+
+        /* Metrics */
+        [data-testid="stMetric"] {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 12px 14px;
+        }
+        [data-testid="stMetricValue"] { color: #f8fafc !important; font-weight: 700; }
+        [data-testid="stMetricLabel"] { color: #93c5fd !important; font-weight: 600; }
+
+        /* Progress bar */
+        [data-testid="stProgress"] > div > div {
+            height: 12px;
+            border-radius: 999px;
+            background-image: linear-gradient(90deg, var(--accent), #3b82f6);
+        }
+
+        /* Code blocks */
+        pre, code {
+            background: rgba(2, 6, 23, 0.6) !important;
+            border: 1px solid var(--border) !important;
+            border-radius: var(--radius) !important;
+        }
+
+        /* Alerts */
+        .stAlert { border-radius: var(--radius); border: 1px solid var(--border); }
+
+        /* Tabs */
+        .stTabs [role="tablist"] { gap: 8px; }
+        .stTabs [role="tab"] { background: var(--surface); border: 1px solid var(--border); border-radius: 999px; color: #cbd5e1; }
+        .stTabs [aria-selected="true"] { border-color: var(--accent); color: var(--text); }
+
+        /* Inputs */
+        .stSelectbox, .stTextInput, [data-baseweb="input"], [data-baseweb="select"] { background: var(--surface); border-radius: 10px; }
+        .stTextInput input, [data-baseweb="input"] input { color: var(--text); }
+        [data-baseweb="select"] div { color: var(--text); white-space: normal !important; }
+
+        /* Dividers */
+        hr { border: none; height: 1px; background: linear-gradient(90deg, rgba(148,163,184,0), rgba(148,163,184,0.4), rgba(148,163,184,0)); }
+
+        /* Expanders */
+        [data-testid="stExpander"] { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: rgba(148,163,184,0.05); }
+        [data-testid="stExpander"] [data-testid="stExpanderToggle"] svg { color: #93c5fd; }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 10px; height: 10px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(148,163,184,0.25); border-radius: 999px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(148,163,184,0.35); }
+
+        /* Buttons */
+        .stButton > button {
+            background: linear-gradient(180deg, #0ea5e9 0%, #0284c7 100%);
+            border: 1px solid var(--border);
+            color: #ecfeff;
+            border-radius: 10px;
+            padding: 0.4rem 0.9rem;
+        }
+        .stButton > button:hover { filter: brightness(1.05); }
+
+        /* Make select dropdown wider so long filenames are visible */
+        [data-baseweb="menu"] { max-width: 90vw; width: 480px; }
+        /* Preserve spaces and use monospace in select options so we can align status to the right */
+        [data-baseweb="menu"] [role="option"] {
+            white-space: pre;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def inject_detail_styles():
+    st.markdown(
+        """
+        <style>
+        .af-status {
+            display: inline-flex;
+            align-items: center;
+            padding: 16px 28px;
+            border-radius: 999px;
+            font-weight: 800;
+            letter-spacing: .35px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            font-size: 20px;
+        }
+        .af-status.af-pass {
+            color: #10b981;
+            background: linear-gradient(180deg, rgba(16,185,129,.12), rgba(16,185,129,.06));
+            border-color: rgba(16,185,129,.35);
+        }
+        .af-status.af-fail {
+            color: #ef4444;
+            background: linear-gradient(180deg, rgba(239,68,68,.12), rgba(239,68,68,.06));
+            border-color: rgba(239,68,68,.35);
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def display_entity_info(entity_data: dict, title: str, icon: str = ""):
+    """Display entity information in minimal text format, styled as a badge."""
+    icon_part = f"{icon} " if icon else ""
+    st.markdown(
+        f"<span class='af-badge'>{icon_part}<strong>{title}:</strong> {entity_data['name']} <small>v{entity_data['version']}</small></span>",
+        unsafe_allow_html=True,
+    )
     st.write(f"_{entity_data['description']}_")
 
 
-def create_progress_bar(value: float, max_value: float, label: str):
-    """Create a visual progress bar using Streamlit's progress component"""
-    percentage = value / max_value if max_value > 0 else 0
-    st.write(f"**{label}:** {value}/{max_value} ({percentage:.1%})")
-    st.progress(percentage)
-
-
 def render_overview_section(data: dict):
-    col1, col2, col3 = st.columns([1, 2, 1])
-    with col2:
-        st.header("📊 Evaluation Overview")
+    # Push the overview down from the very top of the page
+    st.markdown("<div style='height:32px'></div>", unsafe_allow_html=True)
 
-    col1, col2, col3 = st.columns([1, 2, 1])
-    with col2:
-        display_entity_info(data, "Evaluation", "🔬")
+    st.header("Evaluation Overview")
+    st.caption("High-level details of the evaluation run")
+
+    st.divider()
+
+    # vertical space between heading and information
+    st.markdown("<div style='height:16px'></div>", unsafe_allow_html=True)
+
+    display_entity_info(data, "Evaluation", "🔬")
 
     # Language and Library
     col1, col2 = st.columns(2)
@@ -43,179 +212,94 @@ def render_overview_section(data: dict):
     with col2:
         display_entity_info(data["agent"], "Agent", "🕵️")
 
+    # Taskset and Testset with task counts
+    col1, col2 = st.columns(2)
+    with col1:
+        display_entity_info(data["taskset"], "Taskset", "🧩")
 
-def render_performance_section(data: dict):
+    with col2:
+        display_entity_info(data["testset"], "Testset", "🧪")
+
+
+def render_metrics_section(data: dict):
     """Render the performance metrics section"""
-    st.header("🎯 Performance Metrics & Computed Fields")
+    # Push the performance section down from the very top of the page
+    st.markdown("<div style='height:32px'></div>", unsafe_allow_html=True)
+
+    st.header("Metrics")
+    st.caption("At-a-glance performance")
+
+    st.divider()
+
+    # vertical space between heading and information
+    st.markdown("<div style='height:16px'></div>", unsafe_allow_html=True)
 
     # Core size metrics
-    st.subheader("📏 Size Metrics (Computed Fields)")
+    st.subheader("Dataset sizes")
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
         st.metric(
-            "Taskset Size",
+            "Taskset size",
             data["taskset"]["size"],
-            help="Number of tasks in the taskset",
         )
     with col2:
         st.metric(
-            "Testset Size",
+            "Testset size",
             data["testset"]["size"],
-            help="Number of tests in the testset",
         )
     with col3:
         st.metric(
-            "Answerset Size",
+            "Answerset size",
             data["answerset"]["size"],
-            help="Number of answers generated",
         )
     with col4:
         st.metric(
-            "Resultset Size",
+            "Resultset size",
             data["resultset"]["size"],
-            help="Number of test results",
         )
-
-    st.divider()
-
-    # Resultset performance
-    st.subheader("🎯 Resultset Performance (Computed Fields)")
-
-    col1, col2 = st.columns(2)
-    with col1:
-        passed = data["resultset"]["number_passed"]
-        total = data["resultset"]["size"]
-        percentage = data["resultset"]["percentage_passed"]
-
-        st.metric("Tests Passed", f"{passed}/{total}")
-        st.metric("Pass Rate", f"{percentage:.1f}%")
-
-        # Visual progress bar
-        create_progress_bar(passed, total, "Progress")
-
-    with col2:
-        failed = total - passed
-        fail_rate = 100 - percentage
-
-        st.metric("Tests Failed", failed)
-        st.metric("Fail Rate", f"{fail_rate:.1f}%")
-
-        # Status indicator
-        if percentage >= 80:
-            st.success("🎉 Excellent performance!")
-        elif percentage >= 60:
-            st.warning("⚠️ Good performance")
-        else:
-            st.error("❌ Needs improvement")
 
     st.divider()
 
     # Benchmark performance
-    st.subheader("🏆 Benchmark Performance (Computed Fields)")
-
-    col1, col2, col3, col4 = st.columns(4)
-    with col1:
-        st.metric("Benchmark Size", data["benchmark"]["size"])
-    with col2:
-        st.metric("Total Tests", data["benchmark"]["total_size"])
-    with col3:
-        st.metric("Total Passed", data["benchmark"]["number_passed"])
-    with col4:
-        st.metric(
-            "Overall Pass Rate",
-            f"{data['benchmark']['percentage_passed']:.1f}%",
-        )
-
-    # Overall progress
-    st.subheader("📊 Overall Progress")
-    create_progress_bar(
-        data["benchmark"]["number_passed"],
-        data["benchmark"]["total_size"],
-        "Overall Completion",
-    )
-
-
-def render_task_results_section(data: dict):
-    """Render the task results section"""
-    st.header("📋 Detailed Task Results")
-
-    # Results summary
-    results = data["resultset"]["results"]
-    passed_count = sum(1 for r in results if r["passed"])
-    failed_count = len(results) - passed_count
+    st.subheader("Evaluation performance")
 
     col1, col2, col3 = st.columns(3)
     with col1:
-        st.metric("Total Tasks", len(results))
+        st.metric("Total tests", data["benchmark"]["total_size"])
     with col2:
-        st.metric("✅ Passed", passed_count)
+        st.metric("Total passed", data["benchmark"]["number_passed"])
     with col3:
-        st.metric("❌ Failed", failed_count)
+        st.metric(
+            "Overall pass rate",
+            f"{data['benchmark']['percentage_passed']:.1f}%",
+        )
+
+
+def render_detailed_view_section(data: dict):
+    """Render the detailed view section"""
+
+    inject_detail_styles()
+
+    # vertical space between heading and information
+    st.markdown("<div style='height:16px'></div>", unsafe_allow_html=True)
+    st.header("Detailed view")
+    st.caption("Inspect tasks, answers, tests, and results")
 
     st.divider()
 
-    # Filters
-    st.subheader("🔍 Filter Results")
-    col1, col2 = st.columns(2)
-    with col1:
-        status_filter = st.selectbox("Filter by Status:", ["All", "Passed", "Failed"])
-    with col2:
-        search_term = st.text_input("Search task names:")
-
-    # Display results
-    st.subheader("📊 Task Results")
-
-    for i, result in enumerate(results):
-        # Apply filters
-        if status_filter == "Passed" and not result["passed"]:
-            continue
-        if status_filter == "Failed" and result["passed"]:
-            continue
-        if (
-            search_term
-            and search_term.lower() not in result["answer"]["task"]["name"].lower()
-        ):
-            continue
-
-        # Display task
-        status_icon = "✅" if result["passed"] else "❌"
-
-        with st.container():
-            col1, col2 = st.columns([1, 4])
-            with col1:
-                st.markdown(f"**Task {i + 1}**")
-                if result["passed"]:
-                    st.success(f"{status_icon} Passed")
-                else:
-                    st.error(f"{status_icon} Failed")
-
-            with col2:
-                st.markdown(f"**{result['answer']['task']['name']}**")
-                st.caption(result["answer"]["task"]["description"][:100] + "...")
-
-                with st.expander(f"View Details - Task {i + 1}"):
-                    st.markdown("**Task Content:**")
-                    st.text(result["answer"]["task"]["content"])
-
-                    col_a, col_b = st.columns(2)
-                    with col_a:
-                        st.markdown("**Generated Answer:**")
-                        st.code(result["answer"]["content"], language="python")
-                    with col_b:
-                        st.markdown("**Test Code:**")
-                        st.code(result["test"]["content"], language="python")
-
-        st.divider()
-
-
-def render_task_explorer_section(data: dict):
-    """Render the task explorer section"""
-    st.header("🔍 Task Deep Dive Explorer")
-
     results = data["resultset"]["results"]
-    task_names = [
+    left_parts = [
         f"Task {i + 1}: {r['answer']['task']['name']}" for i, r in enumerate(results)
+    ]
+    max_left_len = max((len(s) for s in left_parts), default=0)
+
+    def status_text(passed: bool) -> str:
+        return "🟢 PASSED" if passed else "🔴 FAILED"
+
+    task_names = [
+        f"{left.ljust(max_left_len + 2)}{status_text(r['passed'])}"
+        for left, r in zip(left_parts, results)
     ]
 
     selected_task_idx = st.selectbox(
@@ -224,168 +308,101 @@ def render_task_explorer_section(data: dict):
         format_func=lambda x: task_names[x],
     )
 
+    st.write("")
+    st.write("")
+
     if selected_task_idx is not None:
         result = results[selected_task_idx]
 
         # Task header
         col1, col2 = st.columns([3, 1])
         with col1:
-            st.subheader(f"📝 {result['answer']['task']['name']}")
+            st.subheader(f"{result['answer']['task']['name']}")
         with col2:
-            if result["passed"]:
-                st.success("✅ PASSED")
-            else:
-                st.error("❌ FAILED")
+            status_html = (
+                "<span class='af-status af-pass'>PASSED</span>"
+                if result["passed"]
+                else "<span class='af-status af-fail'>FAILED</span>"
+            )
+            st.markdown(status_html, unsafe_allow_html=True)
 
         # Task details tabs
-        tab1, tab2, tab3 = st.tabs(["📋 Task Info", "🤖 Answer", "🧪 Test"])
+        st.markdown(
+            """
+        <style>
+        .stTabs [data-baseweb="tab-list"] button [data-testid="stMarkdownContainer"] p {
+            font-size: 18px;
+            font-weight: 600;
+            padding: 8px 16px;
+        }
+        .stTabs [data-baseweb="tab-list"] button {
+            height: 50px;
+            padding: 0 24px;
+        }
+        </style>
+        """,
+            unsafe_allow_html=True,
+        )
+        tab1, tab2, tab3 = st.tabs(["Task", "Answer", "Test"])
 
         with tab1:
-            st.markdown("**Task Description:**")
-            st.info(result["answer"]["task"]["description"])
+            # Restore original task textarea styling (black bg, white text)
+            st.markdown(
+                """
+            <style>
+            .stTextArea textarea {
+                background-color: black !important;
+                color: white !important;
+            }
+            </style>
+            """,
+                unsafe_allow_html=True,
+            )
 
-            st.markdown("**Task Content:**")
             st.text_area(
-                "",
+                "Task content:",
                 result["answer"]["task"]["content"],
-                height=200,
+                height=150,
                 disabled=True,
             )
 
-            # Task metadata
-            st.markdown("**Metadata:**")
+            # Plain metadata (no styled cards)
             col1, col2 = st.columns(2)
             with col1:
-                st.write(f"**Version:** {result['answer']['task']['version']}")
+                st.write(f"**Task name:** {result['answer']['task']['name']}")
+                st.write(f"**Description:** {result['answer']['task']['description']}")
                 st.write(f"**Library:** {result['answer']['task']['library']['name']}")
             with col2:
-                st.write(f"**Task Number:** {selected_task_idx + 1}")
-                st.write(f"**Status:** {'Passed' if result['passed'] else 'Failed'}")
+                st.write(f"**Version:** {result['answer']['task']['version']}")
+                st.write(f"**Task number:** {selected_task_idx + 1}")
 
         with tab2:
-            st.markdown("**Generated Answer:**")
-            st.code(result["answer"]["content"], language="python")
+            st.code(result["answer"]["content"])
 
-            st.markdown("**Answer Metadata:**")
             col1, col2 = st.columns(2)
             with col1:
                 st.write(f"**Agent:** {result['answer']['agent']['name']}")
                 st.write(f"**Model:** {result['answer']['agent']['model']['name']}")
+                st.write(f"**Prompt:** {result['answer']['agent']['prompt']}")
+                st.write(f"**Scaffolding:** {result['answer']['agent']['scaffolding']}")
             with col2:
-                st.write(f"**Answer Version:** {result['answer']['version']}")
+                st.write(f"**Version:** {result['answer']['agent']['version']}")
                 st.write(
                     f"**Provider:** {result['answer']['agent']['model']['provider']}"
                 )
+                st.write(
+                    f"**Configuration:** {result['answer']['agent']['configuration']}"
+                )
 
         with tab3:
-            st.markdown("**Test Code:**")
-            st.code(result["test"]["content"], language="python")
+            st.code(result["test"]["content"])
 
-            st.markdown("**Test Metadata:**")
             col1, col2 = st.columns(2)
             with col1:
-                st.write(f"**Test Name:** {result['test']['name']}")
-                st.write(f"**Test Version:** {result['test']['version']}")
+                st.write(f"**Test name:** {result['test']['name']}")
+                st.write(f"**Test version:** {result['test']['version']}")
             with col2:
-                st.write(
-                    f"**Result:** {'✅ Passed' if result['passed'] else '❌ Failed'}"
-                )
-                st.write(f"**Test Description:** {result['test']['description']}")
-
-
-def render_summary_section(data: dict):
-    """Render the summary section"""
-    st.header("📈 Evaluation Summary")
-
-    # Key statistics
-    st.subheader("🔢 Key Statistics")
-
-    col1, col2, col3 = st.columns(3)
-
-    with col1:
-        st.markdown("**📊 Size Metrics**")
-        st.write(f"• Taskset Size: {data['taskset']['size']}")
-        st.write(f"• Testset Size: {data['testset']['size']}")
-        st.write(f"• Answerset Size: {data['answerset']['size']}")
-        st.write(f"• Resultset Size: {data['resultset']['size']}")
-
-    with col2:
-        st.markdown("**🎯 Performance Metrics**")
-        st.write(f"• Tests Passed: {data['resultset']['number_passed']}")
-        st.write(f"• Pass Rate: {data['resultset']['percentage_passed']:.1f}%")
-        st.write(f"• Benchmark Size: {data['benchmark']['size']}")
-        st.write(f"• Overall Pass Rate: {data['benchmark']['percentage_passed']:.1f}%")
-
-    with col3:
-        st.markdown("**📋 Entity Info**")
-        st.write(
-            f"• Language: {data['language']['name']} {data['language']['version']}"
-        )
-        st.write(f"• Library: {data['library']['name']} {data['library']['version']}")
-        st.write(f"• Model: {data['model']['name']}")
-        st.write(f"• Agent: {data['agent']['name']}")
-
-    st.divider()
-
-    # All computed fields summary
-    st.subheader("🧮 All Computed Fields")
-
-    computed_fields = {
-        "Taskset.size": data["taskset"]["size"],
-        "Testset.size": data["testset"]["size"],
-        "Answerset.size": data["answerset"]["size"],
-        "Resultset.size": data["resultset"]["size"],
-        "Resultset.number_passed": data["resultset"]["number_passed"],
-        "Resultset.percentage_passed": f"{data['resultset']['percentage_passed']:.2f}%",
-        "Benchmark.size": data["benchmark"]["size"],
-        "Benchmark.total_size": data["benchmark"]["total_size"],
-        "Benchmark.number_passed": data["benchmark"]["number_passed"],
-        "Benchmark.percentage_passed": f"{data['benchmark']['percentage_passed']:.2f}%",
-    }
-
-    for field, value in computed_fields.items():
-        col1, col2 = st.columns([2, 1])
-        with col1:
-            st.write(f"**{field}**")
-        with col2:
-            st.code(str(value))
-
-    st.divider()
-
-    # Final assessment
-    st.subheader("🎯 Final Assessment")
-    overall_rate = data["benchmark"]["percentage_passed"]
-
-    if overall_rate >= 90:
-        st.success(
-            "🏆 **Excellent Performance!** The model performed exceptionally well on this evaluation."
-        )
-    elif overall_rate >= 75:
-        st.success(
-            "🎉 **Good Performance!** The model showed strong capabilities with room for minor improvements."
-        )
-    elif overall_rate >= 50:
-        st.warning(
-            "⚠️ **Moderate Performance.** The model shows promise but needs significant improvement."
-        )
-    else:
-        st.error(
-            "❌ **Poor Performance.** The model struggled significantly with these tasks."
-        )
-
-    # Recommendations
-    st.markdown("**📝 Recommendations:**")
-    failed_tasks = [r for r in data["resultset"]["results"] if not r["passed"]]
-    if failed_tasks:
-        st.write(
-            f"• Focus on improving performance on {len(failed_tasks)} failed tasks"
-        )
-        st.write("• Review failed task patterns for common issues")
-        st.write("• Consider adjusting model parameters or prompts")
-    else:
-        st.write(
-            "• Excellent performance! Consider testing with more challenging tasks"
-        )
+                st.write(f"**Test description:** {result['test']['description']}")
 
 
 @st.cache_data
@@ -408,29 +425,35 @@ def show_dashboard(evaluation_data: Optional[Union[dict, Evaluation]] = None):
     """
     st.set_page_config(
         page_title="Evaluation Dashboard",
-        page_icon="🔬",
+        page_icon=None,
         layout="wide",
         initial_sidebar_state="expanded",
     )
 
-    st.title("🔬 Evaluation Dashboard")
-    st.markdown(
-        "**Comprehensive visualization of evaluation results with all computed fields**"
-    )
+    # Global styles
+    inject_global_styles()
+
+    # Removed main title per request
 
     # Handle different input types
     if evaluation_data is None:
-        # File selection mode (original behavior)
-        st.sidebar.header("📁 File Selection")
+        # File selection mode
+        st.sidebar.header("File Selection")
         eval_files = list(Path(".").glob("Evaluation_*.json"))
 
         if not eval_files:
             st.error(
-                "❌ No evaluation files found! Make sure your JSON files are in the current directory."
+                "No evaluation files found! Make sure your JSON files are in the current directory."
             )
             return
 
-        selected_file = st.sidebar.selectbox("Select Evaluation File:", eval_files)
+        # Radio buttons are better for quick scanning of a short list
+        selected_file = st.sidebar.radio(
+            "",
+            eval_files,
+            format_func=lambda p: p.name,
+            label_visibility="collapsed",
+        )
 
         if selected_file:
             data = load_evaluation_from_file(str(selected_file))
@@ -454,27 +477,23 @@ def show_dashboard(evaluation_data: Optional[Union[dict, Evaluation]] = None):
         return
 
     # Sidebar navigation
-    st.sidebar.header("📍 Navigation")
+    # Navigation: use a menu that highlights the active page
+    st.sidebar.header("Navigation")
     sections = [
-        "📊 Overview",
-        "🎯 Performance Metrics",
-        "📋 Task Results",
-        "🔍 Task Explorer",
-        "📈 Summary",
+        "Overview",
+        "Metrics",
+        "Detailed view",
     ]
-    selected_section = st.sidebar.radio("Go to section:", sections)
+    # Use radio for clear highlighting of the current page
+    selected_section = st.sidebar.radio("", sections, label_visibility="collapsed")
 
     # Render selected section
-    if selected_section == "📊 Overview":
+    if selected_section == "Overview":
         render_overview_section(data)
-    elif selected_section == "🎯 Performance Metrics":
-        render_performance_section(data)
-    elif selected_section == "📋 Task Results":
-        render_task_results_section(data)
-    elif selected_section == "🔍 Task Explorer":
-        render_task_explorer_section(data)
-    elif selected_section == "📈 Summary":
-        render_summary_section(data)
+    elif selected_section == "Metrics":
+        render_metrics_section(data)
+    elif selected_section == "Detailed view":
+        render_detailed_view_section(data)
 
 
 def main():
