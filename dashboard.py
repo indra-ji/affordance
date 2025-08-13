@@ -7,175 +7,39 @@ from data_models import Evaluation
 from json_utils import deserialize_data_model
 
 
-def inject_global_styles():
-    """Inject global CSS to enhance visuals without changing displayed data."""
+def display_entity_info(entity_data: dict, title: str, icon: str = ""):
+    """Display entity information in minimal text format, styled as a badge."""
+    # Inject minimal, self-contained styles for badges (always inject to ensure styling works)
     st.markdown(
         """
         <style>
-        :root {
-            --bg-0: #0b1120;
-            --bg-1: #0f172a;
-            --surface: rgba(148, 163, 184, 0.06);
-            --border: rgba(148, 163, 184, 0.18);
-            --text: #e5e7eb;
-            --muted: #94a3b8;
-            --accent: #38bdf8;
-            --accent-2: #22d3ee;
-            --success: #22c55e;
-            --warning: #f59e0b;
-            --error: #ef4444;
-            --radius: 12px;
-        }
-
-        html, body, [class*="css"] {
-            font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji" !important;
-        }
-
-        /* App background and header */
-        .stApp {
-            background: radial-gradient(1200px 600px at 50% -100px, rgba(56,189,248,0.08), transparent),
-                        linear-gradient(180deg, var(--bg-1) 0%, var(--bg-0) 100%);
-            color: var(--text);
-        }
-        [data-testid="stHeader"] {
-            background-color: rgba(2, 6, 23, 0.5);
-            backdrop-filter: saturate(120%) blur(8px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        /* Sidebar */
-        [data-testid="stSidebar"] {
-            background: linear-gradient(180deg, rgba(2,6,23,0.7) 0%, rgba(2,8,23,0.5) 100%);
-            border-right: 1px solid var(--border);
-        }
-        [data-testid="stSidebar"] .stMarkdown, [data-testid="stSidebar"] label { color: var(--text); }
-
-        /* Typography & spacing */
-        h1, h2, h3, h4, h5, h6 { color: var(--text); letter-spacing: .2px; }
-        .stMarkdown, .stMarkdown p { color: #cbd5e1; }
-        .stCaption { color: var(--muted) !important; }
-        .block-container { padding-top: 1.2rem; padding-bottom: 2rem; }
-
-        /* Badges */
         .af-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
             padding: 6px 10px;
             border-radius: 999px;
-            border: 1px solid var(--border);
-            background: var(--surface);
-            color: var(--text);
+            border: 1px solid #e5e7eb;
+            background: #f3f4f6;
+            color: #111827;
             font-weight: 600;
         }
-        .af-badge small { color: #93c5fd; font-weight: 500; }
-
-        /* Metrics */
-        [data-testid="stMetric"] {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 12px 14px;
+        .af-badge small { color: #2563eb; font-weight: 500; }
+        @media (prefers-color-scheme: dark) {
+            .af-badge {
+                border-color: rgba(148, 163, 184, 0.18);
+                background: rgba(148, 163, 184, 0.06);
+                color: #e5e7eb;
+            }
+            .af-badge small { color: #93c5fd; }
         }
-        [data-testid="stMetricValue"] { color: #f8fafc !important; font-weight: 700; }
-        [data-testid="stMetricLabel"] { color: #93c5fd !important; font-weight: 600; }
-
-        /* Progress bar */
-        [data-testid="stProgress"] > div > div {
-            height: 12px;
-            border-radius: 999px;
-            background-image: linear-gradient(90deg, var(--accent), #3b82f6);
-        }
-
-        /* Code blocks */
-        pre, code {
-            background: rgba(2, 6, 23, 0.6) !important;
-            border: 1px solid var(--border) !important;
-            border-radius: var(--radius) !important;
-        }
-
-        /* Alerts */
-        .stAlert { border-radius: var(--radius); border: 1px solid var(--border); }
-
-        /* Tabs */
-        .stTabs [role="tablist"] { gap: 8px; }
-        .stTabs [role="tab"] { background: var(--surface); border: 1px solid var(--border); border-radius: 999px; color: #cbd5e1; }
-        .stTabs [aria-selected="true"] { border-color: var(--accent); color: var(--text); }
-
-        /* Inputs */
-        .stSelectbox, .stTextInput, [data-baseweb="input"], [data-baseweb="select"] { background: var(--surface); border-radius: 10px; }
-        .stTextInput input, [data-baseweb="input"] input { color: var(--text); }
-        [data-baseweb="select"] div { color: var(--text); white-space: normal !important; }
-
-        /* Dividers */
-        hr { border: none; height: 1px; background: linear-gradient(90deg, rgba(148,163,184,0), rgba(148,163,184,0.4), rgba(148,163,184,0)); }
-
-        /* Expanders */
-        [data-testid="stExpander"] { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: rgba(148,163,184,0.05); }
-        [data-testid="stExpander"] [data-testid="stExpanderToggle"] svg { color: #93c5fd; }
-
-        /* Scrollbar */
-        ::-webkit-scrollbar { width: 10px; height: 10px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: rgba(148,163,184,0.25); border-radius: 999px; }
-        ::-webkit-scrollbar-thumb:hover { background: rgba(148,163,184,0.35); }
-
-        /* Buttons */
-        .stButton > button {
-            background: linear-gradient(180deg, #0ea5e9 0%, #0284c7 100%);
-            border: 1px solid var(--border);
-            color: #ecfeff;
-            border-radius: 10px;
-            padding: 0.4rem 0.9rem;
-        }
-        .stButton > button:hover { filter: brightness(1.05); }
-
-        /* Make select dropdown wider so long filenames are visible */
-        [data-baseweb="menu"] { max-width: 90vw; width: 480px; }
-        /* Preserve spaces and use monospace in select options so we can align status to the right */
-        [data-baseweb="menu"] [role="option"] {
-            white-space: pre;
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-        }
+        .af-overview-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 12px; }
+        .af-overview-desc { font-size: 0.95rem; color: #64748b; }
+        @media (prefers-color-scheme: dark) { .af-overview-desc { color: #94a3b8; } }
         </style>
         """,
         unsafe_allow_html=True,
     )
-
-
-def inject_detail_styles():
-    st.markdown(
-        """
-        <style>
-        .af-status {
-            display: inline-flex;
-            align-items: center;
-            padding: 16px 28px;
-            border-radius: 999px;
-            font-weight: 800;
-            letter-spacing: .35px;
-            border: 1px solid var(--border);
-            background: var(--surface);
-            font-size: 20px;
-        }
-        .af-status.af-pass {
-            color: #10b981;
-            background: linear-gradient(180deg, rgba(16,185,129,.12), rgba(16,185,129,.06));
-            border-color: rgba(16,185,129,.35);
-        }
-        .af-status.af-fail {
-            color: #ef4444;
-            background: linear-gradient(180deg, rgba(239,68,68,.12), rgba(239,68,68,.06));
-            border-color: rgba(239,68,68,.35);
-        }
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
-
-
-def display_entity_info(entity_data: dict, title: str, icon: str = ""):
-    """Display entity information in minimal text format, styled as a badge."""
     icon_part = f"{icon} " if icon else ""
     st.markdown(
         f"<span class='af-badge'>{icon_part}<strong>{title}:</strong> {entity_data['name']} <small>v{entity_data['version']}</small></span>",
@@ -279,7 +143,7 @@ def render_metrics_section(data: dict):
 def render_detailed_view_section(data: dict):
     """Render the detailed view section"""
 
-    inject_detail_styles()
+    # inject_detail_styles()
 
     # vertical space between heading and information
     st.markdown("<div style='height:16px'></div>", unsafe_allow_html=True)
@@ -319,12 +183,10 @@ def render_detailed_view_section(data: dict):
         with col1:
             st.subheader(f"{result['answer']['task']['name']}")
         with col2:
-            status_html = (
-                "<span class='af-status af-pass'>PASSED</span>"
-                if result["passed"]
-                else "<span class='af-status af-fail'>FAILED</span>"
-            )
-            st.markdown(status_html, unsafe_allow_html=True)
+            if result["passed"]:
+                st.success("🟢 PASSED")
+            else:
+                st.error("🔴 FAILED")
 
         # Task details tabs
         st.markdown(
@@ -431,7 +293,7 @@ def show_dashboard(evaluation_data: Optional[Union[dict, Evaluation]] = None):
     )
 
     # Global styles
-    inject_global_styles()
+    # inject_global_styles()
 
     # Removed main title per request
 
@@ -447,8 +309,17 @@ def show_dashboard(evaluation_data: Optional[Union[dict, Evaluation]] = None):
             )
             return
 
-        # Radio buttons are better for quick scanning of a short list
-        selected_file = st.sidebar.radio(
+        # Dropdown for file selection; widen menu so long filenames are visible
+        st.sidebar.markdown(
+            """
+            <style>
+            [data-baseweb="menu"] { max-width: 90vw; width: 640px; left: 20px !important; }
+            [data-baseweb="menu"] [role="option"] { white-space: normal; }
+            </style>
+            """,
+            unsafe_allow_html=True,
+        )
+        selected_file = st.sidebar.selectbox(
             "",
             eval_files,
             format_func=lambda p: p.name,
