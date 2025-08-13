@@ -603,7 +603,7 @@
   },
   "model": {
     "name": "gpt-5",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "description": "Small and fast model used for the demo evaluation",
     "provider": "openai"
   },
@@ -613,7 +613,7 @@
     "description": "Agent that uses a raw LLM to solve the tasks",
     "model": {
       "name": "gpt-5",
-      "version": "0.1.0",
+      "version": "1.0.0",
       "description": "Small and fast model used for the demo evaluation",
       "provider": "openai"
     },
@@ -631,7 +631,7 @@
       "description": "Agent that uses a raw LLM to solve the tasks",
       "model": {
         "name": "gpt-5",
-        "version": "0.1.0",
+        "version": "1.0.0",
         "description": "Small and fast model used for the demo evaluation",
         "provider": "openai"
       },
@@ -828,7 +828,7 @@
           "description": "Agent that uses a raw LLM to solve the tasks",
           "model": {
             "name": "gpt-5",
-            "version": "0.1.0",
+            "version": "1.0.0",
             "description": "Small and fast model used for the demo evaluation",
             "provider": "openai"
           },
@@ -852,7 +852,7 @@
           },
           "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100. Array should be assigned to a variable called `array`."
         },
-        "content": "import numpy as np\n\narray = np.random.default_rng().integers(0, 101, size=(3, 4))"
+        "content": "import numpy as np\n\narray = np.random.randint(0, 101, size=(3, 4))"
       },
       {
         "name": "Answer for Calculate mean",
@@ -864,7 +864,7 @@
           "description": "Agent that uses a raw LLM to solve the tasks",
           "model": {
             "name": "gpt-5",
-            "version": "0.1.0",
+            "version": "1.0.0",
             "description": "Small and fast model used for the demo evaluation",
             "provider": "openai"
           },
@@ -900,7 +900,7 @@
           "description": "Agent that uses a raw LLM to solve the tasks",
           "model": {
             "name": "gpt-5",
-            "version": "0.1.0",
+            "version": "1.0.0",
             "description": "Small and fast model used for the demo evaluation",
             "provider": "openai"
           },
@@ -936,7 +936,7 @@
           "description": "Agent that uses a raw LLM to solve the tasks",
           "model": {
             "name": "gpt-5",
-            "version": "0.1.0",
+            "version": "1.0.0",
             "description": "Small and fast model used for the demo evaluation",
             "provider": "openai"
           },
@@ -972,7 +972,7 @@
           "description": "Agent that uses a raw LLM to solve the tasks",
           "model": {
             "name": "gpt-5",
-            "version": "0.1.0",
+            "version": "1.0.0",
             "description": "Small and fast model used for the demo evaluation",
             "provider": "openai"
           },
@@ -996,7 +996,7 @@
           },
           "content": "Create two 2x3 NumPy arrays filled with random integers between 1 and 10. Calculate their element-wise product and sum. First array should be assigned to `array1`, second array to `array2`, element-wise product to `product`, and element-wise sum to `sum_array`."
         },
-        "content": "import numpy as np\n\nrng = np.random.default_rng()\narray1 = rng.integers(1, 11, size=(2, 3))\narray2 = rng.integers(1, 11, size=(2, 3))\nproduct = array1 * array2\nsum_array = array1 + array2"
+        "content": "import numpy as np\n\nrng = np.random.default_rng()\n\narray1 = rng.integers(1, 11, size=(2, 3))\narray2 = rng.integers(1, 11, size=(2, 3))\n\nproduct = np.multiply(array1, array2)\nsum_array = np.add(array1, array2)"
       },
       {
         "name": "Answer for Boolean indexing",
@@ -1008,7 +1008,7 @@
           "description": "Agent that uses a raw LLM to solve the tasks",
           "model": {
             "name": "gpt-5",
-            "version": "0.1.0",
+            "version": "1.0.0",
             "description": "Small and fast model used for the demo evaluation",
             "provider": "openai"
           },
@@ -1044,7 +1044,7 @@
           "description": "Agent that uses a raw LLM to solve the tasks",
           "model": {
             "name": "gpt-5",
-            "version": "0.1.0",
+            "version": "1.0.0",
             "description": "Small and fast model used for the demo evaluation",
             "provider": "openai"
           },
@@ -1080,7 +1080,7 @@
           "description": "Agent that uses a raw LLM to solve the tasks",
           "model": {
             "name": "gpt-5",
-            "version": "0.1.0",
+            "version": "1.0.0",
             "description": "Small and fast model used for the demo evaluation",
             "provider": "openai"
           },
@@ -1104,7 +1104,7 @@
           },
           "content": "Create a 4x5 NumPy array with random integers between 1 and 100. Calculate the mean, median, standard deviation, and variance along axis 0 (columns). Array should be assigned to `data`, column means to `col_means`, column medians to `col_medians`, column standard deviations to `col_stds`, and column variances to `col_vars`."
         },
-        "content": "import numpy as np\n\ndata = np.random.randint(1, 101, size=(4, 5))\ncol_means = np.mean(data, axis=0)\ncol_medians = np.median(data, axis=0)\ncol_stds = np.std(data, axis=0)\ncol_vars = np.var(data, axis=0)"
+        "content": "import numpy as np\n\nrng = np.random.default_rng()\ndata = rng.integers(1, 101, size=(4, 5))\n\ncol_means = data.mean(axis=0)\ncol_medians = np.median(data, axis=0)\ncol_stds = data.std(axis=0)\ncol_vars = data.var(axis=0)"
       },
       {
         "name": "Answer for Broadcasting and vectorization",
@@ -1116,7 +1116,7 @@
           "description": "Agent that uses a raw LLM to solve the tasks",
           "model": {
             "name": "gpt-5",
-            "version": "0.1.0",
+            "version": "1.0.0",
             "description": "Small and fast model used for the demo evaluation",
             "provider": "openai"
           },
@@ -1152,7 +1152,7 @@
           "description": "Agent that uses a raw LLM to solve the tasks",
           "model": {
             "name": "gpt-5",
-            "version": "0.1.0",
+            "version": "1.0.0",
             "description": "Small and fast model used for the demo evaluation",
             "provider": "openai"
           },
@@ -1176,7 +1176,7 @@
           },
           "content": "Create a 5x3 NumPy array with random integers between 0 and 50. Sort each row independently in descending order. Find the indices that would sort the entire array in ascending order when flattened. Original array should be assigned to `original_array`, row-wise sorted array to `sorted_rows`, flattened array to `flattened`, and sorting indices to `sort_indices`."
         },
-        "content": "import numpy as np\n\nrng = np.random.default_rng()\noriginal_array = rng.integers(0, 51, size=(5, 3))\nsorted_rows = np.sort(original_array, axis=1)[:, ::-1]\nflattened = original_array.flatten()\nsort_indices = np.argsort(flattened)"
+        "content": "import numpy as np\n\noriginal_array = np.random.randint(0, 51, size=(5, 3))\nsorted_rows = np.sort(original_array, axis=1)[:, ::-1]\nflattened = original_array.flatten()\nsort_indices = np.argsort(flattened)"
       }
     ],
     "size": 10
@@ -1779,7 +1779,7 @@
         "description": "Agent that uses a raw LLM to solve the tasks",
         "model": {
           "name": "gpt-5",
-          "version": "0.1.0",
+          "version": "1.0.0",
           "description": "Small and fast model used for the demo evaluation",
           "provider": "openai"
         },
@@ -1976,7 +1976,7 @@
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
               "name": "gpt-5",
-              "version": "0.1.0",
+              "version": "1.0.0",
               "description": "Small and fast model used for the demo evaluation",
               "provider": "openai"
             },
@@ -2000,7 +2000,7 @@
             },
             "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100. Array should be assigned to a variable called `array`."
           },
-          "content": "import numpy as np\n\narray = np.random.default_rng().integers(0, 101, size=(3, 4))"
+          "content": "import numpy as np\n\narray = np.random.randint(0, 101, size=(3, 4))"
         },
         {
           "name": "Answer for Calculate mean",
@@ -2012,7 +2012,7 @@
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
               "name": "gpt-5",
-              "version": "0.1.0",
+              "version": "1.0.0",
               "description": "Small and fast model used for the demo evaluation",
               "provider": "openai"
             },
@@ -2048,7 +2048,7 @@
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
               "name": "gpt-5",
-              "version": "0.1.0",
+              "version": "1.0.0",
               "description": "Small and fast model used for the demo evaluation",
               "provider": "openai"
             },
@@ -2084,7 +2084,7 @@
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
               "name": "gpt-5",
-              "version": "0.1.0",
+              "version": "1.0.0",
               "description": "Small and fast model used for the demo evaluation",
               "provider": "openai"
             },
@@ -2120,7 +2120,7 @@
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
               "name": "gpt-5",
-              "version": "0.1.0",
+              "version": "1.0.0",
               "description": "Small and fast model used for the demo evaluation",
               "provider": "openai"
             },
@@ -2144,7 +2144,7 @@
             },
             "content": "Create two 2x3 NumPy arrays filled with random integers between 1 and 10. Calculate their element-wise product and sum. First array should be assigned to `array1`, second array to `array2`, element-wise product to `product`, and element-wise sum to `sum_array`."
           },
-          "content": "import numpy as np\n\nrng = np.random.default_rng()\narray1 = rng.integers(1, 11, size=(2, 3))\narray2 = rng.integers(1, 11, size=(2, 3))\nproduct = array1 * array2\nsum_array = array1 + array2"
+          "content": "import numpy as np\n\nrng = np.random.default_rng()\n\narray1 = rng.integers(1, 11, size=(2, 3))\narray2 = rng.integers(1, 11, size=(2, 3))\n\nproduct = np.multiply(array1, array2)\nsum_array = np.add(array1, array2)"
         },
         {
           "name": "Answer for Boolean indexing",
@@ -2156,7 +2156,7 @@
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
               "name": "gpt-5",
-              "version": "0.1.0",
+              "version": "1.0.0",
               "description": "Small and fast model used for the demo evaluation",
               "provider": "openai"
             },
@@ -2192,7 +2192,7 @@
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
               "name": "gpt-5",
-              "version": "0.1.0",
+              "version": "1.0.0",
               "description": "Small and fast model used for the demo evaluation",
               "provider": "openai"
             },
@@ -2228,7 +2228,7 @@
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
               "name": "gpt-5",
-              "version": "0.1.0",
+              "version": "1.0.0",
               "description": "Small and fast model used for the demo evaluation",
               "provider": "openai"
             },
@@ -2252,7 +2252,7 @@
             },
             "content": "Create a 4x5 NumPy array with random integers between 1 and 100. Calculate the mean, median, standard deviation, and variance along axis 0 (columns). Array should be assigned to `data`, column means to `col_means`, column medians to `col_medians`, column standard deviations to `col_stds`, and column variances to `col_vars`."
           },
-          "content": "import numpy as np\n\ndata = np.random.randint(1, 101, size=(4, 5))\ncol_means = np.mean(data, axis=0)\ncol_medians = np.median(data, axis=0)\ncol_stds = np.std(data, axis=0)\ncol_vars = np.var(data, axis=0)"
+          "content": "import numpy as np\n\nrng = np.random.default_rng()\ndata = rng.integers(1, 101, size=(4, 5))\n\ncol_means = data.mean(axis=0)\ncol_medians = np.median(data, axis=0)\ncol_stds = data.std(axis=0)\ncol_vars = data.var(axis=0)"
         },
         {
           "name": "Answer for Broadcasting and vectorization",
@@ -2264,7 +2264,7 @@
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
               "name": "gpt-5",
-              "version": "0.1.0",
+              "version": "1.0.0",
               "description": "Small and fast model used for the demo evaluation",
               "provider": "openai"
             },
@@ -2300,7 +2300,7 @@
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
               "name": "gpt-5",
-              "version": "0.1.0",
+              "version": "1.0.0",
               "description": "Small and fast model used for the demo evaluation",
               "provider": "openai"
             },
@@ -2324,7 +2324,7 @@
             },
             "content": "Create a 5x3 NumPy array with random integers between 0 and 50. Sort each row independently in descending order. Find the indices that would sort the entire array in ascending order when flattened. Original array should be assigned to `original_array`, row-wise sorted array to `sorted_rows`, flattened array to `flattened`, and sorting indices to `sort_indices`."
           },
-          "content": "import numpy as np\n\nrng = np.random.default_rng()\noriginal_array = rng.integers(0, 51, size=(5, 3))\nsorted_rows = np.sort(original_array, axis=1)[:, ::-1]\nflattened = original_array.flatten()\nsort_indices = np.argsort(flattened)"
+          "content": "import numpy as np\n\noriginal_array = np.random.randint(0, 51, size=(5, 3))\nsorted_rows = np.sort(original_array, axis=1)[:, ::-1]\nflattened = original_array.flatten()\nsort_indices = np.argsort(flattened)"
         }
       ],
       "size": 10
@@ -2344,7 +2344,7 @@
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
               "name": "gpt-5",
-              "version": "0.1.0",
+              "version": "1.0.0",
               "description": "Small and fast model used for the demo evaluation",
               "provider": "openai"
             },
@@ -2368,7 +2368,7 @@
             },
             "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100. Array should be assigned to a variable called `array`."
           },
-          "content": "import numpy as np\n\narray = np.random.default_rng().integers(0, 101, size=(3, 4))"
+          "content": "import numpy as np\n\narray = np.random.randint(0, 101, size=(3, 4))"
         },
         "test": {
           "name": "Create 2D array test",
@@ -2408,7 +2408,7 @@
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
               "name": "gpt-5",
-              "version": "0.1.0",
+              "version": "1.0.0",
               "description": "Small and fast model used for the demo evaluation",
               "provider": "openai"
             },
@@ -2472,7 +2472,7 @@
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
               "name": "gpt-5",
-              "version": "0.1.0",
+              "version": "1.0.0",
               "description": "Small and fast model used for the demo evaluation",
               "provider": "openai"
             },
@@ -2536,7 +2536,7 @@
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
               "name": "gpt-5",
-              "version": "0.1.0",
+              "version": "1.0.0",
               "description": "Small and fast model used for the demo evaluation",
               "provider": "openai"
             },
@@ -2600,7 +2600,7 @@
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
               "name": "gpt-5",
-              "version": "0.1.0",
+              "version": "1.0.0",
               "description": "Small and fast model used for the demo evaluation",
               "provider": "openai"
             },
@@ -2624,7 +2624,7 @@
             },
             "content": "Create two 2x3 NumPy arrays filled with random integers between 1 and 10. Calculate their element-wise product and sum. First array should be assigned to `array1`, second array to `array2`, element-wise product to `product`, and element-wise sum to `sum_array`."
           },
-          "content": "import numpy as np\n\nrng = np.random.default_rng()\narray1 = rng.integers(1, 11, size=(2, 3))\narray2 = rng.integers(1, 11, size=(2, 3))\nproduct = array1 * array2\nsum_array = array1 + array2"
+          "content": "import numpy as np\n\nrng = np.random.default_rng()\n\narray1 = rng.integers(1, 11, size=(2, 3))\narray2 = rng.integers(1, 11, size=(2, 3))\n\nproduct = np.multiply(array1, array2)\nsum_array = np.add(array1, array2)"
         },
         "test": {
           "name": "Element-wise operations test",
@@ -2664,7 +2664,7 @@
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
               "name": "gpt-5",
-              "version": "0.1.0",
+              "version": "1.0.0",
               "description": "Small and fast model used for the demo evaluation",
               "provider": "openai"
             },
@@ -2728,7 +2728,7 @@
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
               "name": "gpt-5",
-              "version": "0.1.0",
+              "version": "1.0.0",
               "description": "Small and fast model used for the demo evaluation",
               "provider": "openai"
             },
@@ -2792,7 +2792,7 @@
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
               "name": "gpt-5",
-              "version": "0.1.0",
+              "version": "1.0.0",
               "description": "Small and fast model used for the demo evaluation",
               "provider": "openai"
             },
@@ -2816,7 +2816,7 @@
             },
             "content": "Create a 4x5 NumPy array with random integers between 1 and 100. Calculate the mean, median, standard deviation, and variance along axis 0 (columns). Array should be assigned to `data`, column means to `col_means`, column medians to `col_medians`, column standard deviations to `col_stds`, and column variances to `col_vars`."
           },
-          "content": "import numpy as np\n\ndata = np.random.randint(1, 101, size=(4, 5))\ncol_means = np.mean(data, axis=0)\ncol_medians = np.median(data, axis=0)\ncol_stds = np.std(data, axis=0)\ncol_vars = np.var(data, axis=0)"
+          "content": "import numpy as np\n\nrng = np.random.default_rng()\ndata = rng.integers(1, 101, size=(4, 5))\n\ncol_means = data.mean(axis=0)\ncol_medians = np.median(data, axis=0)\ncol_stds = data.std(axis=0)\ncol_vars = data.var(axis=0)"
         },
         "test": {
           "name": "Statistical analysis test",
@@ -2856,7 +2856,7 @@
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
               "name": "gpt-5",
-              "version": "0.1.0",
+              "version": "1.0.0",
               "description": "Small and fast model used for the demo evaluation",
               "provider": "openai"
             },
@@ -2920,7 +2920,7 @@
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
               "name": "gpt-5",
-              "version": "0.1.0",
+              "version": "1.0.0",
               "description": "Small and fast model used for the demo evaluation",
               "provider": "openai"
             },
@@ -2944,7 +2944,7 @@
             },
             "content": "Create a 5x3 NumPy array with random integers between 0 and 50. Sort each row independently in descending order. Find the indices that would sort the entire array in ascending order when flattened. Original array should be assigned to `original_array`, row-wise sorted array to `sorted_rows`, flattened array to `flattened`, and sorting indices to `sort_indices`."
           },
-          "content": "import numpy as np\n\nrng = np.random.default_rng()\noriginal_array = rng.integers(0, 51, size=(5, 3))\nsorted_rows = np.sort(original_array, axis=1)[:, ::-1]\nflattened = original_array.flatten()\nsort_indices = np.argsort(flattened)"
+          "content": "import numpy as np\n\noriginal_array = np.random.randint(0, 51, size=(5, 3))\nsorted_rows = np.sort(original_array, axis=1)[:, ::-1]\nflattened = original_array.flatten()\nsort_indices = np.argsort(flattened)"
         },
         "test": {
           "name": "Advanced indexing and sorting test",
@@ -3588,7 +3588,7 @@
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
               "name": "gpt-5",
-              "version": "0.1.0",
+              "version": "1.0.0",
               "description": "Small and fast model used for the demo evaluation",
               "provider": "openai"
             },
@@ -3785,7 +3785,7 @@
                 "description": "Agent that uses a raw LLM to solve the tasks",
                 "model": {
                   "name": "gpt-5",
-                  "version": "0.1.0",
+                  "version": "1.0.0",
                   "description": "Small and fast model used for the demo evaluation",
                   "provider": "openai"
                 },
@@ -3809,7 +3809,7 @@
                 },
                 "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100. Array should be assigned to a variable called `array`."
               },
-              "content": "import numpy as np\n\narray = np.random.default_rng().integers(0, 101, size=(3, 4))"
+              "content": "import numpy as np\n\narray = np.random.randint(0, 101, size=(3, 4))"
             },
             {
               "name": "Answer for Calculate mean",
@@ -3821,7 +3821,7 @@
                 "description": "Agent that uses a raw LLM to solve the tasks",
                 "model": {
                   "name": "gpt-5",
-                  "version": "0.1.0",
+                  "version": "1.0.0",
                   "description": "Small and fast model used for the demo evaluation",
                   "provider": "openai"
                 },
@@ -3857,7 +3857,7 @@
                 "description": "Agent that uses a raw LLM to solve the tasks",
                 "model": {
                   "name": "gpt-5",
-                  "version": "0.1.0",
+                  "version": "1.0.0",
                   "description": "Small and fast model used for the demo evaluation",
                   "provider": "openai"
                 },
@@ -3893,7 +3893,7 @@
                 "description": "Agent that uses a raw LLM to solve the tasks",
                 "model": {
                   "name": "gpt-5",
-                  "version": "0.1.0",
+                  "version": "1.0.0",
                   "description": "Small and fast model used for the demo evaluation",
                   "provider": "openai"
                 },
@@ -3929,7 +3929,7 @@
                 "description": "Agent that uses a raw LLM to solve the tasks",
                 "model": {
                   "name": "gpt-5",
-                  "version": "0.1.0",
+                  "version": "1.0.0",
                   "description": "Small and fast model used for the demo evaluation",
                   "provider": "openai"
                 },
@@ -3953,7 +3953,7 @@
                 },
                 "content": "Create two 2x3 NumPy arrays filled with random integers between 1 and 10. Calculate their element-wise product and sum. First array should be assigned to `array1`, second array to `array2`, element-wise product to `product`, and element-wise sum to `sum_array`."
               },
-              "content": "import numpy as np\n\nrng = np.random.default_rng()\narray1 = rng.integers(1, 11, size=(2, 3))\narray2 = rng.integers(1, 11, size=(2, 3))\nproduct = array1 * array2\nsum_array = array1 + array2"
+              "content": "import numpy as np\n\nrng = np.random.default_rng()\n\narray1 = rng.integers(1, 11, size=(2, 3))\narray2 = rng.integers(1, 11, size=(2, 3))\n\nproduct = np.multiply(array1, array2)\nsum_array = np.add(array1, array2)"
             },
             {
               "name": "Answer for Boolean indexing",
@@ -3965,7 +3965,7 @@
                 "description": "Agent that uses a raw LLM to solve the tasks",
                 "model": {
                   "name": "gpt-5",
-                  "version": "0.1.0",
+                  "version": "1.0.0",
                   "description": "Small and fast model used for the demo evaluation",
                   "provider": "openai"
                 },
@@ -4001,7 +4001,7 @@
                 "description": "Agent that uses a raw LLM to solve the tasks",
                 "model": {
                   "name": "gpt-5",
-                  "version": "0.1.0",
+                  "version": "1.0.0",
                   "description": "Small and fast model used for the demo evaluation",
                   "provider": "openai"
                 },
@@ -4037,7 +4037,7 @@
                 "description": "Agent that uses a raw LLM to solve the tasks",
                 "model": {
                   "name": "gpt-5",
-                  "version": "0.1.0",
+                  "version": "1.0.0",
                   "description": "Small and fast model used for the demo evaluation",
                   "provider": "openai"
                 },
@@ -4061,7 +4061,7 @@
                 },
                 "content": "Create a 4x5 NumPy array with random integers between 1 and 100. Calculate the mean, median, standard deviation, and variance along axis 0 (columns). Array should be assigned to `data`, column means to `col_means`, column medians to `col_medians`, column standard deviations to `col_stds`, and column variances to `col_vars`."
               },
-              "content": "import numpy as np\n\ndata = np.random.randint(1, 101, size=(4, 5))\ncol_means = np.mean(data, axis=0)\ncol_medians = np.median(data, axis=0)\ncol_stds = np.std(data, axis=0)\ncol_vars = np.var(data, axis=0)"
+              "content": "import numpy as np\n\nrng = np.random.default_rng()\ndata = rng.integers(1, 101, size=(4, 5))\n\ncol_means = data.mean(axis=0)\ncol_medians = np.median(data, axis=0)\ncol_stds = data.std(axis=0)\ncol_vars = data.var(axis=0)"
             },
             {
               "name": "Answer for Broadcasting and vectorization",
@@ -4073,7 +4073,7 @@
                 "description": "Agent that uses a raw LLM to solve the tasks",
                 "model": {
                   "name": "gpt-5",
-                  "version": "0.1.0",
+                  "version": "1.0.0",
                   "description": "Small and fast model used for the demo evaluation",
                   "provider": "openai"
                 },
@@ -4109,7 +4109,7 @@
                 "description": "Agent that uses a raw LLM to solve the tasks",
                 "model": {
                   "name": "gpt-5",
-                  "version": "0.1.0",
+                  "version": "1.0.0",
                   "description": "Small and fast model used for the demo evaluation",
                   "provider": "openai"
                 },
@@ -4133,7 +4133,7 @@
                 },
                 "content": "Create a 5x3 NumPy array with random integers between 0 and 50. Sort each row independently in descending order. Find the indices that would sort the entire array in ascending order when flattened. Original array should be assigned to `original_array`, row-wise sorted array to `sorted_rows`, flattened array to `flattened`, and sorting indices to `sort_indices`."
               },
-              "content": "import numpy as np\n\nrng = np.random.default_rng()\noriginal_array = rng.integers(0, 51, size=(5, 3))\nsorted_rows = np.sort(original_array, axis=1)[:, ::-1]\nflattened = original_array.flatten()\nsort_indices = np.argsort(flattened)"
+              "content": "import numpy as np\n\noriginal_array = np.random.randint(0, 51, size=(5, 3))\nsorted_rows = np.sort(original_array, axis=1)[:, ::-1]\nflattened = original_array.flatten()\nsort_indices = np.argsort(flattened)"
             }
           ],
           "size": 10
@@ -4153,7 +4153,7 @@
                 "description": "Agent that uses a raw LLM to solve the tasks",
                 "model": {
                   "name": "gpt-5",
-                  "version": "0.1.0",
+                  "version": "1.0.0",
                   "description": "Small and fast model used for the demo evaluation",
                   "provider": "openai"
                 },
@@ -4177,7 +4177,7 @@
                 },
                 "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100. Array should be assigned to a variable called `array`."
               },
-              "content": "import numpy as np\n\narray = np.random.default_rng().integers(0, 101, size=(3, 4))"
+              "content": "import numpy as np\n\narray = np.random.randint(0, 101, size=(3, 4))"
             },
             "test": {
               "name": "Create 2D array test",
@@ -4217,7 +4217,7 @@
                 "description": "Agent that uses a raw LLM to solve the tasks",
                 "model": {
                   "name": "gpt-5",
-                  "version": "0.1.0",
+                  "version": "1.0.0",
                   "description": "Small and fast model used for the demo evaluation",
                   "provider": "openai"
                 },
@@ -4281,7 +4281,7 @@
                 "description": "Agent that uses a raw LLM to solve the tasks",
                 "model": {
                   "name": "gpt-5",
-                  "version": "0.1.0",
+                  "version": "1.0.0",
                   "description": "Small and fast model used for the demo evaluation",
                   "provider": "openai"
                 },
@@ -4345,7 +4345,7 @@
                 "description": "Agent that uses a raw LLM to solve the tasks",
                 "model": {
                   "name": "gpt-5",
-                  "version": "0.1.0",
+                  "version": "1.0.0",
                   "description": "Small and fast model used for the demo evaluation",
                   "provider": "openai"
                 },
@@ -4409,7 +4409,7 @@
                 "description": "Agent that uses a raw LLM to solve the tasks",
                 "model": {
                   "name": "gpt-5",
-                  "version": "0.1.0",
+                  "version": "1.0.0",
                   "description": "Small and fast model used for the demo evaluation",
                   "provider": "openai"
                 },
@@ -4433,7 +4433,7 @@
                 },
                 "content": "Create two 2x3 NumPy arrays filled with random integers between 1 and 10. Calculate their element-wise product and sum. First array should be assigned to `array1`, second array to `array2`, element-wise product to `product`, and element-wise sum to `sum_array`."
               },
-              "content": "import numpy as np\n\nrng = np.random.default_rng()\narray1 = rng.integers(1, 11, size=(2, 3))\narray2 = rng.integers(1, 11, size=(2, 3))\nproduct = array1 * array2\nsum_array = array1 + array2"
+              "content": "import numpy as np\n\nrng = np.random.default_rng()\n\narray1 = rng.integers(1, 11, size=(2, 3))\narray2 = rng.integers(1, 11, size=(2, 3))\n\nproduct = np.multiply(array1, array2)\nsum_array = np.add(array1, array2)"
             },
             "test": {
               "name": "Element-wise operations test",
@@ -4473,7 +4473,7 @@
                 "description": "Agent that uses a raw LLM to solve the tasks",
                 "model": {
                   "name": "gpt-5",
-                  "version": "0.1.0",
+                  "version": "1.0.0",
                   "description": "Small and fast model used for the demo evaluation",
                   "provider": "openai"
                 },
@@ -4537,7 +4537,7 @@
                 "description": "Agent that uses a raw LLM to solve the tasks",
                 "model": {
                   "name": "gpt-5",
-                  "version": "0.1.0",
+                  "version": "1.0.0",
                   "description": "Small and fast model used for the demo evaluation",
                   "provider": "openai"
                 },
@@ -4601,7 +4601,7 @@
                 "description": "Agent that uses a raw LLM to solve the tasks",
                 "model": {
                   "name": "gpt-5",
-                  "version": "0.1.0",
+                  "version": "1.0.0",
                   "description": "Small and fast model used for the demo evaluation",
                   "provider": "openai"
                 },
@@ -4625,7 +4625,7 @@
                 },
                 "content": "Create a 4x5 NumPy array with random integers between 1 and 100. Calculate the mean, median, standard deviation, and variance along axis 0 (columns). Array should be assigned to `data`, column means to `col_means`, column medians to `col_medians`, column standard deviations to `col_stds`, and column variances to `col_vars`."
               },
-              "content": "import numpy as np\n\ndata = np.random.randint(1, 101, size=(4, 5))\ncol_means = np.mean(data, axis=0)\ncol_medians = np.median(data, axis=0)\ncol_stds = np.std(data, axis=0)\ncol_vars = np.var(data, axis=0)"
+              "content": "import numpy as np\n\nrng = np.random.default_rng()\ndata = rng.integers(1, 101, size=(4, 5))\n\ncol_means = data.mean(axis=0)\ncol_medians = np.median(data, axis=0)\ncol_stds = data.std(axis=0)\ncol_vars = data.var(axis=0)"
             },
             "test": {
               "name": "Statistical analysis test",
@@ -4665,7 +4665,7 @@
                 "description": "Agent that uses a raw LLM to solve the tasks",
                 "model": {
                   "name": "gpt-5",
-                  "version": "0.1.0",
+                  "version": "1.0.0",
                   "description": "Small and fast model used for the demo evaluation",
                   "provider": "openai"
                 },
@@ -4729,7 +4729,7 @@
                 "description": "Agent that uses a raw LLM to solve the tasks",
                 "model": {
                   "name": "gpt-5",
-                  "version": "0.1.0",
+                  "version": "1.0.0",
                   "description": "Small and fast model used for the demo evaluation",
                   "provider": "openai"
                 },
@@ -4753,7 +4753,7 @@
                 },
                 "content": "Create a 5x3 NumPy array with random integers between 0 and 50. Sort each row independently in descending order. Find the indices that would sort the entire array in ascending order when flattened. Original array should be assigned to `original_array`, row-wise sorted array to `sorted_rows`, flattened array to `flattened`, and sorting indices to `sort_indices`."
               },
-              "content": "import numpy as np\n\nrng = np.random.default_rng()\noriginal_array = rng.integers(0, 51, size=(5, 3))\nsorted_rows = np.sort(original_array, axis=1)[:, ::-1]\nflattened = original_array.flatten()\nsort_indices = np.argsort(flattened)"
+              "content": "import numpy as np\n\noriginal_array = np.random.randint(0, 51, size=(5, 3))\nsorted_rows = np.sort(original_array, axis=1)[:, ::-1]\nflattened = original_array.flatten()\nsort_indices = np.argsort(flattened)"
             },
             "test": {
               "name": "Advanced indexing and sorting test",

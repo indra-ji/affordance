@@ -98,6 +98,22 @@ def render_metrics_section(data: dict):
     # vertical space between heading and information
     st.markdown("<div style='height:16px'></div>", unsafe_allow_html=True)
 
+    # Benchmark performance
+    st.subheader("Evaluation performance")
+
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.metric(
+            "Overall pass rate",
+            f"{data['benchmark']['percentage_passed']:.1f}%",
+        )
+    with col2:
+        st.metric("Total tests", data["benchmark"]["total_size"])
+    with col3:
+        st.metric("Total passed", data["benchmark"]["number_passed"])
+
+    st.divider()
+
     # Core size metrics
     st.subheader("Dataset sizes")
     col1, col2, col3, col4 = st.columns(4)
@@ -121,22 +137,6 @@ def render_metrics_section(data: dict):
         st.metric(
             "Resultset size",
             data["resultset"]["size"],
-        )
-
-    st.divider()
-
-    # Benchmark performance
-    st.subheader("Evaluation performance")
-
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.metric("Total tests", data["benchmark"]["total_size"])
-    with col2:
-        st.metric("Total passed", data["benchmark"]["number_passed"])
-    with col3:
-        st.metric(
-            "Overall pass rate",
-            f"{data['benchmark']['percentage_passed']:.1f}%",
         )
 
 
@@ -301,7 +301,7 @@ def show_dashboard(evaluation_data: Optional[Union[dict, Evaluation]] = None):
     if evaluation_data is None:
         # File selection mode
         st.sidebar.header("File Selection")
-        eval_files = list(Path(".").glob("Evaluation_*.json"))
+        eval_files = list(Path("evals").glob("Evaluation_*.json"))
 
         if not eval_files:
             st.error(

@@ -25,6 +25,9 @@ def generate_result(answer: Answer, test: Test) -> bool:
         exec(answer.content, namespace)
         exec(test.content, namespace)
         return True
+    except AssertionError as e:
+        print(f"Test failed for task - {answer.task.name}: {e}")
+        return False
     except Exception as e:
         print(f"Error generating result: {e}")
         return False
