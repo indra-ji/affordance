@@ -14,8 +14,3 @@ dependencies = [
     "streamlit>=1.48.0",
     "ty>=0.0.1a16",
 ]
-
-[dependency-groups]
-dev = [
-    "pre-commit>=4.2.0",
-]
