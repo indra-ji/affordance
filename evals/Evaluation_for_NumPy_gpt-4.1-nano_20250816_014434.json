@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Evaluation for NumPy using NumPy Demo Taskset and NumPy Demo Testset",
   "language": {
-    "name": "Python",
+    "name": "python",
     "version": "3.13.5",
     "description": "A high-level, interpreted programming language known for its simplicity and versatility"
   },
@@ -12,7 +12,7 @@
     "version": "2.3.2",
     "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
     "language": {
-      "name": "Python",
+      "name": "python",
       "version": "3.13.5",
       "description": "A high-level, interpreted programming language known for its simplicity and versatility"
     }
@@ -26,7 +26,7 @@
       "version": "2.3.2",
       "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
       "language": {
-        "name": "Python",
+        "name": "python",
         "version": "3.13.5",
         "description": "A high-level, interpreted programming language known for its simplicity and versatility"
       }
@@ -41,7 +41,7 @@
           "version": "2.3.2",
           "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
           "language": {
-            "name": "Python",
+            "name": "python",
             "version": "3.13.5",
             "description": "A high-level, interpreted programming language known for its simplicity and versatility"
           }
@@ -57,7 +57,7 @@
           "version": "2.3.2",
           "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
           "language": {
-            "name": "Python",
+            "name": "python",
             "version": "3.13.5",
             "description": "A high-level, interpreted programming language known for its simplicity and versatility"
           }
@@ -73,7 +73,7 @@
           "version": "2.3.2",
           "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
           "language": {
-            "name": "Python",
+            "name": "python",
             "version": "3.13.5",
             "description": "A high-level, interpreted programming language known for its simplicity and versatility"
           }
@@ -89,7 +89,7 @@
           "version": "2.3.2",
           "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
           "language": {
-            "name": "Python",
+            "name": "python",
             "version": "3.13.5",
             "description": "A high-level, interpreted programming language known for its simplicity and versatility"
           }
@@ -105,7 +105,7 @@
           "version": "2.3.2",
           "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
           "language": {
-            "name": "Python",
+            "name": "python",
             "version": "3.13.5",
             "description": "A high-level, interpreted programming language known for its simplicity and versatility"
           }
@@ -121,7 +121,7 @@
           "version": "2.3.2",
           "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
           "language": {
-            "name": "Python",
+            "name": "python",
             "version": "3.13.5",
             "description": "A high-level, interpreted programming language known for its simplicity and versatility"
           }
@@ -137,7 +137,7 @@
           "version": "2.3.2",
           "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
           "language": {
-            "name": "Python",
+            "name": "python",
             "version": "3.13.5",
             "description": "A high-level, interpreted programming language known for its simplicity and versatility"
           }
@@ -153,7 +153,7 @@
           "version": "2.3.2",
           "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
           "language": {
-            "name": "Python",
+            "name": "python",
             "version": "3.13.5",
             "description": "A high-level, interpreted programming language known for its simplicity and versatility"
           }
@@ -169,7 +169,7 @@
           "version": "2.3.2",
           "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
           "language": {
-            "name": "Python",
+            "name": "python",
             "version": "3.13.5",
             "description": "A high-level, interpreted programming language known for its simplicity and versatility"
           }
@@ -185,7 +185,7 @@
           "version": "2.3.2",
           "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
           "language": {
-            "name": "Python",
+            "name": "python",
             "version": "3.13.5",
             "description": "A high-level, interpreted programming language known for its simplicity and versatility"
           }
@@ -208,7 +208,7 @@
         "version": "2.3.2",
         "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
         "language": {
-          "name": "Python",
+          "name": "python",
           "version": "3.13.5",
           "description": "A high-level, interpreted programming language known for its simplicity and versatility"
         }
@@ -223,7 +223,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -239,7 +239,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -255,7 +255,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -271,7 +271,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -287,7 +287,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -303,7 +303,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -319,7 +319,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -335,7 +335,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -351,7 +351,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -367,7 +367,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -391,7 +391,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -413,7 +413,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -435,7 +435,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -457,7 +457,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -479,7 +479,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -501,7 +501,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -523,7 +523,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -545,7 +545,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -567,7 +567,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -589,7 +589,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -602,9 +602,9 @@
     "size": 10
   },
   "model": {
-    "name": "gpt-3.5-turbo",
+    "name": "gpt-4.1-nano",
     "version": "1.0.0",
-    "description": "The one, the only, the original, the one that started it all",
+    "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
     "provider": "openai"
   },
   "agent": {
@@ -612,9 +612,9 @@
     "version": "1.0.0",
     "description": "Agent that uses a raw LLM to solve the tasks",
     "model": {
-      "name": "gpt-3.5-turbo",
+      "name": "gpt-4.1-nano",
       "version": "1.0.0",
-      "description": "The one, the only, the original, the one that started it all",
+      "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
       "provider": "openai"
     },
     "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -624,15 +624,15 @@
   "answerset": {
     "name": "Answerset for NumPy Demo Taskset",
     "version": "1.0.0",
-    "description": "Answerset for NumPy Demo Taskset using Pure LLM agent and gpt-3.5-turbo",
+    "description": "Answerset for NumPy Demo Taskset using Pure LLM agent and gpt-4.1-nano",
     "agent": {
       "name": "Pure LLM agent",
       "version": "1.0.0",
       "description": "Agent that uses a raw LLM to solve the tasks",
       "model": {
-        "name": "gpt-3.5-turbo",
+        "name": "gpt-4.1-nano",
         "version": "1.0.0",
-        "description": "The one, the only, the original, the one that started it all",
+        "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
         "provider": "openai"
       },
       "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -648,7 +648,7 @@
         "version": "2.3.2",
         "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
         "language": {
-          "name": "Python",
+          "name": "python",
           "version": "3.13.5",
           "description": "A high-level, interpreted programming language known for its simplicity and versatility"
         }
@@ -663,7 +663,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -679,7 +679,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -695,7 +695,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -711,7 +711,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -727,7 +727,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -743,7 +743,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -759,7 +759,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -775,7 +775,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -791,7 +791,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -807,7 +807,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -821,15 +821,15 @@
       {
         "name": "Answer for Create 2D array",
         "version": "1.0.0",
-        "description": "Answer generated for Create 2D array using Pure LLM agent and gpt-3.5-turbo",
+        "description": "Answer generated for Create 2D array using Pure LLM agent and gpt-4.1-nano",
         "agent": {
           "name": "Pure LLM agent",
           "version": "1.0.0",
           "description": "Agent that uses a raw LLM to solve the tasks",
           "model": {
-            "name": "gpt-3.5-turbo",
+            "name": "gpt-4.1-nano",
             "version": "1.0.0",
-            "description": "The one, the only, the original, the one that started it all",
+            "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
             "provider": "openai"
           },
           "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -845,27 +845,27 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
           },
           "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100. Array should be assigned to a variable called `array`."
         },
-        "content": "\nimport numpy as np\n\narray = np.random.randint(0, 100, (3, 4))\narray\n"
+        "content": "\nimport numpy as np\n\nnp.random.seed(0)  # Optional: for reproducibility\narray = np.random.randint(0, 101, size=(3, 4))\n"
       },
       {
         "name": "Answer for Calculate mean",
         "version": "1.0.0",
-        "description": "Answer generated for Calculate mean using Pure LLM agent and gpt-3.5-turbo",
+        "description": "Answer generated for Calculate mean using Pure LLM agent and gpt-4.1-nano",
         "agent": {
           "name": "Pure LLM agent",
           "version": "1.0.0",
           "description": "Agent that uses a raw LLM to solve the tasks",
           "model": {
-            "name": "gpt-3.5-turbo",
+            "name": "gpt-4.1-nano",
             "version": "1.0.0",
-            "description": "The one, the only, the original, the one that started it all",
+            "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
             "provider": "openai"
           },
           "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -881,7 +881,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -893,15 +893,15 @@
       {
         "name": "Answer for Array slicing",
         "version": "1.0.0",
-        "description": "Answer generated for Array slicing using Pure LLM agent and gpt-3.5-turbo",
+        "description": "Answer generated for Array slicing using Pure LLM agent and gpt-4.1-nano",
         "agent": {
           "name": "Pure LLM agent",
           "version": "1.0.0",
           "description": "Agent that uses a raw LLM to solve the tasks",
           "model": {
-            "name": "gpt-3.5-turbo",
+            "name": "gpt-4.1-nano",
             "version": "1.0.0",
-            "description": "The one, the only, the original, the one that started it all",
+            "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
             "provider": "openai"
           },
           "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -917,7 +917,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -929,15 +929,15 @@
       {
         "name": "Answer for Array reshaping",
         "version": "1.0.0",
-        "description": "Answer generated for Array reshaping using Pure LLM agent and gpt-3.5-turbo",
+        "description": "Answer generated for Array reshaping using Pure LLM agent and gpt-4.1-nano",
         "agent": {
           "name": "Pure LLM agent",
           "version": "1.0.0",
           "description": "Agent that uses a raw LLM to solve the tasks",
           "model": {
-            "name": "gpt-3.5-turbo",
+            "name": "gpt-4.1-nano",
             "version": "1.0.0",
-            "description": "The one, the only, the original, the one that started it all",
+            "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
             "provider": "openai"
           },
           "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -953,27 +953,27 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
           },
           "content": "Create a 1D NumPy array with 12 consecutive integers starting from 1. Reshape it into a 3x4 matrix. Original array should be assigned to a variable called `original_array`. Reshaped array should be assigned to a variable called `reshaped_array`."
         },
-        "content": "\nimport numpy as np\n\noriginal_array = np.arange(1, 13)\nreshaped_array = original_array.reshape(3, 4)\n"
+        "content": "\nimport numpy as np\n\noriginal_array = np.array(range(1, 13))\nreshaped_array = original_array.reshape(3, 4)\n"
       },
       {
         "name": "Answer for Element-wise operations",
         "version": "1.0.0",
-        "description": "Answer generated for Element-wise operations using Pure LLM agent and gpt-3.5-turbo",
+        "description": "Answer generated for Element-wise operations using Pure LLM agent and gpt-4.1-nano",
         "agent": {
           "name": "Pure LLM agent",
           "version": "1.0.0",
           "description": "Agent that uses a raw LLM to solve the tasks",
           "model": {
-            "name": "gpt-3.5-turbo",
+            "name": "gpt-4.1-nano",
             "version": "1.0.0",
-            "description": "The one, the only, the original, the one that started it all",
+            "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
             "provider": "openai"
           },
           "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -989,27 +989,27 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
           },
           "content": "Create two 2x3 NumPy arrays filled with random integers between 1 and 10. Calculate their element-wise product and sum. First array should be assigned to `array1`, second array to `array2`, element-wise product to `product`, and element-wise sum to `sum_array`."
         },
-        "content": "\nimport numpy as np\n\narray1 = np.random.randint(1, 11, (2, 3))\narray2 = np.random.randint(1, 11, (2, 3))\n\nproduct = np.multiply(array1, array2)\nsum_array = np.add(array1, array2)\n"
+        "content": "\nimport numpy as np\n\narray1 = np.random.randint(1, 11, size=(2, 3))\narray2 = np.random.randint(1, 11, size=(2, 3))\nproduct = np.multiply(array1, array2)\nsum_array = np.add(array1, array2)\n"
       },
       {
         "name": "Answer for Boolean indexing",
         "version": "1.0.0",
-        "description": "Answer generated for Boolean indexing using Pure LLM agent and gpt-3.5-turbo",
+        "description": "Answer generated for Boolean indexing using Pure LLM agent and gpt-4.1-nano",
         "agent": {
           "name": "Pure LLM agent",
           "version": "1.0.0",
           "description": "Agent that uses a raw LLM to solve the tasks",
           "model": {
-            "name": "gpt-3.5-turbo",
+            "name": "gpt-4.1-nano",
             "version": "1.0.0",
-            "description": "The one, the only, the original, the one that started it all",
+            "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
             "provider": "openai"
           },
           "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -1025,27 +1025,27 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
           },
           "content": "Create a 1D NumPy array with 15 random integers between -10 and 10. Extract all positive values using boolean indexing. Original array should be assigned to `original_array`. Array of positive values should be assigned to `positive_values`."
         },
-        "content": "\nimport numpy as np\n\noriginal_array = np.random.randint(-10, 11, 15)\npositive_values = original_array[original_array > 0]\n"
+        "content": "\nimport numpy as np\n\noriginal_array = np.random.randint(-10, 11, size=15)\npositive_values = original_array[original_array > 0]\n"
       },
       {
         "name": "Answer for Linear algebra operations",
         "version": "1.0.0",
-        "description": "Answer generated for Linear algebra operations using Pure LLM agent and gpt-3.5-turbo",
+        "description": "Answer generated for Linear algebra operations using Pure LLM agent and gpt-4.1-nano",
         "agent": {
           "name": "Pure LLM agent",
           "version": "1.0.0",
           "description": "Agent that uses a raw LLM to solve the tasks",
           "model": {
-            "name": "gpt-3.5-turbo",
+            "name": "gpt-4.1-nano",
             "version": "1.0.0",
-            "description": "The one, the only, the original, the one that started it all",
+            "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
             "provider": "openai"
           },
           "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -1061,27 +1061,27 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
           },
           "content": "Create a 3x3 NumPy array filled with random floating-point numbers between 0 and 1. Calculate its matrix multiplication with itself (A @ A). Then find the eigenvalues of the original matrix. Original matrix should be assigned to `matrix`, matrix multiplication result to `matrix_squared`, and eigenvalues to `eigenvalues`."
         },
-        "content": "\nimport numpy as np\n\nmatrix = np.random.rand(3, 3)\nmatrix_squared = matrix @ matrix\neigenvalues = np.linalg.eigvals(matrix)\n"
+        "content": "\nimport numpy as np\n\n# Set seed for reproducibility (optional)\nnp.random.seed(0)\n\n# Create a 3x3 random float matrix\nmatrix = np.random.rand(3, 3)\n\n# Calculate its matrix multiplication with itself\nmatrix_squared = matrix @ matrix\n\n# Find the eigenvalues of the original matrix\neigenvalues = np.linalg.eigvals(matrix)\n"
       },
       {
         "name": "Answer for Statistical analysis",
         "version": "1.0.0",
-        "description": "Answer generated for Statistical analysis using Pure LLM agent and gpt-3.5-turbo",
+        "description": "Answer generated for Statistical analysis using Pure LLM agent and gpt-4.1-nano",
         "agent": {
           "name": "Pure LLM agent",
           "version": "1.0.0",
           "description": "Agent that uses a raw LLM to solve the tasks",
           "model": {
-            "name": "gpt-3.5-turbo",
+            "name": "gpt-4.1-nano",
             "version": "1.0.0",
-            "description": "The one, the only, the original, the one that started it all",
+            "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
             "provider": "openai"
           },
           "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -1097,27 +1097,27 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
           },
           "content": "Create a 4x5 NumPy array with random integers between 1 and 100. Calculate the mean, median, standard deviation, and variance along axis 0 (columns). Array should be assigned to `data`, column means to `col_means`, column medians to `col_medians`, column standard deviations to `col_stds`, and column variances to `col_vars`."
         },
-        "content": "\nimport numpy as np\n\ndata = np.random.randint(1, 101, size=(4, 5))\ncol_means = np.mean(data, axis=0)\ncol_medians = np.median(data, axis=0)\ncol_stds = np.std(data, axis=0)\ncol_vars = np.var(data, axis=0)\n"
+        "content": "\nimport numpy as np\n\nnp.random.seed(0)  # optional: for reproducibility\ndata = np.random.randint(1, 101, size=(4, 5))\ncol_means = np.mean(data, axis=0)\ncol_medians = np.median(data, axis=0)\ncol_stds = np.std(data, axis=0)\ncol_vars = np.var(data, axis=0)\n"
       },
       {
         "name": "Answer for Broadcasting and vectorization",
         "version": "1.0.0",
-        "description": "Answer generated for Broadcasting and vectorization using Pure LLM agent and gpt-3.5-turbo",
+        "description": "Answer generated for Broadcasting and vectorization using Pure LLM agent and gpt-4.1-nano",
         "agent": {
           "name": "Pure LLM agent",
           "version": "1.0.0",
           "description": "Agent that uses a raw LLM to solve the tasks",
           "model": {
-            "name": "gpt-3.5-turbo",
+            "name": "gpt-4.1-nano",
             "version": "1.0.0",
-            "description": "The one, the only, the original, the one that started it all",
+            "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
             "provider": "openai"
           },
           "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -1133,7 +1133,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -1145,15 +1145,15 @@
       {
         "name": "Answer for Advanced indexing and sorting",
         "version": "1.0.0",
-        "description": "Answer generated for Advanced indexing and sorting using Pure LLM agent and gpt-3.5-turbo",
+        "description": "Answer generated for Advanced indexing and sorting using Pure LLM agent and gpt-4.1-nano",
         "agent": {
           "name": "Pure LLM agent",
           "version": "1.0.0",
           "description": "Agent that uses a raw LLM to solve the tasks",
           "model": {
-            "name": "gpt-3.5-turbo",
+            "name": "gpt-4.1-nano",
             "version": "1.0.0",
-            "description": "The one, the only, the original, the one that started it all",
+            "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
             "provider": "openai"
           },
           "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -1169,14 +1169,14 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
           },
           "content": "Create a 5x3 NumPy array with random integers between 0 and 50. Sort each row independently in descending order. Find the indices that would sort the entire array in ascending order when flattened. Original array should be assigned to `original_array`, row-wise sorted array to `sorted_rows`, flattened array to `flattened`, and sorting indices to `sort_indices`."
         },
-        "content": "\nimport numpy as np\n\noriginal_array = np.random.randint(0, 50, (5, 3))\nsorted_rows = np.sort(original_array, axis=1)[:, ::-1]\nflattened = sorted_rows.flatten()\nsort_indices = np.argsort(flattened)\n"
+        "content": "\nimport numpy as np\n\n# Seed for reproducibility, optional\nnp.random.seed(0)\n\n# Create a 5x3 array with random integers between 0 and 50\noriginal_array = np.random.randint(0, 51, size=(5, 3))\n\n# Sort each row independently in descending order\nsorted_rows = np.sort(original_array)[:, ::-1]\n\n# Flatten the array\nflattened = sorted_rows.flatten()\n\n# Find indices that would sort the flattened array in ascending order\nsort_indices = np.argsort(flattened)\n"
       }
     ],
     "size": 10
@@ -1194,7 +1194,7 @@
         "version": "2.3.2",
         "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
         "language": {
-          "name": "Python",
+          "name": "python",
           "version": "3.13.5",
           "description": "A high-level, interpreted programming language known for its simplicity and versatility"
         }
@@ -1209,7 +1209,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -1225,7 +1225,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -1241,7 +1241,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -1257,7 +1257,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -1273,7 +1273,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -1289,7 +1289,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -1305,7 +1305,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -1321,7 +1321,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -1337,7 +1337,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -1353,7 +1353,7 @@
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
-              "name": "Python",
+              "name": "python",
               "version": "3.13.5",
               "description": "A high-level, interpreted programming language known for its simplicity and versatility"
             }
@@ -1376,7 +1376,7 @@
           "version": "2.3.2",
           "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
           "language": {
-            "name": "Python",
+            "name": "python",
             "version": "3.13.5",
             "description": "A high-level, interpreted programming language known for its simplicity and versatility"
           }
@@ -1391,7 +1391,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1407,7 +1407,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1423,7 +1423,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1439,7 +1439,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1455,7 +1455,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1471,7 +1471,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1487,7 +1487,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1503,7 +1503,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1519,7 +1519,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1535,7 +1535,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1559,7 +1559,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1581,7 +1581,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1603,7 +1603,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1625,7 +1625,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1647,7 +1647,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1669,7 +1669,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1691,7 +1691,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1713,7 +1713,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1735,7 +1735,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1757,7 +1757,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1772,15 +1772,15 @@
     "answerset": {
       "name": "Answerset for NumPy Demo Taskset",
       "version": "1.0.0",
-      "description": "Answerset for NumPy Demo Taskset using Pure LLM agent and gpt-3.5-turbo",
+      "description": "Answerset for NumPy Demo Taskset using Pure LLM agent and gpt-4.1-nano",
       "agent": {
         "name": "Pure LLM agent",
         "version": "1.0.0",
         "description": "Agent that uses a raw LLM to solve the tasks",
         "model": {
-          "name": "gpt-3.5-turbo",
+          "name": "gpt-4.1-nano",
           "version": "1.0.0",
-          "description": "The one, the only, the original, the one that started it all",
+          "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
           "provider": "openai"
         },
         "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -1796,7 +1796,7 @@
           "version": "2.3.2",
           "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
           "language": {
-            "name": "Python",
+            "name": "python",
             "version": "3.13.5",
             "description": "A high-level, interpreted programming language known for its simplicity and versatility"
           }
@@ -1811,7 +1811,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1827,7 +1827,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1843,7 +1843,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1859,7 +1859,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1875,7 +1875,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1891,7 +1891,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1907,7 +1907,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1923,7 +1923,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1939,7 +1939,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1955,7 +1955,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -1969,15 +1969,15 @@
         {
           "name": "Answer for Create 2D array",
           "version": "1.0.0",
-          "description": "Answer generated for Create 2D array using Pure LLM agent and gpt-3.5-turbo",
+          "description": "Answer generated for Create 2D array using Pure LLM agent and gpt-4.1-nano",
           "agent": {
             "name": "Pure LLM agent",
             "version": "1.0.0",
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
-              "name": "gpt-3.5-turbo",
+              "name": "gpt-4.1-nano",
               "version": "1.0.0",
-              "description": "The one, the only, the original, the one that started it all",
+              "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
               "provider": "openai"
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -1993,27 +1993,27 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
             },
             "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100. Array should be assigned to a variable called `array`."
           },
-          "content": "\nimport numpy as np\n\narray = np.random.randint(0, 100, (3, 4))\narray\n"
+          "content": "\nimport numpy as np\n\nnp.random.seed(0)  # Optional: for reproducibility\narray = np.random.randint(0, 101, size=(3, 4))\n"
         },
         {
           "name": "Answer for Calculate mean",
           "version": "1.0.0",
-          "description": "Answer generated for Calculate mean using Pure LLM agent and gpt-3.5-turbo",
+          "description": "Answer generated for Calculate mean using Pure LLM agent and gpt-4.1-nano",
           "agent": {
             "name": "Pure LLM agent",
             "version": "1.0.0",
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
-              "name": "gpt-3.5-turbo",
+              "name": "gpt-4.1-nano",
               "version": "1.0.0",
-              "description": "The one, the only, the original, the one that started it all",
+              "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
               "provider": "openai"
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -2029,7 +2029,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -2041,15 +2041,15 @@
         {
           "name": "Answer for Array slicing",
           "version": "1.0.0",
-          "description": "Answer generated for Array slicing using Pure LLM agent and gpt-3.5-turbo",
+          "description": "Answer generated for Array slicing using Pure LLM agent and gpt-4.1-nano",
           "agent": {
             "name": "Pure LLM agent",
             "version": "1.0.0",
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
-              "name": "gpt-3.5-turbo",
+              "name": "gpt-4.1-nano",
               "version": "1.0.0",
-              "description": "The one, the only, the original, the one that started it all",
+              "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
               "provider": "openai"
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -2065,7 +2065,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -2077,15 +2077,15 @@
         {
           "name": "Answer for Array reshaping",
           "version": "1.0.0",
-          "description": "Answer generated for Array reshaping using Pure LLM agent and gpt-3.5-turbo",
+          "description": "Answer generated for Array reshaping using Pure LLM agent and gpt-4.1-nano",
           "agent": {
             "name": "Pure LLM agent",
             "version": "1.0.0",
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
-              "name": "gpt-3.5-turbo",
+              "name": "gpt-4.1-nano",
               "version": "1.0.0",
-              "description": "The one, the only, the original, the one that started it all",
+              "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
               "provider": "openai"
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -2101,27 +2101,27 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
             },
             "content": "Create a 1D NumPy array with 12 consecutive integers starting from 1. Reshape it into a 3x4 matrix. Original array should be assigned to a variable called `original_array`. Reshaped array should be assigned to a variable called `reshaped_array`."
           },
-          "content": "\nimport numpy as np\n\noriginal_array = np.arange(1, 13)\nreshaped_array = original_array.reshape(3, 4)\n"
+          "content": "\nimport numpy as np\n\noriginal_array = np.array(range(1, 13))\nreshaped_array = original_array.reshape(3, 4)\n"
         },
         {
           "name": "Answer for Element-wise operations",
           "version": "1.0.0",
-          "description": "Answer generated for Element-wise operations using Pure LLM agent and gpt-3.5-turbo",
+          "description": "Answer generated for Element-wise operations using Pure LLM agent and gpt-4.1-nano",
           "agent": {
             "name": "Pure LLM agent",
             "version": "1.0.0",
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
-              "name": "gpt-3.5-turbo",
+              "name": "gpt-4.1-nano",
               "version": "1.0.0",
-              "description": "The one, the only, the original, the one that started it all",
+              "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
               "provider": "openai"
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -2137,27 +2137,27 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
             },
             "content": "Create two 2x3 NumPy arrays filled with random integers between 1 and 10. Calculate their element-wise product and sum. First array should be assigned to `array1`, second array to `array2`, element-wise product to `product`, and element-wise sum to `sum_array`."
           },
-          "content": "\nimport numpy as np\n\narray1 = np.random.randint(1, 11, (2, 3))\narray2 = np.random.randint(1, 11, (2, 3))\n\nproduct = np.multiply(array1, array2)\nsum_array = np.add(array1, array2)\n"
+          "content": "\nimport numpy as np\n\narray1 = np.random.randint(1, 11, size=(2, 3))\narray2 = np.random.randint(1, 11, size=(2, 3))\nproduct = np.multiply(array1, array2)\nsum_array = np.add(array1, array2)\n"
         },
         {
           "name": "Answer for Boolean indexing",
           "version": "1.0.0",
-          "description": "Answer generated for Boolean indexing using Pure LLM agent and gpt-3.5-turbo",
+          "description": "Answer generated for Boolean indexing using Pure LLM agent and gpt-4.1-nano",
           "agent": {
             "name": "Pure LLM agent",
             "version": "1.0.0",
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
-              "name": "gpt-3.5-turbo",
+              "name": "gpt-4.1-nano",
               "version": "1.0.0",
-              "description": "The one, the only, the original, the one that started it all",
+              "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
               "provider": "openai"
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -2173,27 +2173,27 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
             },
             "content": "Create a 1D NumPy array with 15 random integers between -10 and 10. Extract all positive values using boolean indexing. Original array should be assigned to `original_array`. Array of positive values should be assigned to `positive_values`."
           },
-          "content": "\nimport numpy as np\n\noriginal_array = np.random.randint(-10, 11, 15)\npositive_values = original_array[original_array > 0]\n"
+          "content": "\nimport numpy as np\n\noriginal_array = np.random.randint(-10, 11, size=15)\npositive_values = original_array[original_array > 0]\n"
         },
         {
           "name": "Answer for Linear algebra operations",
           "version": "1.0.0",
-          "description": "Answer generated for Linear algebra operations using Pure LLM agent and gpt-3.5-turbo",
+          "description": "Answer generated for Linear algebra operations using Pure LLM agent and gpt-4.1-nano",
           "agent": {
             "name": "Pure LLM agent",
             "version": "1.0.0",
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
-              "name": "gpt-3.5-turbo",
+              "name": "gpt-4.1-nano",
               "version": "1.0.0",
-              "description": "The one, the only, the original, the one that started it all",
+              "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
               "provider": "openai"
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -2209,27 +2209,27 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
             },
             "content": "Create a 3x3 NumPy array filled with random floating-point numbers between 0 and 1. Calculate its matrix multiplication with itself (A @ A). Then find the eigenvalues of the original matrix. Original matrix should be assigned to `matrix`, matrix multiplication result to `matrix_squared`, and eigenvalues to `eigenvalues`."
           },
-          "content": "\nimport numpy as np\n\nmatrix = np.random.rand(3, 3)\nmatrix_squared = matrix @ matrix\neigenvalues = np.linalg.eigvals(matrix)\n"
+          "content": "\nimport numpy as np\n\n# Set seed for reproducibility (optional)\nnp.random.seed(0)\n\n# Create a 3x3 random float matrix\nmatrix = np.random.rand(3, 3)\n\n# Calculate its matrix multiplication with itself\nmatrix_squared = matrix @ matrix\n\n# Find the eigenvalues of the original matrix\neigenvalues = np.linalg.eigvals(matrix)\n"
         },
         {
           "name": "Answer for Statistical analysis",
           "version": "1.0.0",
-          "description": "Answer generated for Statistical analysis using Pure LLM agent and gpt-3.5-turbo",
+          "description": "Answer generated for Statistical analysis using Pure LLM agent and gpt-4.1-nano",
           "agent": {
             "name": "Pure LLM agent",
             "version": "1.0.0",
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
-              "name": "gpt-3.5-turbo",
+              "name": "gpt-4.1-nano",
               "version": "1.0.0",
-              "description": "The one, the only, the original, the one that started it all",
+              "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
               "provider": "openai"
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -2245,27 +2245,27 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
             },
             "content": "Create a 4x5 NumPy array with random integers between 1 and 100. Calculate the mean, median, standard deviation, and variance along axis 0 (columns). Array should be assigned to `data`, column means to `col_means`, column medians to `col_medians`, column standard deviations to `col_stds`, and column variances to `col_vars`."
           },
-          "content": "\nimport numpy as np\n\ndata = np.random.randint(1, 101, size=(4, 5))\ncol_means = np.mean(data, axis=0)\ncol_medians = np.median(data, axis=0)\ncol_stds = np.std(data, axis=0)\ncol_vars = np.var(data, axis=0)\n"
+          "content": "\nimport numpy as np\n\nnp.random.seed(0)  # optional: for reproducibility\ndata = np.random.randint(1, 101, size=(4, 5))\ncol_means = np.mean(data, axis=0)\ncol_medians = np.median(data, axis=0)\ncol_stds = np.std(data, axis=0)\ncol_vars = np.var(data, axis=0)\n"
         },
         {
           "name": "Answer for Broadcasting and vectorization",
           "version": "1.0.0",
-          "description": "Answer generated for Broadcasting and vectorization using Pure LLM agent and gpt-3.5-turbo",
+          "description": "Answer generated for Broadcasting and vectorization using Pure LLM agent and gpt-4.1-nano",
           "agent": {
             "name": "Pure LLM agent",
             "version": "1.0.0",
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
-              "name": "gpt-3.5-turbo",
+              "name": "gpt-4.1-nano",
               "version": "1.0.0",
-              "description": "The one, the only, the original, the one that started it all",
+              "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
               "provider": "openai"
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -2281,7 +2281,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -2293,15 +2293,15 @@
         {
           "name": "Answer for Advanced indexing and sorting",
           "version": "1.0.0",
-          "description": "Answer generated for Advanced indexing and sorting using Pure LLM agent and gpt-3.5-turbo",
+          "description": "Answer generated for Advanced indexing and sorting using Pure LLM agent and gpt-4.1-nano",
           "agent": {
             "name": "Pure LLM agent",
             "version": "1.0.0",
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
-              "name": "gpt-3.5-turbo",
+              "name": "gpt-4.1-nano",
               "version": "1.0.0",
-              "description": "The one, the only, the original, the one that started it all",
+              "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
               "provider": "openai"
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -2317,14 +2317,14 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
             },
             "content": "Create a 5x3 NumPy array with random integers between 0 and 50. Sort each row independently in descending order. Find the indices that would sort the entire array in ascending order when flattened. Original array should be assigned to `original_array`, row-wise sorted array to `sorted_rows`, flattened array to `flattened`, and sorting indices to `sort_indices`."
           },
-          "content": "\nimport numpy as np\n\noriginal_array = np.random.randint(0, 50, (5, 3))\nsorted_rows = np.sort(original_array, axis=1)[:, ::-1]\nflattened = sorted_rows.flatten()\nsort_indices = np.argsort(flattened)\n"
+          "content": "\nimport numpy as np\n\n# Seed for reproducibility, optional\nnp.random.seed(0)\n\n# Create a 5x3 array with random integers between 0 and 50\noriginal_array = np.random.randint(0, 51, size=(5, 3))\n\n# Sort each row independently in descending order\nsorted_rows = np.sort(original_array)[:, ::-1]\n\n# Flatten the array\nflattened = sorted_rows.flatten()\n\n# Find indices that would sort the flattened array in ascending order\nsort_indices = np.argsort(flattened)\n"
         }
       ],
       "size": 10
@@ -2337,15 +2337,15 @@
         "answer": {
           "name": "Answer for Create 2D array",
           "version": "1.0.0",
-          "description": "Answer generated for Create 2D array using Pure LLM agent and gpt-3.5-turbo",
+          "description": "Answer generated for Create 2D array using Pure LLM agent and gpt-4.1-nano",
           "agent": {
             "name": "Pure LLM agent",
             "version": "1.0.0",
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
-              "name": "gpt-3.5-turbo",
+              "name": "gpt-4.1-nano",
               "version": "1.0.0",
-              "description": "The one, the only, the original, the one that started it all",
+              "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
               "provider": "openai"
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -2361,14 +2361,14 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
             },
             "content": "Create a 2D NumPy array with 3 rows and 4 columns, filled with random integers between 0 and 100. Array should be assigned to a variable called `array`."
           },
-          "content": "\nimport numpy as np\n\narray = np.random.randint(0, 100, (3, 4))\narray\n"
+          "content": "\nimport numpy as np\n\nnp.random.seed(0)  # Optional: for reproducibility\narray = np.random.randint(0, 101, size=(3, 4))\n"
         },
         "test": {
           "name": "Create 2D array test",
@@ -2383,7 +2383,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -2401,15 +2401,15 @@
         "answer": {
           "name": "Answer for Calculate mean",
           "version": "1.0.0",
-          "description": "Answer generated for Calculate mean using Pure LLM agent and gpt-3.5-turbo",
+          "description": "Answer generated for Calculate mean using Pure LLM agent and gpt-4.1-nano",
           "agent": {
             "name": "Pure LLM agent",
             "version": "1.0.0",
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
-              "name": "gpt-3.5-turbo",
+              "name": "gpt-4.1-nano",
               "version": "1.0.0",
-              "description": "The one, the only, the original, the one that started it all",
+              "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
               "provider": "openai"
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -2425,7 +2425,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -2447,7 +2447,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -2465,15 +2465,15 @@
         "answer": {
           "name": "Answer for Array slicing",
           "version": "1.0.0",
-          "description": "Answer generated for Array slicing using Pure LLM agent and gpt-3.5-turbo",
+          "description": "Answer generated for Array slicing using Pure LLM agent and gpt-4.1-nano",
           "agent": {
             "name": "Pure LLM agent",
             "version": "1.0.0",
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
-              "name": "gpt-3.5-turbo",
+              "name": "gpt-4.1-nano",
               "version": "1.0.0",
-              "description": "The one, the only, the original, the one that started it all",
+              "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
               "provider": "openai"
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -2489,7 +2489,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -2511,7 +2511,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -2529,15 +2529,15 @@
         "answer": {
           "name": "Answer for Array reshaping",
           "version": "1.0.0",
-          "description": "Answer generated for Array reshaping using Pure LLM agent and gpt-3.5-turbo",
+          "description": "Answer generated for Array reshaping using Pure LLM agent and gpt-4.1-nano",
           "agent": {
             "name": "Pure LLM agent",
             "version": "1.0.0",
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
-              "name": "gpt-3.5-turbo",
+              "name": "gpt-4.1-nano",
               "version": "1.0.0",
-              "description": "The one, the only, the original, the one that started it all",
+              "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
               "provider": "openai"
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -2553,14 +2553,14 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
             },
             "content": "Create a 1D NumPy array with 12 consecutive integers starting from 1. Reshape it into a 3x4 matrix. Original array should be assigned to a variable called `original_array`. Reshaped array should be assigned to a variable called `reshaped_array`."
           },
-          "content": "\nimport numpy as np\n\noriginal_array = np.arange(1, 13)\nreshaped_array = original_array.reshape(3, 4)\n"
+          "content": "\nimport numpy as np\n\noriginal_array = np.array(range(1, 13))\nreshaped_array = original_array.reshape(3, 4)\n"
         },
         "test": {
           "name": "Array reshaping test",
@@ -2575,7 +2575,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -2593,15 +2593,15 @@
         "answer": {
           "name": "Answer for Element-wise operations",
           "version": "1.0.0",
-          "description": "Answer generated for Element-wise operations using Pure LLM agent and gpt-3.5-turbo",
+          "description": "Answer generated for Element-wise operations using Pure LLM agent and gpt-4.1-nano",
           "agent": {
             "name": "Pure LLM agent",
             "version": "1.0.0",
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
-              "name": "gpt-3.5-turbo",
+              "name": "gpt-4.1-nano",
               "version": "1.0.0",
-              "description": "The one, the only, the original, the one that started it all",
+              "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
               "provider": "openai"
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -2617,14 +2617,14 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
             },
             "content": "Create two 2x3 NumPy arrays filled with random integers between 1 and 10. Calculate their element-wise product and sum. First array should be assigned to `array1`, second array to `array2`, element-wise product to `product`, and element-wise sum to `sum_array`."
           },
-          "content": "\nimport numpy as np\n\narray1 = np.random.randint(1, 11, (2, 3))\narray2 = np.random.randint(1, 11, (2, 3))\n\nproduct = np.multiply(array1, array2)\nsum_array = np.add(array1, array2)\n"
+          "content": "\nimport numpy as np\n\narray1 = np.random.randint(1, 11, size=(2, 3))\narray2 = np.random.randint(1, 11, size=(2, 3))\nproduct = np.multiply(array1, array2)\nsum_array = np.add(array1, array2)\n"
         },
         "test": {
           "name": "Element-wise operations test",
@@ -2639,7 +2639,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -2657,15 +2657,15 @@
         "answer": {
           "name": "Answer for Boolean indexing",
           "version": "1.0.0",
-          "description": "Answer generated for Boolean indexing using Pure LLM agent and gpt-3.5-turbo",
+          "description": "Answer generated for Boolean indexing using Pure LLM agent and gpt-4.1-nano",
           "agent": {
             "name": "Pure LLM agent",
             "version": "1.0.0",
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
-              "name": "gpt-3.5-turbo",
+              "name": "gpt-4.1-nano",
               "version": "1.0.0",
-              "description": "The one, the only, the original, the one that started it all",
+              "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
               "provider": "openai"
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -2681,14 +2681,14 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
             },
             "content": "Create a 1D NumPy array with 15 random integers between -10 and 10. Extract all positive values using boolean indexing. Original array should be assigned to `original_array`. Array of positive values should be assigned to `positive_values`."
           },
-          "content": "\nimport numpy as np\n\noriginal_array = np.random.randint(-10, 11, 15)\npositive_values = original_array[original_array > 0]\n"
+          "content": "\nimport numpy as np\n\noriginal_array = np.random.randint(-10, 11, size=15)\npositive_values = original_array[original_array > 0]\n"
         },
         "test": {
           "name": "Boolean indexing test",
@@ -2703,7 +2703,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -2721,15 +2721,15 @@
         "answer": {
           "name": "Answer for Linear algebra operations",
           "version": "1.0.0",
-          "description": "Answer generated for Linear algebra operations using Pure LLM agent and gpt-3.5-turbo",
+          "description": "Answer generated for Linear algebra operations using Pure LLM agent and gpt-4.1-nano",
           "agent": {
             "name": "Pure LLM agent",
             "version": "1.0.0",
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
-              "name": "gpt-3.5-turbo",
+              "name": "gpt-4.1-nano",
               "version": "1.0.0",
-              "description": "The one, the only, the original, the one that started it all",
+              "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
               "provider": "openai"
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -2745,14 +2745,14 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
             },
             "content": "Create a 3x3 NumPy array filled with random floating-point numbers between 0 and 1. Calculate its matrix multiplication with itself (A @ A). Then find the eigenvalues of the original matrix. Original matrix should be assigned to `matrix`, matrix multiplication result to `matrix_squared`, and eigenvalues to `eigenvalues`."
           },
-          "content": "\nimport numpy as np\n\nmatrix = np.random.rand(3, 3)\nmatrix_squared = matrix @ matrix\neigenvalues = np.linalg.eigvals(matrix)\n"
+          "content": "\nimport numpy as np\n\n# Set seed for reproducibility (optional)\nnp.random.seed(0)\n\n# Create a 3x3 random float matrix\nmatrix = np.random.rand(3, 3)\n\n# Calculate its matrix multiplication with itself\nmatrix_squared = matrix @ matrix\n\n# Find the eigenvalues of the original matrix\neigenvalues = np.linalg.eigvals(matrix)\n"
         },
         "test": {
           "name": "Linear algebra operations test",
@@ -2767,7 +2767,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -2785,15 +2785,15 @@
         "answer": {
           "name": "Answer for Statistical analysis",
           "version": "1.0.0",
-          "description": "Answer generated for Statistical analysis using Pure LLM agent and gpt-3.5-turbo",
+          "description": "Answer generated for Statistical analysis using Pure LLM agent and gpt-4.1-nano",
           "agent": {
             "name": "Pure LLM agent",
             "version": "1.0.0",
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
-              "name": "gpt-3.5-turbo",
+              "name": "gpt-4.1-nano",
               "version": "1.0.0",
-              "description": "The one, the only, the original, the one that started it all",
+              "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
               "provider": "openai"
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -2809,14 +2809,14 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
             },
             "content": "Create a 4x5 NumPy array with random integers between 1 and 100. Calculate the mean, median, standard deviation, and variance along axis 0 (columns). Array should be assigned to `data`, column means to `col_means`, column medians to `col_medians`, column standard deviations to `col_stds`, and column variances to `col_vars`."
           },
-          "content": "\nimport numpy as np\n\ndata = np.random.randint(1, 101, size=(4, 5))\ncol_means = np.mean(data, axis=0)\ncol_medians = np.median(data, axis=0)\ncol_stds = np.std(data, axis=0)\ncol_vars = np.var(data, axis=0)\n"
+          "content": "\nimport numpy as np\n\nnp.random.seed(0)  # optional: for reproducibility\ndata = np.random.randint(1, 101, size=(4, 5))\ncol_means = np.mean(data, axis=0)\ncol_medians = np.median(data, axis=0)\ncol_stds = np.std(data, axis=0)\ncol_vars = np.var(data, axis=0)\n"
         },
         "test": {
           "name": "Statistical analysis test",
@@ -2831,7 +2831,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -2849,15 +2849,15 @@
         "answer": {
           "name": "Answer for Broadcasting and vectorization",
           "version": "1.0.0",
-          "description": "Answer generated for Broadcasting and vectorization using Pure LLM agent and gpt-3.5-turbo",
+          "description": "Answer generated for Broadcasting and vectorization using Pure LLM agent and gpt-4.1-nano",
           "agent": {
             "name": "Pure LLM agent",
             "version": "1.0.0",
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
-              "name": "gpt-3.5-turbo",
+              "name": "gpt-4.1-nano",
               "version": "1.0.0",
-              "description": "The one, the only, the original, the one that started it all",
+              "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
               "provider": "openai"
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -2873,7 +2873,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -2895,7 +2895,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
@@ -2913,15 +2913,15 @@
         "answer": {
           "name": "Answer for Advanced indexing and sorting",
           "version": "1.0.0",
-          "description": "Answer generated for Advanced indexing and sorting using Pure LLM agent and gpt-3.5-turbo",
+          "description": "Answer generated for Advanced indexing and sorting using Pure LLM agent and gpt-4.1-nano",
           "agent": {
             "name": "Pure LLM agent",
             "version": "1.0.0",
             "description": "Agent that uses a raw LLM to solve the tasks",
             "model": {
-              "name": "gpt-3.5-turbo",
+              "name": "gpt-4.1-nano",
               "version": "1.0.0",
-              "description": "The one, the only, the original, the one that started it all",
+              "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
               "provider": "openai"
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
@@ -2937,14 +2937,14 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }
             },
             "content": "Create a 5x3 NumPy array with random integers between 0 and 50. Sort each row independently in descending order. Find the indices that would sort the entire array in ascending order when flattened. Original array should be assigned to `original_array`, row-wise sorted array to `sorted_rows`, flattened array to `flattened`, and sorting indices to `sort_indices`."
           },
-          "content": "\nimport numpy as np\n\noriginal_array = np.random.randint(0, 50, (5, 3))\nsorted_rows = np.sort(original_array, axis=1)[:, ::-1]\nflattened = sorted_rows.flatten()\nsort_indices = np.argsort(flattened)\n"
+          "content": "\nimport numpy as np\n\n# Seed for reproducibility, optional\nnp.random.seed(0)\n\n# Create a 5x3 array with random integers between 0 and 50\noriginal_array = np.random.randint(0, 51, size=(5, 3))\n\n# Sort each row independently in descending order\nsorted_rows = np.sort(original_array)[:, ::-1]\n\n# Flatten the array\nflattened = sorted_rows.flatten()\n\n# Find indices that would sort the flattened array in ascending order\nsort_indices = np.argsort(flattened)\n"
         },
         "test": {
           "name": "Advanced indexing and sorting test",
@@ -2959,7 +2959,7 @@
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
-                "name": "Python",
+                "name": "python",
                 "version": "3.13.5",
                 "description": "A high-level, interpreted programming language known for its simplicity and versatility"
               }

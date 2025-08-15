@@ -1,4 +1,6 @@
-from pydantic import BaseModel, computed_field
+from typing import Literal
+
+from pydantic import BaseModel, computed_field, field_validator
 
 
 class BaseEntity(BaseModel, frozen=True, strict=True, extra="ignore"):
@@ -8,7 +10,14 @@ class BaseEntity(BaseModel, frozen=True, strict=True, extra="ignore"):
 
 
 class Language(BaseEntity):
-    pass
+    name: Literal["python"]
+
+    @field_validator("name", mode="before")
+    @classmethod
+    def normalize_name(cls, text: str) -> str:
+        if isinstance(text, str):
+            return text.lower().strip()
+        return text
 
 
 class Library(BaseEntity):
@@ -46,7 +55,14 @@ class Testset(BaseEntity):
 
 
 class Model(BaseEntity):
-    provider: str
+    provider: Literal["openai"]
+
+    @field_validator("provider", mode="before")
+    @classmethod
+    def normalize_provider(cls, text: str) -> str:
+        if isinstance(text, str):
+            return text.lower().strip()
+        return text
 
 
 class Agent(BaseEntity):
