@@ -2,7 +2,9 @@
 
 **Understand how well software engineering agents can use your software library.**
 
-Affordance is an evaluation framework that measures how effectively AI coding agents can use specific software libraries. It provides a complete pipeline for creating coding tasks, running AI agents against them, executing generated code safely, and visualizing results through an interactive dashboard.
+Affordance is an evaluation framework that measures how effectively AI coding agents can use specific software libraries. 
+
+It provides a complete pipeline for creating coding tasks, running AI agents against them, executing generated code safely, and visualizing results through an interactive dashboard.
 
 ## 🚀 Quick Start
 
@@ -48,6 +50,7 @@ uv run streamlit run dashboard.py
 
 ### Data Model Hierarchy
 
+```markdown
 Evaluation
 ├── Language (Python, JavaScript, etc.)
 ├── Library (NumPy, React, etc.)
@@ -60,6 +63,7 @@ Evaluation
 
 ## 📁 Project Structure
 
+```markdown
 affordance/
 ├── data_models.py          # Pydantic models for all data structures
 ├── evaluation.py           # Main evaluation pipeline + CLI interface
@@ -333,10 +337,6 @@ uv run pytest tests/ -v
 uv run ruff check
 uv run ruff format
 ```
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## 🆘 Support
 
