@@ -7,7 +7,7 @@ primaryColor = "#00ff00"
 backgroundColor = "#000000"
 
 # Sidebar and container backgrounds (dark gray/black)
-secondaryBackgroundColor = "#1a1a1a"
+secondaryBackgroundColor = "#000000"
 
 # Text color for all content (green terminal text)
 textColor = "#00ff00"

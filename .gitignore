@@ -1,5 +1,6 @@
 .states
 .web
+.claude
 *.py[cod]
 assets/external/
 *.db

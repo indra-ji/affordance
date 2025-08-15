@@ -121,6 +121,8 @@ def render_detailed_view(evaluation: Evaluation):
             disabled=True,
         )
 
+        st.divider()
+
         col1, col2 = st.columns(2)
         with col1:
             st.write(f"**Task name:** {result.answer.task.name}")
@@ -132,6 +134,8 @@ def render_detailed_view(evaluation: Evaluation):
 
     with tab2:
         st.code(result.answer.content)
+
+        st.divider()
 
         col1, col2 = st.columns(2)
         with col1:
@@ -146,6 +150,8 @@ def render_detailed_view(evaluation: Evaluation):
 
     with tab3:
         st.code(result.test.content)
+
+        st.divider()
 
         col1, col2 = st.columns(2)
         with col1:
