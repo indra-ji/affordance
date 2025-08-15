@@ -6,10 +6,9 @@ from data_models import Evaluation
 from utils import deserialize_data_model
 
 
-def display_basic_info(entity, title: str, icon: str = ""):
+def display_basic_info(entity, title: str):
     """Display basic information using Streamlit components only"""
-    icon_part = f"{icon} " if icon else ""
-    st.subheader(f"{icon_part}{title}")
+    st.subheader(title)
 
     st.write(f"**Name:** {entity.name}")
     st.write(f"**Description:** {entity.description}")
@@ -17,47 +16,37 @@ def display_basic_info(entity, title: str, icon: str = ""):
 
 
 def render_overview(evaluation: Evaluation):
-    st.empty()
-    st.empty()
-
     st.header("Evaluation Overview")
     st.caption("High-level details of the evaluation run")
 
     st.divider()
 
-    st.empty()
-
-    display_basic_info(evaluation, "Evaluation", "🔬")
+    display_basic_info(evaluation, "Evaluation")
 
     col1, col2 = st.columns(2)
     with col1:
-        display_basic_info(evaluation.language, "Language", "🔤")
+        display_basic_info(evaluation.language, "Language")
     with col2:
-        display_basic_info(evaluation.library, "Library", "📚")
+        display_basic_info(evaluation.library, "Library")
 
     col1, col2 = st.columns(2)
     with col1:
-        display_basic_info(evaluation.model, "Model", "🤖")
+        display_basic_info(evaluation.model, "Model")
     with col2:
-        display_basic_info(evaluation.agent, "Agent", "🕵️")
+        display_basic_info(evaluation.agent, "Agent")
 
     col1, col2 = st.columns(2)
     with col1:
-        display_basic_info(evaluation.taskset, "Taskset", "🧩")
+        display_basic_info(evaluation.taskset, "Taskset")
     with col2:
-        display_basic_info(evaluation.testset, "Testset", "🧪")
+        display_basic_info(evaluation.testset, "Testset")
 
 
 def render_metrics(evaluation: Evaluation):
-    st.empty()
-    st.empty()
-
     st.header("Metrics")
     st.caption("At-a-glance performance")
 
     st.divider()
-
-    st.empty()
 
     st.subheader("Evaluation performance")
 
@@ -88,7 +77,6 @@ def render_metrics(evaluation: Evaluation):
 
 
 def render_detailed_view(evaluation: Evaluation):
-    st.empty()
     st.header("Detailed view")
     st.caption("Inspect tasks, answers, tests, and results")
 
@@ -101,7 +89,7 @@ def render_detailed_view(evaluation: Evaluation):
     ]
 
     task_names = [
-        f"{text} {('🟢 PASSED' if result.passed else '🔴 FAILED')}"
+        f"{text} {'🟢 PASSED' if result.passed else '🔴 FAILED'}"
         for text, result in zip(text_parts, results)
     ]
 
@@ -111,9 +99,6 @@ def render_detailed_view(evaluation: Evaluation):
         format_func=lambda x: task_names[x],
     )
 
-    st.empty()
-    st.empty()
-
     result = results[selected_task_idx]
 
     col1, col2 = st.columns([3, 1])
@@ -122,9 +107,9 @@ def render_detailed_view(evaluation: Evaluation):
     with col2:
         match result.passed:
             case True:
-                st.success("🟢 PASSED")
+                st.markdown("## **PASSED**")
             case False:
-                st.error("🔴 FAILED")
+                st.markdown("## **:red[FAILED]**")
 
     tab1, tab2, tab3 = st.tabs(["Task", "Answer", "Test"])
 
