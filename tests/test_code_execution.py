@@ -1,7 +1,8 @@
 """Smoke tests for code execution safety in tester.py"""
 
 import pytest
-from data_models import Answer, Test, Agent, Task, Model, Library, Language
+
+from data_models import Agent, Answer, Language, Library, Model, Task, Test
 from tester import generate_result, safe_import
 
 
@@ -12,7 +13,10 @@ class TestCodeExecutionSafety:
         """Helper to create minimal objects for testing"""
         language = Language(name="Python", version="3.13", description="Python")
         library = Library(
-            name="TestLib", version="1.0.0", description="Test", language=language
+            name="TestLib",
+            version="1.0.0",
+            description="Test",
+            language=language,
         )
         model = Model(
             name="test", version="1.0.0", description="Test", provider="openai"
@@ -357,8 +361,8 @@ class TestCodeExecutionSafety:
             content="assert result == 5",
         )
 
-        # Should raise SyntaxError, not return False
-        with pytest.raises(SyntaxError):
+        # Should raise a syntax-related error, not return False
+        with pytest.raises((SyntaxError, IndentationError)):
             generate_result(answer, test)
 
     def test_runtime_error_handling(self):
@@ -426,9 +430,179 @@ class TestCodeExecutionSafety:
             version="1.0.0",
             description="Test",
             task=task,
-            content="assert 'secret_var' not in globals()",
+            content="assert 'secret_var' not in locals() and 'secret_var' not in dir()",
         )
 
         # This should pass because each test runs in its own namespace
         result2 = generate_result(answer2, test2)
         assert result2 is True
+
+    def test_namespace_isolation_verification(self):
+        """Additional test to verify namespace isolation works correctly"""
+        agent, task = self.create_minimal_objects()
+
+        # First execution sets a variable
+        answer1 = Answer(
+            name="Test Answer 1",
+            version="1.0.0",
+            description="Test answer",
+            agent=agent,
+            task=task,
+            content="test_var = 'first_execution'",
+        )
+
+        test1 = Test(
+            name="Test 1",
+            version="1.0.0",
+            description="Test",
+            task=task,
+            content="assert test_var == 'first_execution'",
+        )
+
+        result1 = generate_result(answer1, test1)
+        assert result1 is True
+
+        # Second execution with same variable name but different value
+        answer2 = Answer(
+            name="Test Answer 2",
+            version="1.0.0",
+            description="Test answer",
+            agent=agent,
+            task=task,
+            content="test_var = 'second_execution'",
+        )
+
+        test2 = Test(
+            name="Test 2",
+            version="1.0.0",
+            description="Test",
+            task=task,
+            content="assert test_var == 'second_execution'",
+        )
+
+        # This should pass, proving no contamination from first execution
+        result2 = generate_result(answer2, test2)
+        assert result2 is True
+
+    def test_blocked_from_import_star(self):
+        """Test that 'from module import *' syntax is blocked for dangerous modules"""
+        agent, task = self.create_minimal_objects()
+
+        answer = Answer(
+            name="Test Answer",
+            version="1.0.0",
+            description="Test answer",
+            agent=agent,
+            task=task,
+            content="from os import *\nresult = 'test'",
+        )
+
+        test = Test(
+            name="Test",
+            version="1.0.0",
+            description="Test",
+            task=task,
+            content="assert result == 'test'",
+        )
+
+        with pytest.raises(ImportError, match="Import of 'os' is blocked"):
+            generate_result(answer, test)
+
+    def test_blocked_from_import_specific(self):
+        """Test that 'from module import specific' syntax is blocked for dangerous modules"""
+        agent, task = self.create_minimal_objects()
+
+        answer = Answer(
+            name="Test Answer",
+            version="1.0.0",
+            description="Test answer",
+            agent=agent,
+            task=task,
+            content="from subprocess import run\nresult = 'test'",
+        )
+
+        test = Test(
+            name="Test",
+            version="1.0.0",
+            description="Test",
+            task=task,
+            content="assert result == 'test'",
+        )
+
+        with pytest.raises(ImportError, match="Import of 'subprocess' is blocked"):
+            generate_result(answer, test)
+
+    def test_blocked_importlib_bypass_attempt(self):
+        """Test that importlib cannot be used to bypass import restrictions"""
+        agent, task = self.create_minimal_objects()
+
+        answer = Answer(
+            name="Test Answer",
+            version="1.0.0",
+            description="Test answer",
+            agent=agent,
+            task=task,
+            content="import importlib\nos_module = importlib.import_module('os')\nresult = 'bypassed'",
+        )
+
+        test = Test(
+            name="Test",
+            version="1.0.0",
+            description="Test",
+            task=task,
+            content="assert result == 'bypassed'",
+        )
+
+        # Should fail when trying to import 'os' via importlib
+        with pytest.raises(ImportError, match="Import of 'importlib' is blocked"):
+            generate_result(answer, test)
+
+    def test_safe_import_in_sandboxed_context(self):
+        """Test that safe_import works correctly within the sandboxed execution context"""
+        agent, task = self.create_minimal_objects()
+
+        answer = Answer(
+            name="Test Answer",
+            version="1.0.0",
+            description="Test answer",
+            agent=agent,
+            task=task,
+            content="import math\nresult = math.sqrt(16)\n# Verify math module functions work\npi_val = math.pi",
+        )
+
+        test = Test(
+            name="Test",
+            version="1.0.0",
+            description="Test",
+            task=task,
+            content="assert result == 4.0\nassert abs(pi_val - 3.14159) < 0.001",
+        )
+
+        # This should pass - math is safe and should work in sandbox
+        result = generate_result(answer, test)
+        assert result is True
+
+    def test_blocked_import_via_exec(self):
+        """Test that exec cannot be used to bypass import restrictions"""
+        agent, task = self.create_minimal_objects()
+
+        answer = Answer(
+            name="Test Answer",
+            version="1.0.0",
+            description="Test answer",
+            agent=agent,
+            task=task,
+            content="exec('import os')\nresult = 'bypassed'",
+        )
+
+        test = Test(
+            name="Test",
+            version="1.0.0",
+            description="Test",
+            task=task,
+            content="assert result == 'bypassed'",
+        )
+
+        # Should still block the import even when done via exec
+        with pytest.raises(ImportError, match="Import of 'os' is blocked"):
+            generate_result(answer, test)

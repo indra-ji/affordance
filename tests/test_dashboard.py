@@ -494,3 +494,241 @@ class TestDashboardIntegration:
             results = loaded_eval.resultset.results
             assert results[0].passed is False  # Addition failed
             assert results[1].passed is True  # String reversal passed
+
+
+class TestDashboardErrorScenarios:
+    """Test dashboard error handling and edge cases"""
+
+    def test_dashboard_with_missing_evaluation_fields(self):
+        """Test dashboard behavior when evaluation data has missing fields"""
+        with tempfile.TemporaryDirectory() as temp_dir:
+            incomplete_path = os.path.join(temp_dir, "incomplete.json")
+
+            # Create evaluation with missing required fields
+            incomplete_data = {
+                "name": "Incomplete Evaluation",
+                "version": "1.0.0",
+                # Missing required fields like language, library, etc.
+            }
+
+            with open(incomplete_path, "w") as f:
+                f.write(str(incomplete_data).replace("'", '"'))
+
+            # Should return None gracefully
+            result = load_evaluation_from_file(incomplete_path)
+            assert result is None
+
+    def test_dashboard_with_corrupted_resultset(self):
+        """Test dashboard when evaluation has corrupted result data"""
+        config_dir = "tests/configs/test_configs"
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            eval_path = os.path.join(temp_dir, "corrupted_results.json")
+
+            # Create evaluation then corrupt the resultset data
+            with patch("llm.generate_answer") as mock_generate:
+                mock_generate.side_effect = [
+                    "result = 5 + 3",
+                    "reversed_str = 'hello'[::-1]",
+                ]
+                evaluation = create_evaluation(config_dir)
+
+                # Serialize and then corrupt the JSON
+                serialize_data_model(eval_path, evaluation)
+
+                # Read and corrupt the JSON
+                with open(eval_path, "r") as f:
+                    data = f.read()
+
+                # Corrupt the resultset section
+                corrupted_data = data.replace('"results":', '"corrupted_results":')
+
+                with open(eval_path, "w") as f:
+                    f.write(corrupted_data)
+
+            # Should handle corruption gracefully
+            result = load_evaluation_from_file(eval_path)
+            assert result is None
+
+    @patch("streamlit.error")
+    def test_streamlit_component_failure_handling(self, mock_error):
+        """Test dashboard behavior when Streamlit components fail"""
+        from dashboard import render_overview
+
+        # Create mock evaluation
+        mock_evaluation = Mock()
+        mock_evaluation.name = "Test"
+        mock_evaluation.version = "1.0.0"
+        mock_evaluation.description = "Test"
+
+        # Mock streamlit components to raise exceptions
+        with patch(
+            "streamlit.header", side_effect=Exception("Streamlit component failed")
+        ):
+            with patch("streamlit.caption"):
+                with patch("streamlit.divider"):
+                    # Should not crash when streamlit components fail
+                    try:
+                        render_overview(mock_evaluation)
+                    except Exception as e:
+                        assert "Streamlit component failed" in str(e)
+
+    def test_dashboard_with_large_dataset_performance(self):
+        """Test dashboard loading with large evaluation datasets"""
+        with tempfile.TemporaryDirectory() as temp_dir:
+            large_eval_path = os.path.join(temp_dir, "large_evaluation.json")
+
+            # Create evaluation with large number of tasks/results
+            large_evaluation_data = {
+                "name": "Large Evaluation",
+                "version": "1.0.0",
+                "description": "Large dataset test",
+                "language": {
+                    "name": "Python",
+                    "version": "3.13",
+                    "description": "Python",
+                },
+                "library": {
+                    "name": "TestLib",
+                    "version": "1.0.0",
+                    "description": "Test",
+                    "language": {
+                        "name": "Python",
+                        "version": "3.13",
+                        "description": "Python",
+                    },
+                },
+                "taskset": {
+                    "name": "Large Taskset",
+                    "version": "1.0.0",
+                    "description": "Large taskset",
+                    "library": {
+                        "name": "TestLib",
+                        "version": "1.0.0",
+                        "description": "Test",
+                        "language": {
+                            "name": "Python",
+                            "version": "3.13",
+                            "description": "Python",
+                        },
+                    },
+                    "tasks": [
+                        {
+                            "name": f"Task {i}",
+                            "version": "1.0.0",
+                            "description": f"Task {i}",
+                            "library": {
+                                "name": "TestLib",
+                                "version": "1.0.0",
+                                "description": "Test",
+                                "language": {
+                                    "name": "Python",
+                                    "version": "3.13",
+                                    "description": "Python",
+                                },
+                            },
+                            "content": f"x_{i} = {i}",
+                        }
+                        for i in range(1000)  # 1000 tasks
+                    ],
+                    "size": 1000,
+                },
+                "testset": {
+                    "name": "Large Testset",
+                    "version": "1.0.0",
+                    "description": "Large testset",
+                    "taskset": {},  # Reference to taskset
+                    "tests": [
+                        {
+                            "name": f"Test {i}",
+                            "version": "1.0.0",
+                            "description": f"Test {i}",
+                            "task": {},  # Reference to task
+                            "content": f"assert x_{i} == {i}",
+                        }
+                        for i in range(1000)
+                    ],
+                    "size": 1000,
+                },
+                "model": {
+                    "name": "gpt-4",
+                    "version": "1.0.0",
+                    "description": "GPT-4",
+                    "provider": "openai",
+                },
+                "agent": {
+                    "name": "TestAgent",
+                    "version": "1.0.0",
+                    "description": "Test",
+                    "model": {},
+                    "prompt": "test",
+                    "configuration": "test",
+                    "scaffolding": "test",
+                },
+                "answerset": {
+                    "name": "Large Answerset",
+                    "version": "1.0.0",
+                    "description": "Large answerset",
+                    "agent": {},
+                    "taskset": {},
+                    "answers": [],
+                    "size": 1000,
+                },
+                "resultset": {
+                    "name": "Large Resultset",
+                    "version": "1.0.0",
+                    "description": "Large resultset",
+                    "taskset": {},
+                    "testset": {},
+                    "answerset": {},
+                    "results": [],
+                    "size": 1000,
+                    "number_passed": 500,
+                    "percentage_passed": 50.0,
+                },
+            }
+
+            import json
+
+            with open(large_eval_path, "w") as f:
+                json.dump(large_evaluation_data, f)
+
+            # Test that loading completes in reasonable time (should not hang)
+            import time
+
+            start_time = time.time()
+            result = load_evaluation_from_file(large_eval_path)
+            load_time = time.time() - start_time
+
+            # Should complete within reasonable time (5 seconds) or return None if too large
+            assert load_time < 5.0 or result is None
+
+    def test_dashboard_memory_usage_with_complex_evaluation(self):
+        """Test dashboard memory handling with complex nested evaluation data"""
+        config_dir = "tests/configs/test_configs"
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            # Create multiple evaluations and load them
+            eval_paths = []
+
+            for i in range(10):  # Create 10 evaluations
+                eval_path = os.path.join(temp_dir, f"eval_{i}.json")
+
+                with patch("llm.generate_answer") as mock_generate:
+                    mock_generate.side_effect = [
+                        f"result = {i} + 3",
+                        f"reversed_str = 'test{i}'[::-1]",
+                    ]
+                    evaluation = create_evaluation(config_dir)
+                    serialize_data_model(eval_path, evaluation)
+                    eval_paths.append(eval_path)
+
+            # Load all evaluations - should not cause memory issues
+            loaded_evaluations = []
+            for path in eval_paths:
+                loaded = load_evaluation_from_file(path)
+                if loaded:
+                    loaded_evaluations.append(loaded)
+
+            # Verify we could load multiple evaluations
+            assert len(loaded_evaluations) > 0

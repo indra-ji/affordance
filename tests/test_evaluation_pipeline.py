@@ -5,6 +5,7 @@ import tempfile
 import os
 from pathlib import Path
 from unittest.mock import patch
+from pydantic import ValidationError
 
 from evaluation import (
     create_evaluation,
@@ -323,7 +324,7 @@ class TestEvaluationPipelineErrorHandling:
             invalid_config = Path(temp_dir) / "language_invalid.json"
             invalid_config.write_text('{"invalid": "structure"}')
 
-            with pytest.raises(Exception):  # Should raise validation error
+            with pytest.raises((ValidationError, KeyError, TypeError)):
                 create_evaluation(temp_dir)
 
     def test_llm_generation_failure(self):
@@ -347,8 +348,8 @@ class TestEvaluationPipelineErrorHandling:
                 "reversed_str = 'hello'[::-1]",  # Valid
             ]
 
-            # Should raise SyntaxError when trying to execute the code
-            with pytest.raises(SyntaxError):
+            # Should raise syntax-related error when trying to execute the code
+            with pytest.raises((SyntaxError, IndentationError)):
                 create_evaluation(config_dir)
 
 
@@ -359,12 +360,34 @@ class TestEvaluationPipelineWithExistingConfigs:
         """Test pipeline using actual numpy demo config files"""
         config_dir = "eval_configs/numpy_demo_configs"
 
-        # Skip if the numpy configs don't exist
+        # Skip if the numpy configs don't exist or are incomplete
+        required_patterns = [
+            "language_*.json",
+            "library_*.json",
+            "model_*.json",
+            "agent_*.json",
+            "taskset_*.json",
+            "testset_*.json",
+        ]
         if not os.path.exists(config_dir):
-            pytest.skip("NumPy demo configs not available")
+            pytest.skip("NumPy demo configs directory not available")
+
+        # Check if all required config file patterns exist
+        missing_configs = []
+        for pattern in required_patterns:
+            try:
+                from utils import find_config_file
+
+                find_config_file(config_dir, pattern)
+            except FileNotFoundError:
+                missing_configs.append(pattern)
+
+        if missing_configs:
+            pytest.skip(f"NumPy demo configs incomplete, missing: {missing_configs}")
 
         with patch("llm.generate_answer") as mock_generate:
-            # Mock responses for numpy tasks (we don't know how many there are)
+            # Use return_value instead of side_effect to avoid running out of responses
+            # This ensures ALL calls get mocked and never hit the real API
             mock_generate.return_value = (
                 "import numpy as np\nresult = np.array([1, 2, 3])"
             )
@@ -408,3 +431,92 @@ class TestEvaluationPipelineWithExistingConfigs:
             results = resultset.results
             assert results[0].passed is True
             assert results[1].passed is False
+
+    def test_edge_cases_empty_taskset(self):
+        """Test pipeline behavior with empty tasksets"""
+        with tempfile.TemporaryDirectory() as temp_dir:
+            # Create config files with empty taskset
+            language_config = Path(temp_dir) / "language_empty.json"
+            language_config.write_text(
+                '{"name": "Python", "version": "3.13", "description": "Python"}'
+            )
+
+            library_config = Path(temp_dir) / "library_empty.json"
+            library_config.write_text(
+                '{"name": "TestLib", "version": "1.0.0", "description": "Test"}'
+            )
+
+            taskset_config = Path(temp_dir) / "taskset_empty.json"
+            taskset_config.write_text(
+                '{"name": "Empty", "version": "1.0.0", "description": "Empty taskset", "tasks": []}'
+            )
+
+            testset_config = Path(temp_dir) / "testset_empty.json"
+            testset_config.write_text(
+                '{"name": "Empty", "version": "1.0.0", "description": "Empty testset", "tests": []}'
+            )
+
+            model_config = Path(temp_dir) / "model_empty.json"
+            model_config.write_text(
+                '{"name": "gpt-4", "version": "1.0.0", "description": "GPT-4", "provider": "openai"}'
+            )
+
+            agent_config = Path(temp_dir) / "agent_empty.json"
+            agent_config.write_text(
+                '{"name": "TestAgent", "version": "1.0.0", "description": "Test", "prompt": "test", "configuration": "test", "scaffolding": "test"}'
+            )
+
+            # Mock API calls even though empty taskset shouldn't call API
+            with patch("llm.generate_answer") as mock_generate:
+                mock_generate.return_value = "mock_response"
+                evaluation = create_evaluation(temp_dir)
+
+            # Verify empty evaluation structure
+            assert evaluation.taskset.size == 0
+            assert evaluation.testset.size == 0
+            assert evaluation.answerset.size == 0
+            assert evaluation.resultset.size == 0
+            assert evaluation.resultset.percentage_passed == 0.0
+
+    def test_mismatched_task_test_counts(self):
+        """Test error handling when task and test counts don't match"""
+        with tempfile.TemporaryDirectory() as temp_dir:
+            # Create configs with mismatched counts
+            language_config = Path(temp_dir) / "language_mismatch.json"
+            language_config.write_text(
+                '{"name": "Python", "version": "3.13", "description": "Python"}'
+            )
+
+            library_config = Path(temp_dir) / "library_mismatch.json"
+            library_config.write_text(
+                '{"name": "TestLib", "version": "1.0.0", "description": "Test"}'
+            )
+
+            # 2 tasks
+            taskset_config = Path(temp_dir) / "taskset_mismatch.json"
+            taskset_config.write_text(
+                '{"name": "Mismatch", "version": "1.0.0", "description": "Mismatch", "tasks": [{"name": "Task1", "version": "1.0.0", "description": "Task1", "content": "x=1"}, {"name": "Task2", "version": "1.0.0", "description": "Task2", "content": "y=2"}]}'
+            )
+
+            # 3 tests (mismatch!)
+            testset_config = Path(temp_dir) / "testset_mismatch.json"
+            testset_config.write_text(
+                '{"name": "Mismatch", "version": "1.0.0", "description": "Mismatch", "tests": [{"name": "Test1", "version": "1.0.0", "description": "Test1", "content": "assert x==1"}, {"name": "Test2", "version": "1.0.0", "description": "Test2", "content": "assert y==2"}, {"name": "Test3", "version": "1.0.0", "description": "Test3", "content": "assert z==3"}]}'
+            )
+
+            model_config = Path(temp_dir) / "model_mismatch.json"
+            model_config.write_text(
+                '{"name": "gpt-4", "version": "1.0.0", "description": "GPT-4", "provider": "openai"}'
+            )
+
+            agent_config = Path(temp_dir) / "agent_mismatch.json"
+            agent_config.write_text(
+                '{"name": "TestAgent", "version": "1.0.0", "description": "Test", "prompt": "test", "configuration": "test", "scaffolding": "test"}'
+            )
+
+            with patch("llm.generate_answer") as mock_generate:
+                mock_generate.side_effect = ["x=1", "y=2"]
+
+                # Should handle the mismatch gracefully or raise appropriate error
+                with pytest.raises((IndexError, ValueError)):
+                    create_evaluation(temp_dir)

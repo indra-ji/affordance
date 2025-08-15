@@ -5,8 +5,11 @@ import subprocess
 import sys
 import tempfile
 from pathlib import Path
+import re
+from unittest.mock import patch, Mock
 
 import pytest
+from pydantic import ValidationError
 
 from dashboard import load_evaluation_from_file
 from evaluation import create_evaluation, rerun_evaluation
@@ -15,6 +18,37 @@ from utils import generate_evaluation_output_path, serialize_data_model
 
 class TestEndToEndWorkflow:
     """Test complete system workflows from start to finish"""
+
+    def _sanitize_api_keys(self, text: str) -> str:
+        """Remove potential API keys from text before logging"""
+        if not isinstance(text, str):
+            return str(text)
+
+        # Pattern for OpenAI API keys (sk-...)
+        text = re.sub(r"sk-[a-zA-Z0-9]{48}", "sk-***REDACTED***", text)
+        # Pattern for other potential keys
+        text = re.sub(r"\b[A-Za-z0-9]{32,}\b", "***REDACTED***", text)
+        return text
+
+    def _validate_code_content(self, content: str) -> None:
+        """Basic validation that content looks like safe code"""
+        if not isinstance(content, str):
+            return
+
+        # Check for obviously malicious patterns
+        dangerous_patterns = [
+            r"import\s+os",
+            r"import\s+subprocess",
+            r"import\s+sys",
+            r"__import__\s*\(",
+            r"eval\s*\(",
+            r"exec\s*\(",
+            r'open\s*\([^)]*["\'][rwa]',  # File operations
+        ]
+
+        for pattern in dangerous_patterns:
+            if re.search(pattern, content, re.IGNORECASE):
+                raise ValueError(f"Potentially dangerous code detected: {pattern}")
 
     @pytest.mark.skipif(
         not os.getenv("OPENAI_API_KEY"),
@@ -39,16 +73,23 @@ class TestEndToEndWorkflow:
             for answer in answers:
                 assert isinstance(answer.content, str)
                 assert len(answer.content.strip()) > 0
-                print(f"Generated answer for {answer.task.name}: {answer.content}")
+                # Sanitize API response before logging
+                sanitized_content = self._sanitize_api_keys(answer.content)
+                print(f"Generated answer for {answer.task.name}: {sanitized_content}")
+                # Validate that content looks like code (basic security check)
+                self._validate_code_content(answer.content)
 
             # Step 4: Verify code was actually executed and tested
             results = evaluation.resultset.results
             for result in results:
                 print(f"Task: {result.answer.task.name}")
-                print(f"Generated code: {result.answer.content}")
+                sanitized_code = self._sanitize_api_keys(result.answer.content)
+                print(f"Generated code: {sanitized_code}")
                 print(f"Test: {result.test.content}")
                 print(f"Passed: {result.passed}")
                 print("---")
+                # Validate code content for security
+                self._validate_code_content(result.answer.content)
 
                 # Verify result has boolean value (code was executed)
                 assert isinstance(result.passed, bool)
@@ -98,13 +139,15 @@ class TestEndToEndWorkflow:
             pytest.skip("No OpenAI API key for command-line test")
 
         with tempfile.TemporaryDirectory() as temp_dir:
-            # Change to temp directory so evals/ folder is created there
+            # Use subprocess with proper working directory handling
             original_cwd = os.getcwd()
 
             try:
-                os.chdir(temp_dir)
+                # Create evals directory in temp_dir
+                evals_dir = Path(temp_dir) / "evals"
+                evals_dir.mkdir(exist_ok=True)
 
-                # Run evaluation via command line
+                # Run evaluation via command line with clear working directory
                 result = subprocess.run(
                     [
                         sys.executable,
@@ -114,25 +157,29 @@ class TestEndToEndWorkflow:
                     ],
                     capture_output=True,
                     text=True,
-                    cwd=original_cwd,
+                    cwd=temp_dir,  # Run subprocess in temp_dir
+                    env={
+                        **os.environ,
+                        "PYTHONPATH": original_cwd,
+                    },  # Ensure imports work
                 )
 
-                print(f"Command output: {result.stdout}")
-                print(f"Command errors: {result.stderr}")
+                # Sanitize output to avoid leaking API keys
+                sanitized_stdout = self._sanitize_api_keys(result.stdout)
+                sanitized_stderr = self._sanitize_api_keys(result.stderr)
+                print(f"Command output: {sanitized_stdout}")
+                print(f"Command errors: {sanitized_stderr}")
 
                 # Verify command succeeded
                 assert result.returncode == 0, f"Command failed: {result.stderr}"
 
-                # Check that evaluation file was created
+                # Check that evaluation file was created in temp_dir
                 evals_dir = Path(temp_dir) / "evals"
                 eval_files = (
-                    list(evals_dir.glob("*.json")) if evals_dir.exists() else []
+                    list(evals_dir.glob("Evaluation_for_TestLib_*.json"))
+                    if evals_dir.exists()
+                    else []
                 )
-
-                # If no files in temp_dir/evals, check original directory
-                if not eval_files:
-                    evals_dir = Path(original_cwd) / "evals"
-                    eval_files = list(evals_dir.glob("Evaluation_for_TestLib_*.json"))
 
                 assert len(eval_files) > 0, (
                     f"No evaluation files found. Checked: {temp_dir}/evals and {original_cwd}/evals"
@@ -154,11 +201,11 @@ class TestEndToEndWorkflow:
                     f"Command-line evaluation completed: {loaded_evaluation.resultset.number_passed}/{loaded_evaluation.resultset.size} passed"
                 )
 
-                # Clean up the generated file
-                eval_file.unlink()
+                # Note: File cleanup handled by temp directory context manager
 
             finally:
-                os.chdir(original_cwd)
+                # No need to restore directory since we didn't change it
+                pass
 
     @pytest.mark.skipif(
         not os.getenv("OPENAI_API_KEY"),
@@ -242,9 +289,10 @@ class TestEndToEndWorkflow:
                 # Verify structure
                 assert evaluation.taskset.size > 0
                 assert evaluation.resultset.size == evaluation.taskset.size
+                # More specific assertion for numpy library
                 assert (
-                    evaluation.library.name.lower() in ["numpy", "np", "numerical"]
-                    or "numpy" in evaluation.library.name.lower()
+                    evaluation.library.name == "NumPy"
+                    or evaluation.library.name == "numpy"
                 )
 
                 # Print results for inspection
@@ -334,6 +382,87 @@ class TestEndToEndWorkflow:
 class TestEndToEndErrorScenarios:
     """Test end-to-end workflows with various error conditions"""
 
+    def test_api_error_scenarios(self):
+        """Test handling of various API error conditions"""
+        config_dir = "tests/configs/test_configs"
+
+        # Test with invalid API key format
+        with patch.dict(os.environ, {"OPENAI_API_KEY": "invalid-key-format"}):
+            with pytest.raises(Exception):  # Should fail with invalid key
+                create_evaluation(config_dir)
+
+        # Test with empty API key
+        with patch.dict(os.environ, {"OPENAI_API_KEY": ""}):
+            with pytest.raises(Exception):  # Should fail with empty key
+                create_evaluation(config_dir)
+
+    def test_network_failure_scenarios(self):
+        """Test handling of network-related failures"""
+        config_dir = "tests/configs/test_configs"
+
+        if not os.getenv("OPENAI_API_KEY"):
+            pytest.skip("No OpenAI API key for network failure test")
+
+        # Mock network failure
+        with patch("openai.OpenAI") as mock_client_class:
+            mock_client = Mock()
+            mock_client_class.return_value = mock_client
+
+            # Simulate connection error on the correct API endpoint
+            from requests.exceptions import ConnectionError
+
+            mock_client.responses.create.side_effect = ConnectionError(
+                "Network unreachable"
+            )
+
+            with pytest.raises(ConnectionError):
+                create_evaluation(config_dir)
+
+    def test_malformed_api_response_handling(self):
+        """Test handling of malformed API responses"""
+        config_dir = "tests/configs/test_configs"
+
+        if not os.getenv("OPENAI_API_KEY"):
+            pytest.skip("No OpenAI API key for malformed response test")
+
+        # Mock malformed response
+        with patch("llm.generate_openai_answer") as mock_generate:
+            # Return non-code content
+            mock_generate.return_value = (
+                "I cannot help with that request. Please try again."
+            )
+
+            evaluation = create_evaluation(config_dir)
+
+            # Verify it handles non-code responses gracefully
+            for answer in evaluation.answerset.answers:
+                # Should not contain executable code patterns
+                assert "import" not in answer.content.lower()
+                assert "def " not in answer.content.lower()
+
+    def test_config_injection_security(self):
+        """Test that config files cannot inject malicious content"""
+        with tempfile.TemporaryDirectory() as temp_dir:
+            # Create config with potential injection
+            malicious_config = os.path.join(temp_dir, "language_malicious.json")
+            with open(malicious_config, "w") as f:
+                f.write(
+                    '{\n    "name": "Python",\n    "version": "3.13",\n    "description": "Python; import os; os.system(\'rm -rf /\');"\n}'
+                )
+
+            # Should handle malicious content safely
+            with pytest.raises((ValidationError, KeyError, TypeError)):
+                create_evaluation(temp_dir)
+
+    def test_subprocess_path_validation(self):
+        """Test that subprocess calls validate paths properly"""
+        # Test with malicious path injection
+        malicious_config = "../../../etc/passwd; rm -rf /; #"
+
+        with pytest.raises((FileNotFoundError, OSError, ValueError)):
+            # Should not execute injected commands
+            create_evaluation(malicious_config)
+
     def test_workflow_with_missing_config_files(self):
         """Test error handling when config files are missing"""
         with tempfile.TemporaryDirectory() as empty_dir:
@@ -350,7 +479,7 @@ class TestEndToEndErrorScenarios:
             with open(config_path, "w") as f:
                 f.write('{"invalid": "structure"}')  # Missing required fields
 
-            with pytest.raises(Exception):  # Should raise validation error
+            with pytest.raises((ValidationError, KeyError, TypeError)):
                 create_evaluation(temp_dir)
 
     def test_workflow_with_serialization_failures(self):

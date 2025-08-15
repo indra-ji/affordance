@@ -9,6 +9,7 @@ def safe_import(name, *args, **kwargs):
         "socket",
         "urllib",
         "requests",
+        "importlib",
     }
     if name in blocked:
         raise ImportError(f"Import of '{name}' is blocked")
