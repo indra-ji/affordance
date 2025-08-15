@@ -1,14 +1,14 @@
 {
-  "name": "Evaluation for NumPy",
+  "name": "Evaluation for numpy",
   "version": "1.0.0",
-  "description": "Evaluation for NumPy using NumPy Demo Taskset and NumPy Demo Testset",
+  "description": "Evaluation for numpy using NumPy Demo Taskset and NumPy Demo Testset",
   "language": {
     "name": "python",
     "version": "3.13.5",
     "description": "A high-level, interpreted programming language known for its simplicity and versatility"
   },
   "library": {
-    "name": "NumPy",
+    "name": "numpy",
     "version": "2.3.2",
     "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
     "language": {
@@ -22,7 +22,7 @@
     "version": "1.0.0",
     "description": "Ten NumPy tasks progressing from beginner to expert level",
     "library": {
-      "name": "NumPy",
+      "name": "numpy",
       "version": "2.3.2",
       "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
       "language": {
@@ -37,7 +37,7 @@
         "version": "1.0.0",
         "description": "Create a NumPy array with specified dimensions and values",
         "library": {
-          "name": "NumPy",
+          "name": "numpy",
           "version": "2.3.2",
           "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
           "language": {
@@ -53,7 +53,7 @@
         "version": "1.0.0",
         "description": "Calculate the mean of a NumPy array",
         "library": {
-          "name": "NumPy",
+          "name": "numpy",
           "version": "2.3.2",
           "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
           "language": {
@@ -69,7 +69,7 @@
         "version": "1.0.0",
         "description": "Extract specific elements from a NumPy array using slicing",
         "library": {
-          "name": "NumPy",
+          "name": "numpy",
           "version": "2.3.2",
           "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
           "language": {
@@ -85,7 +85,7 @@
         "version": "1.0.0",
         "description": "Reshape a NumPy array to different dimensions",
         "library": {
-          "name": "NumPy",
+          "name": "numpy",
           "version": "2.3.2",
           "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
           "language": {
@@ -101,7 +101,7 @@
         "version": "1.0.0",
         "description": "Perform element-wise mathematical operations on arrays",
         "library": {
-          "name": "NumPy",
+          "name": "numpy",
           "version": "2.3.2",
           "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
           "language": {
@@ -117,7 +117,7 @@
         "version": "1.0.0",
         "description": "Use boolean conditions to filter array elements",
         "library": {
-          "name": "NumPy",
+          "name": "numpy",
           "version": "2.3.2",
           "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
           "language": {
@@ -133,7 +133,7 @@
         "version": "1.0.0",
         "description": "Perform matrix multiplication and find eigenvalues",
         "library": {
-          "name": "NumPy",
+          "name": "numpy",
           "version": "2.3.2",
           "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
           "language": {
@@ -149,7 +149,7 @@
         "version": "1.0.0",
         "description": "Calculate comprehensive statistics for array data",
         "library": {
-          "name": "NumPy",
+          "name": "numpy",
           "version": "2.3.2",
           "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
           "language": {
@@ -165,7 +165,7 @@
         "version": "1.0.0",
         "description": "Use NumPy broadcasting to perform operations on arrays of different shapes",
         "library": {
-          "name": "NumPy",
+          "name": "numpy",
           "version": "2.3.2",
           "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
           "language": {
@@ -181,7 +181,7 @@
         "version": "1.0.0",
         "description": "Use advanced indexing techniques and multi-dimensional sorting",
         "library": {
-          "name": "NumPy",
+          "name": "numpy",
           "version": "2.3.2",
           "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
           "language": {
@@ -204,7 +204,7 @@
       "version": "1.0.0",
       "description": "Ten NumPy tasks progressing from beginner to expert level",
       "library": {
-        "name": "NumPy",
+        "name": "numpy",
         "version": "2.3.2",
         "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
         "language": {
@@ -219,7 +219,7 @@
           "version": "1.0.0",
           "description": "Create a NumPy array with specified dimensions and values",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -235,7 +235,7 @@
           "version": "1.0.0",
           "description": "Calculate the mean of a NumPy array",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -251,7 +251,7 @@
           "version": "1.0.0",
           "description": "Extract specific elements from a NumPy array using slicing",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -267,7 +267,7 @@
           "version": "1.0.0",
           "description": "Reshape a NumPy array to different dimensions",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -283,7 +283,7 @@
           "version": "1.0.0",
           "description": "Perform element-wise mathematical operations on arrays",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -299,7 +299,7 @@
           "version": "1.0.0",
           "description": "Use boolean conditions to filter array elements",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -315,7 +315,7 @@
           "version": "1.0.0",
           "description": "Perform matrix multiplication and find eigenvalues",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -331,7 +331,7 @@
           "version": "1.0.0",
           "description": "Calculate comprehensive statistics for array data",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -347,7 +347,7 @@
           "version": "1.0.0",
           "description": "Use NumPy broadcasting to perform operations on arrays of different shapes",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -363,7 +363,7 @@
           "version": "1.0.0",
           "description": "Use advanced indexing techniques and multi-dimensional sorting",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -387,7 +387,7 @@
           "version": "1.0.0",
           "description": "Create a NumPy array with specified dimensions and values",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -409,7 +409,7 @@
           "version": "1.0.0",
           "description": "Calculate the mean of a NumPy array",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -431,7 +431,7 @@
           "version": "1.0.0",
           "description": "Extract specific elements from a NumPy array using slicing",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -453,7 +453,7 @@
           "version": "1.0.0",
           "description": "Reshape a NumPy array to different dimensions",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -475,7 +475,7 @@
           "version": "1.0.0",
           "description": "Perform element-wise mathematical operations on arrays",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -497,7 +497,7 @@
           "version": "1.0.0",
           "description": "Use boolean conditions to filter array elements",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -519,7 +519,7 @@
           "version": "1.0.0",
           "description": "Perform matrix multiplication and find eigenvalues",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -541,7 +541,7 @@
           "version": "1.0.0",
           "description": "Calculate comprehensive statistics for array data",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -563,7 +563,7 @@
           "version": "1.0.0",
           "description": "Use NumPy broadcasting to perform operations on arrays of different shapes",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -585,7 +585,7 @@
           "version": "1.0.0",
           "description": "Use advanced indexing techniques and multi-dimensional sorting",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -619,7 +619,7 @@
     },
     "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
     "configuration": "Default configuration",
-    "scaffolding": "no scaffolding"
+    "scaffolding": "No scaffolding"
   },
   "answerset": {
     "name": "Answerset for NumPy Demo Taskset",
@@ -637,14 +637,14 @@
       },
       "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
       "configuration": "Default configuration",
-      "scaffolding": "no scaffolding"
+      "scaffolding": "No scaffolding"
     },
     "taskset": {
       "name": "NumPy Demo Taskset",
       "version": "1.0.0",
       "description": "Ten NumPy tasks progressing from beginner to expert level",
       "library": {
-        "name": "NumPy",
+        "name": "numpy",
         "version": "2.3.2",
         "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
         "language": {
@@ -659,7 +659,7 @@
           "version": "1.0.0",
           "description": "Create a NumPy array with specified dimensions and values",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -675,7 +675,7 @@
           "version": "1.0.0",
           "description": "Calculate the mean of a NumPy array",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -691,7 +691,7 @@
           "version": "1.0.0",
           "description": "Extract specific elements from a NumPy array using slicing",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -707,7 +707,7 @@
           "version": "1.0.0",
           "description": "Reshape a NumPy array to different dimensions",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -723,7 +723,7 @@
           "version": "1.0.0",
           "description": "Perform element-wise mathematical operations on arrays",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -739,7 +739,7 @@
           "version": "1.0.0",
           "description": "Use boolean conditions to filter array elements",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -755,7 +755,7 @@
           "version": "1.0.0",
           "description": "Perform matrix multiplication and find eigenvalues",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -771,7 +771,7 @@
           "version": "1.0.0",
           "description": "Calculate comprehensive statistics for array data",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -787,7 +787,7 @@
           "version": "1.0.0",
           "description": "Use NumPy broadcasting to perform operations on arrays of different shapes",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -803,7 +803,7 @@
           "version": "1.0.0",
           "description": "Use advanced indexing techniques and multi-dimensional sorting",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -834,14 +834,14 @@
           },
           "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
           "configuration": "Default configuration",
-          "scaffolding": "no scaffolding"
+          "scaffolding": "No scaffolding"
         },
         "task": {
           "name": "Create 2D array",
           "version": "1.0.0",
           "description": "Create a NumPy array with specified dimensions and values",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -870,14 +870,14 @@
           },
           "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
           "configuration": "Default configuration",
-          "scaffolding": "no scaffolding"
+          "scaffolding": "No scaffolding"
         },
         "task": {
           "name": "Calculate mean",
           "version": "1.0.0",
           "description": "Calculate the mean of a NumPy array",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -888,7 +888,7 @@
           },
           "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean. Array should be assigned to a variable called `array`. Mean should be assigned to a variable called `mean`."
         },
-        "content": "\nimport numpy as np\n\narray = np.random.rand(10)\nmean = array.mean()\n"
+        "content": "\nimport numpy as np\n\narray = np.random.rand(10)\nmean = np.mean(array)\n"
       },
       {
         "name": "Answer for Array slicing",
@@ -906,14 +906,14 @@
           },
           "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
           "configuration": "Default configuration",
-          "scaffolding": "no scaffolding"
+          "scaffolding": "No scaffolding"
         },
         "task": {
           "name": "Array slicing",
           "version": "1.0.0",
           "description": "Extract specific elements from a NumPy array using slicing",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -942,14 +942,14 @@
           },
           "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
           "configuration": "Default configuration",
-          "scaffolding": "no scaffolding"
+          "scaffolding": "No scaffolding"
         },
         "task": {
           "name": "Array reshaping",
           "version": "1.0.0",
           "description": "Reshape a NumPy array to different dimensions",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -978,14 +978,14 @@
           },
           "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
           "configuration": "Default configuration",
-          "scaffolding": "no scaffolding"
+          "scaffolding": "No scaffolding"
         },
         "task": {
           "name": "Element-wise operations",
           "version": "1.0.0",
           "description": "Perform element-wise mathematical operations on arrays",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -996,7 +996,7 @@
           },
           "content": "Create two 2x3 NumPy arrays filled with random integers between 1 and 10. Calculate their element-wise product and sum. First array should be assigned to `array1`, second array to `array2`, element-wise product to `product`, and element-wise sum to `sum_array`."
         },
-        "content": "\nimport numpy as np\n\narray1 = np.random.randint(1, 11, (2, 3))\narray2 = np.random.randint(1, 11, (2, 3))\nproduct = np.multiply(array1, array2)\nsum_array = np.add(array1, array2)\n"
+        "content": "\nimport numpy as np\n\narray1 = np.random.randint(1, 11, (2, 3))\narray2 = np.random.randint(1, 11, (2, 3))\nproduct = array1 * array2\nsum_array = array1 + array2\n"
       },
       {
         "name": "Answer for Boolean indexing",
@@ -1014,14 +1014,14 @@
           },
           "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
           "configuration": "Default configuration",
-          "scaffolding": "no scaffolding"
+          "scaffolding": "No scaffolding"
         },
         "task": {
           "name": "Boolean indexing",
           "version": "1.0.0",
           "description": "Use boolean conditions to filter array elements",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -1050,14 +1050,14 @@
           },
           "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
           "configuration": "Default configuration",
-          "scaffolding": "no scaffolding"
+          "scaffolding": "No scaffolding"
         },
         "task": {
           "name": "Linear algebra operations",
           "version": "1.0.0",
           "description": "Perform matrix multiplication and find eigenvalues",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -1068,7 +1068,7 @@
           },
           "content": "Create a 3x3 NumPy array filled with random floating-point numbers between 0 and 1. Calculate its matrix multiplication with itself (A @ A). Then find the eigenvalues of the original matrix. Original matrix should be assigned to `matrix`, matrix multiplication result to `matrix_squared`, and eigenvalues to `eigenvalues`."
         },
-        "content": "\nimport numpy as np\n\nnp.random.seed(0)\nmatrix = np.random.rand(3, 3)\nmatrix_squared = matrix @ matrix\neigenvalues = np.linalg.eigvals(matrix)\n"
+        "content": "\nimport numpy as np\n\nnp.random.seed(0)  # For reproducibility\nmatrix = np.random.rand(3, 3)\nmatrix_squared = matrix @ matrix\neigenvalues = np.linalg.eigvals(matrix)\n"
       },
       {
         "name": "Answer for Statistical analysis",
@@ -1086,14 +1086,14 @@
           },
           "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
           "configuration": "Default configuration",
-          "scaffolding": "no scaffolding"
+          "scaffolding": "No scaffolding"
         },
         "task": {
           "name": "Statistical analysis",
           "version": "1.0.0",
           "description": "Calculate comprehensive statistics for array data",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -1104,7 +1104,7 @@
           },
           "content": "Create a 4x5 NumPy array with random integers between 1 and 100. Calculate the mean, median, standard deviation, and variance along axis 0 (columns). Array should be assigned to `data`, column means to `col_means`, column medians to `col_medians`, column standard deviations to `col_stds`, and column variances to `col_vars`."
         },
-        "content": "\nimport numpy as np\n\nnp.random.seed(0)  # optional, for reproducibility\ndata = np.random.randint(1, 101, size=(4, 5))\ncol_means = np.mean(data, axis=0)\ncol_medians = np.median(data, axis=0)\ncol_stds = np.std(data, axis=0)\ncol_vars = np.var(data, axis=0)\n"
+        "content": "\nimport numpy as np\n\nnp.random.seed(0)  # Optional: for reproducibility\ndata = np.random.randint(1, 101, size=(4, 5))\ncol_means = np.mean(data, axis=0)\ncol_medians = np.median(data, axis=0)\ncol_stds = np.std(data, axis=0, ddof=0)\ncol_vars = np.var(data, axis=0)\n"
       },
       {
         "name": "Answer for Broadcasting and vectorization",
@@ -1122,14 +1122,14 @@
           },
           "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
           "configuration": "Default configuration",
-          "scaffolding": "no scaffolding"
+          "scaffolding": "No scaffolding"
         },
         "task": {
           "name": "Broadcasting and vectorization",
           "version": "1.0.0",
           "description": "Use NumPy broadcasting to perform operations on arrays of different shapes",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -1140,7 +1140,7 @@
           },
           "content": "Create a 4x1 NumPy array with values [1, 2, 3, 4] and a 1x3 array with values [10, 20, 30]. Use broadcasting to add them together, creating a 4x3 result matrix. First array should be assigned to `array_4x1`, second array to `array_1x3`, and the broadcasted sum to `broadcasted_result`."
         },
-        "content": "\nimport numpy as np\n\narray_4x1 = np.array([[1], [2], [3], [4]])\narray_1x3 = np.array([[10, 20, 30]])\nbroadcasted_result = array_4x1 + array_1x3\n"
+        "content": "\nimport numpy as np\n\narray_4x1 = np.array([[1], [2], [3], [4]])\narray_1x3 = np.array([10, 20, 30])\n\nbroadcasted_result = array_4x1 + array_1x3\n"
       },
       {
         "name": "Answer for Advanced indexing and sorting",
@@ -1158,14 +1158,14 @@
           },
           "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
           "configuration": "Default configuration",
-          "scaffolding": "no scaffolding"
+          "scaffolding": "No scaffolding"
         },
         "task": {
           "name": "Advanced indexing and sorting",
           "version": "1.0.0",
           "description": "Use advanced indexing techniques and multi-dimensional sorting",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -1176,7 +1176,7 @@
           },
           "content": "Create a 5x3 NumPy array with random integers between 0 and 50. Sort each row independently in descending order. Find the indices that would sort the entire array in ascending order when flattened. Original array should be assigned to `original_array`, row-wise sorted array to `sorted_rows`, flattened array to `flattened`, and sorting indices to `sort_indices`."
         },
-        "content": "\nimport numpy as np\n\n# Create the original 5x3 array with random integers between 0 and 50\noriginal_array = np.random.randint(0, 51, (5, 3))\n\n# Sort each row independently in descending order\nsorted_rows = np.sort(original_array)[:, ::-1]\n\n# Flatten the array\nflattened = sorted_rows.flatten()\n\n# Find the indices that would sort the flattened array in ascending order\nsort_indices = np.argsort(flattened)\n"
+        "content": "\nimport numpy as np\n\n# Create a 5x3 array with random integers between 0 and 50\noriginal_array = np.random.randint(0, 51, size=(5, 3))\n\n# Sort each row independently in descending order\nsorted_rows = np.sort(original_array, axis=1)[:, ::-1]\n\n# Flatten the array\nflattened = sorted_rows.flatten()\n\n# Find the indices that would sort the flattened array in ascending order\nsort_indices = np.argsort(flattened)\n"
       }
     ],
     "size": 10
@@ -1190,7 +1190,7 @@
       "version": "1.0.0",
       "description": "Ten NumPy tasks progressing from beginner to expert level",
       "library": {
-        "name": "NumPy",
+        "name": "numpy",
         "version": "2.3.2",
         "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
         "language": {
@@ -1205,7 +1205,7 @@
           "version": "1.0.0",
           "description": "Create a NumPy array with specified dimensions and values",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -1221,7 +1221,7 @@
           "version": "1.0.0",
           "description": "Calculate the mean of a NumPy array",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -1237,7 +1237,7 @@
           "version": "1.0.0",
           "description": "Extract specific elements from a NumPy array using slicing",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -1253,7 +1253,7 @@
           "version": "1.0.0",
           "description": "Reshape a NumPy array to different dimensions",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -1269,7 +1269,7 @@
           "version": "1.0.0",
           "description": "Perform element-wise mathematical operations on arrays",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -1285,7 +1285,7 @@
           "version": "1.0.0",
           "description": "Use boolean conditions to filter array elements",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -1301,7 +1301,7 @@
           "version": "1.0.0",
           "description": "Perform matrix multiplication and find eigenvalues",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -1317,7 +1317,7 @@
           "version": "1.0.0",
           "description": "Calculate comprehensive statistics for array data",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -1333,7 +1333,7 @@
           "version": "1.0.0",
           "description": "Use NumPy broadcasting to perform operations on arrays of different shapes",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -1349,7 +1349,7 @@
           "version": "1.0.0",
           "description": "Use advanced indexing techniques and multi-dimensional sorting",
           "library": {
-            "name": "NumPy",
+            "name": "numpy",
             "version": "2.3.2",
             "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
             "language": {
@@ -1372,7 +1372,7 @@
         "version": "1.0.0",
         "description": "Ten NumPy tasks progressing from beginner to expert level",
         "library": {
-          "name": "NumPy",
+          "name": "numpy",
           "version": "2.3.2",
           "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
           "language": {
@@ -1387,7 +1387,7 @@
             "version": "1.0.0",
             "description": "Create a NumPy array with specified dimensions and values",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1403,7 +1403,7 @@
             "version": "1.0.0",
             "description": "Calculate the mean of a NumPy array",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1419,7 +1419,7 @@
             "version": "1.0.0",
             "description": "Extract specific elements from a NumPy array using slicing",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1435,7 +1435,7 @@
             "version": "1.0.0",
             "description": "Reshape a NumPy array to different dimensions",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1451,7 +1451,7 @@
             "version": "1.0.0",
             "description": "Perform element-wise mathematical operations on arrays",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1467,7 +1467,7 @@
             "version": "1.0.0",
             "description": "Use boolean conditions to filter array elements",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1483,7 +1483,7 @@
             "version": "1.0.0",
             "description": "Perform matrix multiplication and find eigenvalues",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1499,7 +1499,7 @@
             "version": "1.0.0",
             "description": "Calculate comprehensive statistics for array data",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1515,7 +1515,7 @@
             "version": "1.0.0",
             "description": "Use NumPy broadcasting to perform operations on arrays of different shapes",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1531,7 +1531,7 @@
             "version": "1.0.0",
             "description": "Use advanced indexing techniques and multi-dimensional sorting",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1555,7 +1555,7 @@
             "version": "1.0.0",
             "description": "Create a NumPy array with specified dimensions and values",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1577,7 +1577,7 @@
             "version": "1.0.0",
             "description": "Calculate the mean of a NumPy array",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1599,7 +1599,7 @@
             "version": "1.0.0",
             "description": "Extract specific elements from a NumPy array using slicing",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1621,7 +1621,7 @@
             "version": "1.0.0",
             "description": "Reshape a NumPy array to different dimensions",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1643,7 +1643,7 @@
             "version": "1.0.0",
             "description": "Perform element-wise mathematical operations on arrays",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1665,7 +1665,7 @@
             "version": "1.0.0",
             "description": "Use boolean conditions to filter array elements",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1687,7 +1687,7 @@
             "version": "1.0.0",
             "description": "Perform matrix multiplication and find eigenvalues",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1709,7 +1709,7 @@
             "version": "1.0.0",
             "description": "Calculate comprehensive statistics for array data",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1731,7 +1731,7 @@
             "version": "1.0.0",
             "description": "Use NumPy broadcasting to perform operations on arrays of different shapes",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1753,7 +1753,7 @@
             "version": "1.0.0",
             "description": "Use advanced indexing techniques and multi-dimensional sorting",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1785,14 +1785,14 @@
         },
         "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
         "configuration": "Default configuration",
-        "scaffolding": "no scaffolding"
+        "scaffolding": "No scaffolding"
       },
       "taskset": {
         "name": "NumPy Demo Taskset",
         "version": "1.0.0",
         "description": "Ten NumPy tasks progressing from beginner to expert level",
         "library": {
-          "name": "NumPy",
+          "name": "numpy",
           "version": "2.3.2",
           "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
           "language": {
@@ -1807,7 +1807,7 @@
             "version": "1.0.0",
             "description": "Create a NumPy array with specified dimensions and values",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1823,7 +1823,7 @@
             "version": "1.0.0",
             "description": "Calculate the mean of a NumPy array",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1839,7 +1839,7 @@
             "version": "1.0.0",
             "description": "Extract specific elements from a NumPy array using slicing",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1855,7 +1855,7 @@
             "version": "1.0.0",
             "description": "Reshape a NumPy array to different dimensions",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1871,7 +1871,7 @@
             "version": "1.0.0",
             "description": "Perform element-wise mathematical operations on arrays",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1887,7 +1887,7 @@
             "version": "1.0.0",
             "description": "Use boolean conditions to filter array elements",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1903,7 +1903,7 @@
             "version": "1.0.0",
             "description": "Perform matrix multiplication and find eigenvalues",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1919,7 +1919,7 @@
             "version": "1.0.0",
             "description": "Calculate comprehensive statistics for array data",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1935,7 +1935,7 @@
             "version": "1.0.0",
             "description": "Use NumPy broadcasting to perform operations on arrays of different shapes",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1951,7 +1951,7 @@
             "version": "1.0.0",
             "description": "Use advanced indexing techniques and multi-dimensional sorting",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -1982,14 +1982,14 @@
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
             "configuration": "Default configuration",
-            "scaffolding": "no scaffolding"
+            "scaffolding": "No scaffolding"
           },
           "task": {
             "name": "Create 2D array",
             "version": "1.0.0",
             "description": "Create a NumPy array with specified dimensions and values",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2018,14 +2018,14 @@
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
             "configuration": "Default configuration",
-            "scaffolding": "no scaffolding"
+            "scaffolding": "No scaffolding"
           },
           "task": {
             "name": "Calculate mean",
             "version": "1.0.0",
             "description": "Calculate the mean of a NumPy array",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2036,7 +2036,7 @@
             },
             "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean. Array should be assigned to a variable called `array`. Mean should be assigned to a variable called `mean`."
           },
-          "content": "\nimport numpy as np\n\narray = np.random.rand(10)\nmean = array.mean()\n"
+          "content": "\nimport numpy as np\n\narray = np.random.rand(10)\nmean = np.mean(array)\n"
         },
         {
           "name": "Answer for Array slicing",
@@ -2054,14 +2054,14 @@
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
             "configuration": "Default configuration",
-            "scaffolding": "no scaffolding"
+            "scaffolding": "No scaffolding"
           },
           "task": {
             "name": "Array slicing",
             "version": "1.0.0",
             "description": "Extract specific elements from a NumPy array using slicing",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2090,14 +2090,14 @@
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
             "configuration": "Default configuration",
-            "scaffolding": "no scaffolding"
+            "scaffolding": "No scaffolding"
           },
           "task": {
             "name": "Array reshaping",
             "version": "1.0.0",
             "description": "Reshape a NumPy array to different dimensions",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2126,14 +2126,14 @@
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
             "configuration": "Default configuration",
-            "scaffolding": "no scaffolding"
+            "scaffolding": "No scaffolding"
           },
           "task": {
             "name": "Element-wise operations",
             "version": "1.0.0",
             "description": "Perform element-wise mathematical operations on arrays",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2144,7 +2144,7 @@
             },
             "content": "Create two 2x3 NumPy arrays filled with random integers between 1 and 10. Calculate their element-wise product and sum. First array should be assigned to `array1`, second array to `array2`, element-wise product to `product`, and element-wise sum to `sum_array`."
           },
-          "content": "\nimport numpy as np\n\narray1 = np.random.randint(1, 11, (2, 3))\narray2 = np.random.randint(1, 11, (2, 3))\nproduct = np.multiply(array1, array2)\nsum_array = np.add(array1, array2)\n"
+          "content": "\nimport numpy as np\n\narray1 = np.random.randint(1, 11, (2, 3))\narray2 = np.random.randint(1, 11, (2, 3))\nproduct = array1 * array2\nsum_array = array1 + array2\n"
         },
         {
           "name": "Answer for Boolean indexing",
@@ -2162,14 +2162,14 @@
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
             "configuration": "Default configuration",
-            "scaffolding": "no scaffolding"
+            "scaffolding": "No scaffolding"
           },
           "task": {
             "name": "Boolean indexing",
             "version": "1.0.0",
             "description": "Use boolean conditions to filter array elements",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2198,14 +2198,14 @@
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
             "configuration": "Default configuration",
-            "scaffolding": "no scaffolding"
+            "scaffolding": "No scaffolding"
           },
           "task": {
             "name": "Linear algebra operations",
             "version": "1.0.0",
             "description": "Perform matrix multiplication and find eigenvalues",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2216,7 +2216,7 @@
             },
             "content": "Create a 3x3 NumPy array filled with random floating-point numbers between 0 and 1. Calculate its matrix multiplication with itself (A @ A). Then find the eigenvalues of the original matrix. Original matrix should be assigned to `matrix`, matrix multiplication result to `matrix_squared`, and eigenvalues to `eigenvalues`."
           },
-          "content": "\nimport numpy as np\n\nnp.random.seed(0)\nmatrix = np.random.rand(3, 3)\nmatrix_squared = matrix @ matrix\neigenvalues = np.linalg.eigvals(matrix)\n"
+          "content": "\nimport numpy as np\n\nnp.random.seed(0)  # For reproducibility\nmatrix = np.random.rand(3, 3)\nmatrix_squared = matrix @ matrix\neigenvalues = np.linalg.eigvals(matrix)\n"
         },
         {
           "name": "Answer for Statistical analysis",
@@ -2234,14 +2234,14 @@
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
             "configuration": "Default configuration",
-            "scaffolding": "no scaffolding"
+            "scaffolding": "No scaffolding"
           },
           "task": {
             "name": "Statistical analysis",
             "version": "1.0.0",
             "description": "Calculate comprehensive statistics for array data",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2252,7 +2252,7 @@
             },
             "content": "Create a 4x5 NumPy array with random integers between 1 and 100. Calculate the mean, median, standard deviation, and variance along axis 0 (columns). Array should be assigned to `data`, column means to `col_means`, column medians to `col_medians`, column standard deviations to `col_stds`, and column variances to `col_vars`."
           },
-          "content": "\nimport numpy as np\n\nnp.random.seed(0)  # optional, for reproducibility\ndata = np.random.randint(1, 101, size=(4, 5))\ncol_means = np.mean(data, axis=0)\ncol_medians = np.median(data, axis=0)\ncol_stds = np.std(data, axis=0)\ncol_vars = np.var(data, axis=0)\n"
+          "content": "\nimport numpy as np\n\nnp.random.seed(0)  # Optional: for reproducibility\ndata = np.random.randint(1, 101, size=(4, 5))\ncol_means = np.mean(data, axis=0)\ncol_medians = np.median(data, axis=0)\ncol_stds = np.std(data, axis=0, ddof=0)\ncol_vars = np.var(data, axis=0)\n"
         },
         {
           "name": "Answer for Broadcasting and vectorization",
@@ -2270,14 +2270,14 @@
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
             "configuration": "Default configuration",
-            "scaffolding": "no scaffolding"
+            "scaffolding": "No scaffolding"
           },
           "task": {
             "name": "Broadcasting and vectorization",
             "version": "1.0.0",
             "description": "Use NumPy broadcasting to perform operations on arrays of different shapes",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2288,7 +2288,7 @@
             },
             "content": "Create a 4x1 NumPy array with values [1, 2, 3, 4] and a 1x3 array with values [10, 20, 30]. Use broadcasting to add them together, creating a 4x3 result matrix. First array should be assigned to `array_4x1`, second array to `array_1x3`, and the broadcasted sum to `broadcasted_result`."
           },
-          "content": "\nimport numpy as np\n\narray_4x1 = np.array([[1], [2], [3], [4]])\narray_1x3 = np.array([[10, 20, 30]])\nbroadcasted_result = array_4x1 + array_1x3\n"
+          "content": "\nimport numpy as np\n\narray_4x1 = np.array([[1], [2], [3], [4]])\narray_1x3 = np.array([10, 20, 30])\n\nbroadcasted_result = array_4x1 + array_1x3\n"
         },
         {
           "name": "Answer for Advanced indexing and sorting",
@@ -2306,14 +2306,14 @@
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
             "configuration": "Default configuration",
-            "scaffolding": "no scaffolding"
+            "scaffolding": "No scaffolding"
           },
           "task": {
             "name": "Advanced indexing and sorting",
             "version": "1.0.0",
             "description": "Use advanced indexing techniques and multi-dimensional sorting",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2324,7 +2324,7 @@
             },
             "content": "Create a 5x3 NumPy array with random integers between 0 and 50. Sort each row independently in descending order. Find the indices that would sort the entire array in ascending order when flattened. Original array should be assigned to `original_array`, row-wise sorted array to `sorted_rows`, flattened array to `flattened`, and sorting indices to `sort_indices`."
           },
-          "content": "\nimport numpy as np\n\n# Create the original 5x3 array with random integers between 0 and 50\noriginal_array = np.random.randint(0, 51, (5, 3))\n\n# Sort each row independently in descending order\nsorted_rows = np.sort(original_array)[:, ::-1]\n\n# Flatten the array\nflattened = sorted_rows.flatten()\n\n# Find the indices that would sort the flattened array in ascending order\nsort_indices = np.argsort(flattened)\n"
+          "content": "\nimport numpy as np\n\n# Create a 5x3 array with random integers between 0 and 50\noriginal_array = np.random.randint(0, 51, size=(5, 3))\n\n# Sort each row independently in descending order\nsorted_rows = np.sort(original_array, axis=1)[:, ::-1]\n\n# Flatten the array\nflattened = sorted_rows.flatten()\n\n# Find the indices that would sort the flattened array in ascending order\nsort_indices = np.argsort(flattened)\n"
         }
       ],
       "size": 10
@@ -2350,14 +2350,14 @@
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
             "configuration": "Default configuration",
-            "scaffolding": "no scaffolding"
+            "scaffolding": "No scaffolding"
           },
           "task": {
             "name": "Create 2D array",
             "version": "1.0.0",
             "description": "Create a NumPy array with specified dimensions and values",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2379,7 +2379,7 @@
             "version": "1.0.0",
             "description": "Create a NumPy array with specified dimensions and values",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2414,14 +2414,14 @@
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
             "configuration": "Default configuration",
-            "scaffolding": "no scaffolding"
+            "scaffolding": "No scaffolding"
           },
           "task": {
             "name": "Calculate mean",
             "version": "1.0.0",
             "description": "Calculate the mean of a NumPy array",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2432,7 +2432,7 @@
             },
             "content": "Create a 1D NumPy array with 10 random floating-point numbers between 0 and 1, then calculate its mean. Array should be assigned to a variable called `array`. Mean should be assigned to a variable called `mean`."
           },
-          "content": "\nimport numpy as np\n\narray = np.random.rand(10)\nmean = array.mean()\n"
+          "content": "\nimport numpy as np\n\narray = np.random.rand(10)\nmean = np.mean(array)\n"
         },
         "test": {
           "name": "Calculate mean test",
@@ -2443,7 +2443,7 @@
             "version": "1.0.0",
             "description": "Calculate the mean of a NumPy array",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2478,14 +2478,14 @@
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
             "configuration": "Default configuration",
-            "scaffolding": "no scaffolding"
+            "scaffolding": "No scaffolding"
           },
           "task": {
             "name": "Array slicing",
             "version": "1.0.0",
             "description": "Extract specific elements from a NumPy array using slicing",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2507,7 +2507,7 @@
             "version": "1.0.0",
             "description": "Extract specific elements from a NumPy array using slicing",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2542,14 +2542,14 @@
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
             "configuration": "Default configuration",
-            "scaffolding": "no scaffolding"
+            "scaffolding": "No scaffolding"
           },
           "task": {
             "name": "Array reshaping",
             "version": "1.0.0",
             "description": "Reshape a NumPy array to different dimensions",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2571,7 +2571,7 @@
             "version": "1.0.0",
             "description": "Reshape a NumPy array to different dimensions",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2606,14 +2606,14 @@
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
             "configuration": "Default configuration",
-            "scaffolding": "no scaffolding"
+            "scaffolding": "No scaffolding"
           },
           "task": {
             "name": "Element-wise operations",
             "version": "1.0.0",
             "description": "Perform element-wise mathematical operations on arrays",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2624,7 +2624,7 @@
             },
             "content": "Create two 2x3 NumPy arrays filled with random integers between 1 and 10. Calculate their element-wise product and sum. First array should be assigned to `array1`, second array to `array2`, element-wise product to `product`, and element-wise sum to `sum_array`."
           },
-          "content": "\nimport numpy as np\n\narray1 = np.random.randint(1, 11, (2, 3))\narray2 = np.random.randint(1, 11, (2, 3))\nproduct = np.multiply(array1, array2)\nsum_array = np.add(array1, array2)\n"
+          "content": "\nimport numpy as np\n\narray1 = np.random.randint(1, 11, (2, 3))\narray2 = np.random.randint(1, 11, (2, 3))\nproduct = array1 * array2\nsum_array = array1 + array2\n"
         },
         "test": {
           "name": "Element-wise operations test",
@@ -2635,7 +2635,7 @@
             "version": "1.0.0",
             "description": "Perform element-wise mathematical operations on arrays",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2670,14 +2670,14 @@
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
             "configuration": "Default configuration",
-            "scaffolding": "no scaffolding"
+            "scaffolding": "No scaffolding"
           },
           "task": {
             "name": "Boolean indexing",
             "version": "1.0.0",
             "description": "Use boolean conditions to filter array elements",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2699,7 +2699,7 @@
             "version": "1.0.0",
             "description": "Use boolean conditions to filter array elements",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2734,14 +2734,14 @@
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
             "configuration": "Default configuration",
-            "scaffolding": "no scaffolding"
+            "scaffolding": "No scaffolding"
           },
           "task": {
             "name": "Linear algebra operations",
             "version": "1.0.0",
             "description": "Perform matrix multiplication and find eigenvalues",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2752,7 +2752,7 @@
             },
             "content": "Create a 3x3 NumPy array filled with random floating-point numbers between 0 and 1. Calculate its matrix multiplication with itself (A @ A). Then find the eigenvalues of the original matrix. Original matrix should be assigned to `matrix`, matrix multiplication result to `matrix_squared`, and eigenvalues to `eigenvalues`."
           },
-          "content": "\nimport numpy as np\n\nnp.random.seed(0)\nmatrix = np.random.rand(3, 3)\nmatrix_squared = matrix @ matrix\neigenvalues = np.linalg.eigvals(matrix)\n"
+          "content": "\nimport numpy as np\n\nnp.random.seed(0)  # For reproducibility\nmatrix = np.random.rand(3, 3)\nmatrix_squared = matrix @ matrix\neigenvalues = np.linalg.eigvals(matrix)\n"
         },
         "test": {
           "name": "Linear algebra operations test",
@@ -2763,7 +2763,7 @@
             "version": "1.0.0",
             "description": "Perform matrix multiplication and find eigenvalues",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2798,14 +2798,14 @@
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
             "configuration": "Default configuration",
-            "scaffolding": "no scaffolding"
+            "scaffolding": "No scaffolding"
           },
           "task": {
             "name": "Statistical analysis",
             "version": "1.0.0",
             "description": "Calculate comprehensive statistics for array data",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2816,7 +2816,7 @@
             },
             "content": "Create a 4x5 NumPy array with random integers between 1 and 100. Calculate the mean, median, standard deviation, and variance along axis 0 (columns). Array should be assigned to `data`, column means to `col_means`, column medians to `col_medians`, column standard deviations to `col_stds`, and column variances to `col_vars`."
           },
-          "content": "\nimport numpy as np\n\nnp.random.seed(0)  # optional, for reproducibility\ndata = np.random.randint(1, 101, size=(4, 5))\ncol_means = np.mean(data, axis=0)\ncol_medians = np.median(data, axis=0)\ncol_stds = np.std(data, axis=0)\ncol_vars = np.var(data, axis=0)\n"
+          "content": "\nimport numpy as np\n\nnp.random.seed(0)  # Optional: for reproducibility\ndata = np.random.randint(1, 101, size=(4, 5))\ncol_means = np.mean(data, axis=0)\ncol_medians = np.median(data, axis=0)\ncol_stds = np.std(data, axis=0, ddof=0)\ncol_vars = np.var(data, axis=0)\n"
         },
         "test": {
           "name": "Statistical analysis test",
@@ -2827,7 +2827,7 @@
             "version": "1.0.0",
             "description": "Calculate comprehensive statistics for array data",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2862,14 +2862,14 @@
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
             "configuration": "Default configuration",
-            "scaffolding": "no scaffolding"
+            "scaffolding": "No scaffolding"
           },
           "task": {
             "name": "Broadcasting and vectorization",
             "version": "1.0.0",
             "description": "Use NumPy broadcasting to perform operations on arrays of different shapes",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2880,7 +2880,7 @@
             },
             "content": "Create a 4x1 NumPy array with values [1, 2, 3, 4] and a 1x3 array with values [10, 20, 30]. Use broadcasting to add them together, creating a 4x3 result matrix. First array should be assigned to `array_4x1`, second array to `array_1x3`, and the broadcasted sum to `broadcasted_result`."
           },
-          "content": "\nimport numpy as np\n\narray_4x1 = np.array([[1], [2], [3], [4]])\narray_1x3 = np.array([[10, 20, 30]])\nbroadcasted_result = array_4x1 + array_1x3\n"
+          "content": "\nimport numpy as np\n\narray_4x1 = np.array([[1], [2], [3], [4]])\narray_1x3 = np.array([10, 20, 30])\n\nbroadcasted_result = array_4x1 + array_1x3\n"
         },
         "test": {
           "name": "Broadcasting and vectorization test",
@@ -2891,7 +2891,7 @@
             "version": "1.0.0",
             "description": "Use NumPy broadcasting to perform operations on arrays of different shapes",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2904,7 +2904,7 @@
           },
           "content": "import numpy as np\n\n# Test that required variables exist\nassert 'array_4x1' in locals() or 'array_4x1' in globals(), 'Variable \"array_4x1\" must be defined'\nassert 'array_1x3' in locals() or 'array_1x3' in globals(), 'Variable \"array_1x3\" must be defined'\nassert 'broadcasted_result' in locals() or 'broadcasted_result' in globals(), 'Variable \"broadcasted_result\" must be defined'\n\n# Test array shapes and values\nassert isinstance(array_4x1, np.ndarray), 'Variable \"array_4x1\" must be a numpy array'\nassert array_4x1.shape == (4, 1), f'Array_4x1 must have shape (4, 1), but got {array_4x1.shape}'\nassert np.array_equal(array_4x1.flatten(), [1, 2, 3, 4]), f'Array_4x1 should contain [1, 2, 3, 4], but got {array_4x1.flatten()}'\n\nassert isinstance(array_1x3, np.ndarray), 'Variable \"array_1x3\" must be a numpy array'\nassert array_1x3.shape == (1, 3), f'Array_1x3 must have shape (1, 3), but got {array_1x3.shape}'\nassert np.array_equal(array_1x3.flatten(), [10, 20, 30]), f'Array_1x3 should contain [10, 20, 30], but got {array_1x3.flatten()}'\n\n# Test broadcasting result\nassert isinstance(broadcasted_result, np.ndarray), 'Variable \"broadcasted_result\" must be a numpy array'\nassert broadcasted_result.shape == (4, 3), f'Broadcasted_result must have shape (4, 3), but got {broadcasted_result.shape}'\nexpected_result = array_4x1 + array_1x3\nassert np.array_equal(broadcasted_result, expected_result), f'Broadcasted result should be {expected_result}, but got {broadcasted_result}'"
         },
-        "passed": true
+        "passed": false
       },
       {
         "name": "Result for Advanced indexing and sorting",
@@ -2926,14 +2926,14 @@
             },
             "prompt": "Solve the task below, and return the solution in the specified language. Return ONLY the code, no other text.",
             "configuration": "Default configuration",
-            "scaffolding": "no scaffolding"
+            "scaffolding": "No scaffolding"
           },
           "task": {
             "name": "Advanced indexing and sorting",
             "version": "1.0.0",
             "description": "Use advanced indexing techniques and multi-dimensional sorting",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2944,7 +2944,7 @@
             },
             "content": "Create a 5x3 NumPy array with random integers between 0 and 50. Sort each row independently in descending order. Find the indices that would sort the entire array in ascending order when flattened. Original array should be assigned to `original_array`, row-wise sorted array to `sorted_rows`, flattened array to `flattened`, and sorting indices to `sort_indices`."
           },
-          "content": "\nimport numpy as np\n\n# Create the original 5x3 array with random integers between 0 and 50\noriginal_array = np.random.randint(0, 51, (5, 3))\n\n# Sort each row independently in descending order\nsorted_rows = np.sort(original_array)[:, ::-1]\n\n# Flatten the array\nflattened = sorted_rows.flatten()\n\n# Find the indices that would sort the flattened array in ascending order\nsort_indices = np.argsort(flattened)\n"
+          "content": "\nimport numpy as np\n\n# Create a 5x3 array with random integers between 0 and 50\noriginal_array = np.random.randint(0, 51, size=(5, 3))\n\n# Sort each row independently in descending order\nsorted_rows = np.sort(original_array, axis=1)[:, ::-1]\n\n# Flatten the array\nflattened = sorted_rows.flatten()\n\n# Find the indices that would sort the flattened array in ascending order\nsort_indices = np.argsort(flattened)\n"
         },
         "test": {
           "name": "Advanced indexing and sorting test",
@@ -2955,7 +2955,7 @@
             "version": "1.0.0",
             "description": "Use advanced indexing techniques and multi-dimensional sorting",
             "library": {
-              "name": "NumPy",
+              "name": "numpy",
               "version": "2.3.2",
               "description": "Fundamental package for scientific computing with Python, providing support for large, multi-dimensional arrays and matrices",
               "language": {
@@ -2972,7 +2972,7 @@
       }
     ],
     "size": 10,
-    "number_passed": 9,
-    "percentage_passed": 90.0
+    "number_passed": 8,
+    "percentage_passed": 80.0
   }
 }

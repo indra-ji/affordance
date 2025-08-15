@@ -1,12 +1,19 @@
 from typing import Literal
 
-from pydantic import BaseModel, computed_field, field_validator
+from pydantic import BaseModel, Field, computed_field, field_validator
 
 
 class BaseEntity(BaseModel, frozen=True, strict=True, extra="ignore"):
     name: str
-    version: str
+    version: str = Field(pattern=r"^\d+\.\d+\.\d+$")  # Validate semantic versioning
     description: str
+
+    @field_validator("version", mode="before")
+    @classmethod
+    def normalize_version(cls, text: str) -> str:
+        if isinstance(text, str):
+            return text.strip()
+        return text
 
 
 class Language(BaseEntity):
@@ -22,6 +29,13 @@ class Language(BaseEntity):
 
 class Library(BaseEntity):
     language: Language
+
+    @field_validator("name", mode="before")
+    @classmethod
+    def normalize_name(cls, text: str) -> str:
+        if isinstance(text, str):
+            return text.lower().strip()
+        return text
 
 
 class Task(BaseEntity):
