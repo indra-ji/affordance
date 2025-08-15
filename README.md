@@ -60,6 +60,7 @@ Evaluation
 ├── Testset (Collection of test cases)
 ├── Answerset (Collection of AI-generated code solutions)
 └── Resultset (Execution results + metrics)
+```
 
 ## 📁 Project Structure
 
@@ -82,6 +83,7 @@ affordance/
 │   └── configs/            # Test configuration files
 └── eval_configs/           # Evaluation configurations
     └── numpy_demo_configs/ # NumPy library evaluation example
+```
 
 ## 🔧 Configuration System
 
