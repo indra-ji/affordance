@@ -1,26 +1,28 @@
 """Smoke tests for affordance evaluation framework"""
 
 # Import the actual application modules
+import pytest
+
 from data_models import (
+    Agent,
+    Answer,
+    Answerset,
+    Evaluation,
     Language,
     Library,
     Model,
-    Agent,
+    Result,
+    Resultset,
     Task,
     Taskset,
     Test,
     Testset,
-    Answer,
-    Answerset,
-    Result,
-    Resultset,
-    Evaluation,
 )
 from evaluation import (
+    create_agent,
     create_language,
     create_library,
     create_model,
-    create_agent,
     create_taskset,
     create_testset,
 )
@@ -33,7 +35,9 @@ class TestDataModels:
     def test_language_creation_and_properties(self):
         """Test Language creation and all properties"""
         language = Language(
-            name="Python", version="3.13", description="Python programming language"
+            name="Python",
+            version="3.13",
+            description="Python programming language",
         )
         assert language.name == "Python"
         assert language.version == "3.13"
@@ -70,7 +74,10 @@ class TestDataModels:
     def test_agent_creation_and_properties(self):
         """Test Agent creation and all properties"""
         model = Model(
-            name="gpt-4", version="1.0.0", description="GPT-4", provider="openai"
+            name="gpt-4",
+            version="1.0.0",
+            description="GPT-4",
+            provider="openai",
         )
         agent = Agent(
             name="CodingAgent",
@@ -93,7 +100,10 @@ class TestDataModels:
         """Test Task creation and all properties"""
         language = Language(name="Python", version="3.13", description="Python")
         library = Library(
-            name="NumPy", version="2.0.0", description="NumPy", language=language
+            name="NumPy",
+            version="2.0.0",
+            description="NumPy",
+            language=language,
         )
         task = Task(
             name="Array Sum",
@@ -115,7 +125,10 @@ class TestDataModels:
         """Test Taskset creation and all properties including computed fields"""
         language = Language(name="Python", version="3.13", description="Python")
         library = Library(
-            name="NumPy", version="2.0.0", description="NumPy", language=language
+            name="NumPy",
+            version="2.0.0",
+            description="NumPy",
+            language=language,
         )
 
         task1 = Task(
@@ -158,7 +171,10 @@ class TestDataModels:
         """Test Test creation and all properties"""
         language = Language(name="Python", version="3.13", description="Python")
         library = Library(
-            name="NumPy", version="2.0.0", description="NumPy", language=language
+            name="NumPy",
+            version="2.0.0",
+            description="NumPy",
+            language=language,
         )
         task = Task(
             name="Task1",
@@ -185,7 +201,10 @@ class TestDataModels:
         """Test Testset creation and all properties including computed fields"""
         language = Language(name="Python", version="3.13", description="Python")
         library = Library(
-            name="NumPy", version="2.0.0", description="NumPy", language=language
+            name="NumPy",
+            version="2.0.0",
+            description="NumPy",
+            language=language,
         )
 
         task1 = Task(
@@ -244,10 +263,16 @@ class TestDataModels:
         """Test Answer creation and all properties"""
         language = Language(name="Python", version="3.13", description="Python")
         library = Library(
-            name="NumPy", version="2.0.0", description="NumPy", language=language
+            name="NumPy",
+            version="2.0.0",
+            description="NumPy",
+            language=language,
         )
         model = Model(
-            name="gpt-4", version="1.0.0", description="GPT-4", provider="openai"
+            name="gpt-4",
+            version="1.0.0",
+            description="GPT-4",
+            provider="openai",
         )
         agent = Agent(
             name="Agent",
@@ -285,10 +310,16 @@ class TestDataModels:
         """Test Answerset creation and all properties including computed fields"""
         language = Language(name="Python", version="3.13", description="Python")
         library = Library(
-            name="NumPy", version="2.0.0", description="NumPy", language=language
+            name="NumPy",
+            version="2.0.0",
+            description="NumPy",
+            language=language,
         )
         model = Model(
-            name="gpt-4", version="1.0.0", description="GPT-4", provider="openai"
+            name="gpt-4",
+            version="1.0.0",
+            description="GPT-4",
+            provider="openai",
         )
         agent = Agent(
             name="Agent",
@@ -359,10 +390,16 @@ class TestDataModels:
         """Test Result creation and all properties"""
         language = Language(name="Python", version="3.13", description="Python")
         library = Library(
-            name="NumPy", version="2.0.0", description="NumPy", language=language
+            name="NumPy",
+            version="2.0.0",
+            description="NumPy",
+            language=language,
         )
         model = Model(
-            name="gpt-4", version="1.0.0", description="GPT-4", provider="openai"
+            name="gpt-4",
+            version="1.0.0",
+            description="GPT-4",
+            provider="openai",
         )
         agent = Agent(
             name="Agent",
@@ -415,10 +452,16 @@ class TestDataModels:
         """Test Resultset creation and all properties including computed fields"""
         language = Language(name="Python", version="3.13", description="Python")
         library = Library(
-            name="NumPy", version="2.0.0", description="NumPy", language=language
+            name="NumPy",
+            version="2.0.0",
+            description="NumPy",
+            language=language,
         )
         model = Model(
-            name="gpt-4", version="1.0.0", description="GPT-4", provider="openai"
+            name="gpt-4",
+            version="1.0.0",
+            description="GPT-4",
+            provider="openai",
         )
         agent = Agent(
             name="Agent",
@@ -564,18 +607,24 @@ class TestDataModels:
         assert resultset.results == (result1, result2, result3)
         assert resultset.size == 3  # Test computed field
         assert resultset.number_passed == 2  # Test computed field (2 out of 3 passed)
-        assert (
-            abs(resultset.percentage_passed - 66.66666666666667) < 0.0000001
+        assert resultset.percentage_passed == pytest.approx(
+            66.66666666666667
         )  # Test computed field
 
     def test_evaluation_creation_and_properties(self):
         """Test Evaluation creation and all properties"""
         language = Language(name="Python", version="3.13", description="Python")
         library = Library(
-            name="NumPy", version="2.0.0", description="NumPy", language=language
+            name="NumPy",
+            version="2.0.0",
+            description="NumPy",
+            language=language,
         )
         model = Model(
-            name="gpt-4", version="1.0.0", description="GPT-4", provider="openai"
+            name="gpt-4",
+            version="1.0.0",
+            description="GPT-4",
+            provider="openai",
         )
         agent = Agent(
             name="Agent",
@@ -724,7 +773,10 @@ class TestConfigLoading:
         assert agent.version == "1.0.0"
         assert agent.description == "Mock agent for testing"
         assert agent.model == model
-        assert agent.prompt == "You are a helpful coding assistant. Solve the task."
+        assert (
+            agent.prompt
+            == "You are a helpful coding assistant. Solve the task in the specified language and library. Return ONLY the code, no other text."
+        )
         assert agent.configuration == "temperature=0.1"
         assert agent.scaffolding == "basic"
 

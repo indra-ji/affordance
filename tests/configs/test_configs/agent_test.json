@@ -2,7 +2,7 @@
   "name": "TestAgent",
   "version": "1.0.0",
   "description": "Mock agent for testing",
-  "prompt": "You are a helpful coding assistant. Solve the task.",
+  "prompt": "You are a helpful coding assistant. Solve the task in the specified language and library. Return ONLY the code, no other text.",
   "configuration": "temperature=0.1",
   "scaffolding": "basic"
 }

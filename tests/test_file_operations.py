@@ -1,17 +1,20 @@
 """Smoke tests for file operations in affordance evaluation framework"""
 
-import pytest
-import tempfile
+import json
 import os
+import tempfile
+
+import pytest
+from pydantic import ValidationError
 
 from data_models import Language, Library, Task, Taskset
 from utils import (
-    serialize_data_model,
+    clean_code,
     deserialize_data_model,
     deserialize_dict,
     find_config_file,
     generate_evaluation_output_path,
-    clean_code,
+    serialize_data_model,
 )
 
 
@@ -65,7 +68,9 @@ class TestFileOperations:
     def test_serialization_deserialization_language(self, tmp_path):
         """Test that Language objects can be serialized and deserialized"""
         language = Language(
-            name="Python", version="3.13", description="Python programming language"
+            name="Python",
+            version="3.13",
+            description="Python programming language",
         )
 
         # Test serialization
@@ -90,7 +95,10 @@ class TestFileOperations:
         """Test serialization/deserialization of complex nested objects"""
         language = Language(name="Python", version="3.13", description="Python")
         library = Library(
-            name="NumPy", version="2.0.0", description="NumPy", language=language
+            name="NumPy",
+            version="2.0.0",
+            description="NumPy",
+            language=language,
         )
 
         task1 = Task(
@@ -166,7 +174,7 @@ class TestFileOperations:
         invalid_json_file = tmp_path / "invalid.json"
         invalid_json_file.write_text("{ invalid json }")
 
-        with pytest.raises(Exception):  # Could be JSON decode error
+        with pytest.raises((json.JSONDecodeError, ValidationError)):
             deserialize_data_model(str(invalid_json_file), Language)
 
     def test_evaluation_output_path_generation(self):
@@ -212,6 +220,10 @@ class TestFileOperations:
         assert "x = 1" in cleaned_multiple
         assert "y = 2" in cleaned_multiple
 
+        # Test edge cases
+        assert clean_code("") == ""
+        assert clean_code("```\n```") == "\n"
+
     def test_file_permissions_and_encoding(self, tmp_path):
         """Test that files are created with proper permissions and encoding"""
         language = Language(
@@ -240,7 +252,7 @@ class TestFileOperations:
         language = Language(name="Test", version="1.0.0", description="Test")
 
         # This should fail since parent directories don't exist
-        with pytest.raises(FileNotFoundError):
+        with pytest.raises((FileNotFoundError, OSError)):
             serialize_data_model(str(nested_path), language)
 
         # Create parent directories

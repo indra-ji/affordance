@@ -2,7 +2,7 @@
 
 **Understand how well software engineering agents can use your software library.**
 
-Affordance is an evaluation framework that measures how effectively AI coding agents can use specific software libraries. 
+Affordance is an evaluation framework that measures how effectively AI coding agents can use specific software libraries.
 
 It provides a complete pipeline for creating coding tasks, running AI agents against them, executing generated code safely, and visualizing results through an interactive dashboard.
 
