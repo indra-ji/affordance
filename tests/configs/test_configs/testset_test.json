@@ -1,0 +1,19 @@
+{
+  "name": "TestTestset",
+  "version": "1.0.0",
+  "description": "Mock testset for testing",
+  "tests": [
+    {
+      "name": "Test Addition",
+      "version": "1.0.0",
+      "description": "Test that result equals 8",
+      "content": "assert result == 8"
+    },
+    {
+      "name": "Test String Reversal",
+      "version": "1.0.0",
+      "description": "Test that reversed string equals 'olleh'",
+      "content": "assert reversed_str == 'olleh'"
+    }
+  ]
+}
