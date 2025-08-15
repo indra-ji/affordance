@@ -1,0 +1,8 @@
+{
+  "name": "TestAgent",
+  "version": "1.0.0",
+  "description": "Mock agent for testing",
+  "prompt": "You are a helpful coding assistant. Solve the task.",
+  "configuration": "temperature=0.1",
+  "scaffolding": "basic"
+}

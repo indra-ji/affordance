@@ -1,0 +1,19 @@
+{
+  "name": "TestTaskset",
+  "version": "1.0.0",
+  "description": "Mock taskset for testing",
+  "tasks": [
+    {
+      "name": "Simple Addition",
+      "version": "1.0.0",
+      "description": "Add two numbers",
+      "content": "Write code that calculates 5 + 3 and stores the result in a variable called 'result'."
+    },
+    {
+      "name": "String Reversal",
+      "version": "1.0.0", 
+      "description": "Reverse a string",
+      "content": "Write code that reverses the string 'hello' and stores it in a variable called 'reversed_str'."
+    }
+  ]
+}

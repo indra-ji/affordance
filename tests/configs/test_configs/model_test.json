@@ -1,0 +1,6 @@
+{
+  "name": "test-model",
+  "version": "1.0.0",
+  "description": "Mock model for testing",
+  "provider": "openai"
+}

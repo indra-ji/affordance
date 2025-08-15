@@ -105,35 +105,6 @@ class Resultset(BaseEntity):
         )
 
 
-class Benchmark(BaseEntity):
-    library: Library
-    resultsets: tuple[Resultset, ...]
-
-    @computed_field
-    @property
-    def size(self) -> int:
-        return len(self.resultsets)
-
-    @computed_field
-    @property
-    def total_size(self) -> int:
-        return sum(resultset.size for resultset in self.resultsets)
-
-    @computed_field
-    @property
-    def number_passed(self) -> int:
-        return sum(resultset.number_passed for resultset in self.resultsets)
-
-    @computed_field
-    @property
-    def percentage_passed(self) -> float:
-        return (
-            (float(self.number_passed) / float(self.total_size)) * 100.0
-            if self.total_size > 0
-            else 0.0
-        )
-
-
 class Evaluation(BaseEntity):
     language: Language
     library: Library
@@ -143,4 +114,3 @@ class Evaluation(BaseEntity):
     agent: Agent
     answerset: Answerset
     resultset: Resultset
-    benchmark: Benchmark

@@ -1,0 +1,16 @@
+[theme]
+# Terminal/Hacker Theme
+# Primary color for buttons, links, and interactive elements (bright green)
+primaryColor = "#00ff00"
+
+# Main application background (black)
+backgroundColor = "#000000"
+
+# Sidebar and container backgrounds (dark gray/black)
+secondaryBackgroundColor = "#000000"
+
+# Text color for all content (green terminal text)
+textColor = "#00ff00"
+
+# Font family - monospace for terminal look
+font = "monospace"

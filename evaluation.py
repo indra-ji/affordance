@@ -1,12 +1,9 @@
-import datetime
 import sys
 
-from config_utils import find_config_file
 from data_models import (
     Agent,
     Answer,
     Answerset,
-    Benchmark,
     Evaluation,
     Language,
     Library,
@@ -18,13 +15,15 @@ from data_models import (
     Test,
     Testset,
 )
-from json_utils import (
-    deserialize_data_model,
-    deserialize_dict,
-    serialize_data_model,
-)
 from llm import generate_answer
 from tester import generate_result
+from utils import (
+    deserialize_data_model,
+    deserialize_dict,
+    find_config_file,
+    generate_evaluation_output_path,
+    serialize_data_model,
+)
 
 
 def create_language(configs_dir: str) -> Language:
@@ -176,18 +175,6 @@ def create_resultset(
     return resultset
 
 
-def create_benchmark(library: Library, resultsets: tuple[Resultset, ...]) -> Benchmark:
-    benchmark = Benchmark(
-        name=f"Benchmark for {library.name}",
-        version="1.0.0",
-        description=f"Benchmark for {library.name} using {resultsets[0].taskset.name} and {resultsets[0].testset.name}",
-        library=library,
-        resultsets=resultsets,
-    )
-
-    return benchmark
-
-
 def create_evaluation(configs_dir: str) -> Evaluation:
     language = create_language(
         configs_dir=find_config_file(configs_dir, "language_*.json")
@@ -210,7 +197,6 @@ def create_evaluation(configs_dir: str) -> Evaluation:
     )
     answerset = create_answerset(agent, taskset)
     resultset = create_resultset(taskset, testset, answerset)
-    benchmark = create_benchmark(library, (resultset,))
 
     evaluation = Evaluation(
         name=f"Evaluation for {library.name}",
@@ -224,14 +210,7 @@ def create_evaluation(configs_dir: str) -> Evaluation:
         agent=agent,
         answerset=answerset,
         resultset=resultset,
-        benchmark=benchmark,
     )
-    return evaluation
-
-
-def load_evaluation(eval_path: str) -> Evaluation:
-    evaluation = deserialize_data_model(eval_path, Evaluation)
-
     return evaluation
 
 
@@ -250,7 +229,6 @@ def rerun_evaluation(eval_path: str) -> Evaluation:
 
     answerset = create_answerset(agent, taskset)
     resultset = create_resultset(taskset, testset, answerset)
-    benchmark = create_benchmark(library, (resultset,))
 
     evaluation = Evaluation(
         name=name,
@@ -264,8 +242,14 @@ def rerun_evaluation(eval_path: str) -> Evaluation:
         agent=agent,
         answerset=answerset,
         resultset=resultset,
-        benchmark=benchmark,
     )
+
+    return evaluation
+
+
+def load_evaluation(eval_path: str) -> Evaluation:
+    evaluation = deserialize_data_model(eval_path, Evaluation)
+
     return evaluation
 
 
@@ -273,15 +257,22 @@ if __name__ == "__main__":
     match sys.argv[1:]:
         case ["--create", configs_dir]:
             evaluation = create_evaluation(configs_dir)
-            timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-            output_path = f"evals/{evaluation.name.replace(' ', '_')}_{evaluation.model.name}_{timestamp}.json"
+            output_path = generate_evaluation_output_path(
+                evaluation.name, evaluation.model.name
+            )
             serialize_data_model(output_path, evaluation)
         case ["--rerun", eval_path]:
             evaluation = rerun_evaluation(eval_path)
-            timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-            output_path = f"evals/{evaluation.name.replace(' ', '_')}_{evaluation.model.name}_{timestamp}.json"
+            output_path = generate_evaluation_output_path(
+                evaluation.name, evaluation.model.name
+            )
             serialize_data_model(output_path, evaluation)
+        case ["--load", eval_path]:
+            evaluation = load_evaluation(eval_path)
+            output_path = generate_evaluation_output_path(
+                evaluation.name, evaluation.model.name
+            )
         case _:
             raise Exception(
-                "Usage: python evaluation.py --create <configs_dir> OR python evaluation.py --rerun <eval_path>"
+                "Usage: python evaluation.py --create <configs_dir> OR python evaluation.py --rerun <eval_path> OR python evaluation.py --load <eval_path>"
             )

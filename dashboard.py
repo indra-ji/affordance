@@ -1,290 +1,177 @@
 from pathlib import Path
-from typing import Optional, Union
 
 import streamlit as st
 
 from data_models import Evaluation
-from json_utils import deserialize_data_model
+from utils import deserialize_data_model
 
 
-def display_entity_info(entity_data: dict, title: str, icon: str = ""):
-    """Display entity information in minimal text format, styled as a badge."""
-    # Inject minimal, self-contained styles for badges (always inject to ensure styling works)
-    st.markdown(
-        """
-        <style>
-        .af-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 10px;
-            border-radius: 999px;
-            border: 1px solid #e5e7eb;
-            background: #f3f4f6;
-            color: #111827;
-            font-weight: 600;
-        }
-        .af-badge small { color: #2563eb; font-weight: 500; }
-        @media (prefers-color-scheme: dark) {
-            .af-badge {
-                border-color: rgba(148, 163, 184, 0.18);
-                background: rgba(148, 163, 184, 0.06);
-                color: #e5e7eb;
-            }
-            .af-badge small { color: #93c5fd; }
-        }
-        .af-overview-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 12px; }
-        .af-overview-desc { font-size: 0.95rem; color: #64748b; }
-        @media (prefers-color-scheme: dark) { .af-overview-desc { color: #94a3b8; } }
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
-    icon_part = f"{icon} " if icon else ""
-    st.markdown(
-        f"<span class='af-badge'>{icon_part}<strong>{title}:</strong> {entity_data['name']} <small>v{entity_data['version']}</small></span>",
-        unsafe_allow_html=True,
-    )
-    st.write(f"_{entity_data['description']}_")
+def display_basic_info(entity, title: str):
+    """Display basic information using Streamlit components only"""
+    st.subheader(title)
+
+    st.write(f"**Name:** {entity.name}")
+    st.write(f"**Description:** {entity.description}")
+    st.write(f"**Version:** {entity.version}")
 
 
-def render_overview_section(data: dict):
-    # Push the overview down from the very top of the page
-    st.markdown("<div style='height:32px'></div>", unsafe_allow_html=True)
-
+def render_overview(evaluation: Evaluation):
     st.header("Evaluation Overview")
     st.caption("High-level details of the evaluation run")
 
     st.divider()
 
-    # vertical space between heading and information
-    st.markdown("<div style='height:16px'></div>", unsafe_allow_html=True)
+    display_basic_info(evaluation, "Evaluation")
 
-    display_entity_info(data, "Evaluation", "🔬")
-
-    # Language and Library
     col1, col2 = st.columns(2)
     with col1:
-        display_entity_info(data["language"], "Language", "🔤")
+        display_basic_info(evaluation.language, "Language")
     with col2:
-        display_entity_info(data["library"], "Library", "📚")
+        display_basic_info(evaluation.library, "Library")
 
-    # Model and Agent
     col1, col2 = st.columns(2)
     with col1:
-        display_entity_info(data["model"], "Model", "🤖")
+        display_basic_info(evaluation.model, "Model")
     with col2:
-        display_entity_info(data["agent"], "Agent", "🕵️")
+        display_basic_info(evaluation.agent, "Agent")
 
-    # Taskset and Testset with task counts
     col1, col2 = st.columns(2)
     with col1:
-        display_entity_info(data["taskset"], "Taskset", "🧩")
-
+        display_basic_info(evaluation.taskset, "Taskset")
     with col2:
-        display_entity_info(data["testset"], "Testset", "🧪")
+        display_basic_info(evaluation.testset, "Testset")
 
 
-def render_metrics_section(data: dict):
-    """Render the performance metrics section"""
-    # Push the performance section down from the very top of the page
-    st.markdown("<div style='height:32px'></div>", unsafe_allow_html=True)
-
+def render_metrics(evaluation: Evaluation):
     st.header("Metrics")
     st.caption("At-a-glance performance")
 
     st.divider()
 
-    # vertical space between heading and information
-    st.markdown("<div style='height:16px'></div>", unsafe_allow_html=True)
-
-    # Benchmark performance
     st.subheader("Evaluation performance")
 
     col1, col2, col3 = st.columns(3)
     with col1:
         st.metric(
             "Overall pass rate",
-            f"{data['benchmark']['percentage_passed']:.1f}%",
+            f"{evaluation.resultset.percentage_passed:.1f}%",
         )
     with col2:
-        st.metric("Total tests", data["benchmark"]["total_size"])
+        st.metric("Total tests", evaluation.resultset.size)
     with col3:
-        st.metric("Total passed", data["benchmark"]["number_passed"])
+        st.metric("Total passed", evaluation.resultset.number_passed)
 
     st.divider()
 
-    # Core size metrics
     st.subheader("Dataset sizes")
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
-        st.metric(
-            "Taskset size",
-            data["taskset"]["size"],
-        )
+        st.metric("Taskset size", evaluation.taskset.size)
     with col2:
-        st.metric(
-            "Testset size",
-            data["testset"]["size"],
-        )
+        st.metric("Testset size", evaluation.testset.size)
     with col3:
-        st.metric(
-            "Answerset size",
-            data["answerset"]["size"],
-        )
+        st.metric("Answerset size", evaluation.answerset.size)
     with col4:
-        st.metric(
-            "Resultset size",
-            data["resultset"]["size"],
-        )
+        st.metric("Resultset size", evaluation.resultset.size)
 
 
-def render_detailed_view_section(data: dict):
-    """Render the detailed view section"""
-
-    # inject_detail_styles()
-
-    # vertical space between heading and information
-    st.markdown("<div style='height:16px'></div>", unsafe_allow_html=True)
+def render_detailed_view(evaluation: Evaluation):
     st.header("Detailed view")
     st.caption("Inspect tasks, answers, tests, and results")
 
     st.divider()
 
-    results = data["resultset"]["results"]
-    left_parts = [
-        f"Task {i + 1}: {r['answer']['task']['name']}" for i, r in enumerate(results)
-    ]
-    max_left_len = max((len(s) for s in left_parts), default=0)
+    results = evaluation.resultset.results
 
-    def status_text(passed: bool) -> str:
-        return "🟢 PASSED" if passed else "🔴 FAILED"
+    text_parts = [
+        f"Task {i + 1}: {result.answer.task.name}" for i, result in enumerate(results)
+    ]
 
     task_names = [
-        f"{left.ljust(max_left_len + 2)}{status_text(r['passed'])}"
-        for left, r in zip(left_parts, results)
+        f"{text} {'🟢 PASSED' if result.passed else '🔴 FAILED'}"
+        for text, result in zip(text_parts, results)
     ]
 
     selected_task_idx = st.selectbox(
         "Select a task to explore in detail:",
-        range(len(task_names)),
+        range(evaluation.resultset.taskset.size),
         format_func=lambda x: task_names[x],
     )
 
-    st.write("")
-    st.write("")
+    result = results[selected_task_idx]
 
-    if selected_task_idx is not None:
-        result = results[selected_task_idx]
+    col1, col2 = st.columns([3, 1])
+    with col1:
+        st.subheader(f"{result.answer.task.name}")
+    with col2:
+        match result.passed:
+            case True:
+                st.markdown("## **PASSED**")
+            case False:
+                st.markdown("## **:red[FAILED]**")
 
-        # Task header
-        col1, col2 = st.columns([3, 1])
-        with col1:
-            st.subheader(f"{result['answer']['task']['name']}")
-        with col2:
-            if result["passed"]:
-                st.success("🟢 PASSED")
-            else:
-                st.error("🔴 FAILED")
+    tab1, tab2, tab3 = st.tabs(["Task", "Answer", "Test"])
 
-        # Task details tabs
-        st.markdown(
-            """
-        <style>
-        .stTabs [data-baseweb="tab-list"] button [data-testid="stMarkdownContainer"] p {
-            font-size: 18px;
-            font-weight: 600;
-            padding: 8px 16px;
-        }
-        .stTabs [data-baseweb="tab-list"] button {
-            height: 50px;
-            padding: 0 24px;
-        }
-        </style>
-        """,
-            unsafe_allow_html=True,
+    with tab1:
+        st.text_area(
+            "Task content:",
+            result.answer.task.content,
+            height=150,
+            disabled=True,
         )
-        tab1, tab2, tab3 = st.tabs(["Task", "Answer", "Test"])
 
-        with tab1:
-            # Restore original task textarea styling (black bg, white text)
-            st.markdown(
-                """
-            <style>
-            .stTextArea textarea {
-                background-color: black !important;
-                color: white !important;
-            }
-            </style>
-            """,
-                unsafe_allow_html=True,
-            )
+        st.divider()
 
-            st.text_area(
-                "Task content:",
-                result["answer"]["task"]["content"],
-                height=150,
-                disabled=True,
-            )
+        col1, col2 = st.columns(2)
+        with col1:
+            st.write(f"**Task name:** {result.answer.task.name}")
+            st.write(f"**Description:** {result.answer.task.description}")
+            st.write(f"**Library:** {result.answer.task.library.name}")
+        with col2:
+            st.write(f"**Version:** {result.answer.task.version}")
+            st.write(f"**Task number:** {selected_task_idx + 1}")
 
-            # Plain metadata (no styled cards)
-            col1, col2 = st.columns(2)
-            with col1:
-                st.write(f"**Task name:** {result['answer']['task']['name']}")
-                st.write(f"**Description:** {result['answer']['task']['description']}")
-                st.write(f"**Library:** {result['answer']['task']['library']['name']}")
-            with col2:
-                st.write(f"**Version:** {result['answer']['task']['version']}")
-                st.write(f"**Task number:** {selected_task_idx + 1}")
+    with tab2:
+        st.code(result.answer.content)
 
-        with tab2:
-            st.code(result["answer"]["content"])
+        st.divider()
 
-            col1, col2 = st.columns(2)
-            with col1:
-                st.write(f"**Agent:** {result['answer']['agent']['name']}")
-                st.write(f"**Model:** {result['answer']['agent']['model']['name']}")
-                st.write(f"**Prompt:** {result['answer']['agent']['prompt']}")
-                st.write(f"**Scaffolding:** {result['answer']['agent']['scaffolding']}")
-            with col2:
-                st.write(f"**Version:** {result['answer']['agent']['version']}")
-                st.write(
-                    f"**Provider:** {result['answer']['agent']['model']['provider']}"
-                )
-                st.write(
-                    f"**Configuration:** {result['answer']['agent']['configuration']}"
-                )
+        col1, col2 = st.columns(2)
+        with col1:
+            st.write(f"**Agent:** {result.answer.agent.name}")
+            st.write(f"**Model:** {result.answer.agent.model.name}")
+            st.write(f"**Prompt:** {result.answer.agent.prompt}")
+            st.write(f"**Scaffolding:** {result.answer.agent.scaffolding}")
+        with col2:
+            st.write(f"**Version:** {result.answer.agent.version}")
+            st.write(f"**Provider:** {result.answer.agent.model.provider}")
+            st.write(f"**Configuration:** {result.answer.agent.configuration}")
 
-        with tab3:
-            st.code(result["test"]["content"])
+    with tab3:
+        st.code(result.test.content)
 
-            col1, col2 = st.columns(2)
-            with col1:
-                st.write(f"**Test name:** {result['test']['name']}")
-                st.write(f"**Test version:** {result['test']['version']}")
-            with col2:
-                st.write(f"**Test description:** {result['test']['description']}")
+        st.divider()
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.write(f"**Test name:** {result.test.name}")
+            st.write(f"**Test version:** {result.test.version}")
+        with col2:
+            st.write(f"**Test description:** {result.test.description}")
 
 
 @st.cache_data
-def load_evaluation_from_file(file_path: str) -> Optional[dict]:
-    """Load evaluation data from JSON file"""
+def load_evaluation_from_file(file_path: str) -> Evaluation | None:
     try:
         evaluation = deserialize_data_model(file_path, Evaluation)
-        return evaluation.model_dump()
+        return evaluation
     except Exception as e:
         st.error(f"Error loading evaluation: {e}")
         return None
 
 
-def show_dashboard(evaluation_data: Optional[Union[dict, Evaluation]] = None):
-    """
-    Main dashboard function that can be called from evaluation.py
-
-    Args:
-        evaluation_data: Either an Evaluation object or dict, or None to load from file
-    """
+def show_dashboard(evaluation_data: Evaluation | None = None):
     st.set_page_config(
         page_title="Evaluation Dashboard",
         page_icon=None,
@@ -292,83 +179,46 @@ def show_dashboard(evaluation_data: Optional[Union[dict, Evaluation]] = None):
         initial_sidebar_state="expanded",
     )
 
-    # Global styles
-    # inject_global_styles()
+    st.sidebar.header("File Selection")
+    eval_files = list(Path("evals").glob("Evaluation_*.json"))
 
-    # Removed main title per request
-
-    # Handle different input types
-    if evaluation_data is None:
-        # File selection mode
-        st.sidebar.header("File Selection")
-        eval_files = list(Path("evals").glob("Evaluation_*.json"))
-
-        if not eval_files:
-            st.error(
-                "No evaluation files found! Make sure your JSON files are in the current directory."
-            )
-            return
-
-        # Dropdown for file selection; widen menu so long filenames are visible
-        st.sidebar.markdown(
-            """
-            <style>
-            [data-baseweb="menu"] { max-width: 90vw; width: 640px; left: 20px !important; }
-            [data-baseweb="menu"] [role="option"] { white-space: normal; }
-            </style>
-            """,
-            unsafe_allow_html=True,
-        )
-        selected_file = st.sidebar.selectbox(
-            "",
-            eval_files,
-            format_func=lambda p: p.name,
-            label_visibility="collapsed",
-        )
-
-        if selected_file:
-            data = load_evaluation_from_file(str(selected_file))
-            if not data:
-                return
-        else:
-            return
-
-    elif isinstance(evaluation_data, Evaluation):
-        # Pydantic model input
-        data = evaluation_data.model_dump()
-
-    elif isinstance(evaluation_data, dict):
-        # Dictionary input
-        data = evaluation_data
-
-    else:
+    if not eval_files:
         st.error(
-            "Invalid evaluation data type. Expected Evaluation object, dict, or None."
+            "No evaluation files found! Make sure your JSON files are in the evals directory."
         )
         return
 
-    # Sidebar navigation
-    # Navigation: use a menu that highlights the active page
+    selected_file = st.sidebar.selectbox(
+        "Evaluation to be displayed",
+        eval_files,
+        format_func=lambda p: p.name,
+        label_visibility="collapsed",
+    )
+
+    evaluation = load_evaluation_from_file(str(selected_file))
+
     st.sidebar.header("Navigation")
     sections = [
         "Overview",
         "Metrics",
         "Detailed view",
     ]
-    # Use radio for clear highlighting of the current page
-    selected_section = st.sidebar.radio("", sections, label_visibility="collapsed")
+    selected_section = st.sidebar.radio(
+        "Section to be displayed",
+        sections,
+        label_visibility="collapsed",
+    )
 
-    # Render selected section
-    if selected_section == "Overview":
-        render_overview_section(data)
-    elif selected_section == "Metrics":
-        render_metrics_section(data)
-    elif selected_section == "Detailed view":
-        render_detailed_view_section(data)
+    match selected_section:
+        case "Overview":
+            render_overview(evaluation)
+        case "Metrics":
+            render_metrics(evaluation)
+        case "Detailed view":
+            render_detailed_view(evaluation)
 
 
 def main():
-    """Main function for standalone usage"""
     show_dashboard()
 
 

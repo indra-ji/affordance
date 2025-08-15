@@ -4,7 +4,7 @@ import openai
 from dotenv import load_dotenv
 
 from data_models import Agent, Task
-from json_utils import clean_code
+from utils import clean_code
 
 load_dotenv()
 
@@ -33,7 +33,7 @@ def generate_openai_answer(agent: Agent, task: Task) -> str:
     except Exception as e:
         error_message = f"Error generating answer using OpenAI API: {str(e)}"
         print(error_message)
-        return error_message
+        raise e
 
 
 def generate_answer(agent: Agent, task: Task) -> str:
