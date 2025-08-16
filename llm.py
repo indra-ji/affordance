@@ -31,9 +31,7 @@ def generate_openai_answer(agent: Agent, task: Task) -> str:
         return output
 
     except Exception as e:
-        error_message = f"Error generating answer using OpenAI API: {str(e)}"
-        print(error_message)
-        raise e
+        raise RuntimeError(f"Error generating answer using OpenAI API: {str(e)}") from e
 
 
 def generate_answer(agent: Agent, task: Task) -> str:
