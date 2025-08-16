@@ -2,7 +2,7 @@ import datetime
 import glob
 import json
 import re
-from typing import Type, get_args
+from typing import get_args
 
 from data_models import ValidDataModel, ValidDataModelType
 
@@ -28,7 +28,7 @@ def serialize_data_model(output_path: str, data_model: ValidDataModel) -> None:
 
 
 def deserialize_data_model(
-    input_path: str, data_model_type: Type[ValidDataModelType]
+    input_path: str, data_model_type: type[ValidDataModelType]
 ) -> ValidDataModel:
     valid_data_model_types = get_args(ValidDataModel)
 
