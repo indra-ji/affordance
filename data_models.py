@@ -1,4 +1,4 @@
-from typing import Literal
+from typing import Literal, Type, TypeVar, Union
 
 from pydantic import BaseModel, Field, computed_field, field_validator
 
@@ -144,3 +144,37 @@ class Evaluation(BaseEntity):
     agent: Agent
     answerset: Answerset
     resultset: Resultset
+
+
+ValidDataModel = Union[
+    Language,
+    Library,
+    Task,
+    Taskset,
+    Test,
+    Testset,
+    Model,
+    Agent,
+    Answer,
+    Answerset,
+    Result,
+    Resultset,
+    Evaluation,
+]
+
+ValidDataModelType = TypeVar(
+    "ValidDataModelType",
+    Type[Language],
+    Type[Library],
+    Type[Task],
+    Type[Taskset],
+    Type[Test],
+    Type[Testset],
+    Type[Model],
+    Type[Agent],
+    Type[Answer],
+    Type[Answerset],
+    Type[Result],
+    Type[Resultset],
+    Type[Evaluation],
+)
