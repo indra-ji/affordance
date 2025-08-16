@@ -15,6 +15,7 @@ dependencies = [
     { name = "pytest" },
     { name = "ruff" },
     { name = "streamlit" },
+    { name = "tenacity" },
     { name = "ty" },
     { name = "watchdog" },
 ]
@@ -29,6 +30,7 @@ requires-dist = [
     { name = "pytest", specifier = ">=8.4.1" },
     { name = "ruff", specifier = ">=0.12.5" },
     { name = "streamlit", specifier = ">=1.48.0" },
+    { name = "tenacity", specifier = ">=9.1.2" },
     { name = "ty", specifier = ">=0.0.1a16" },
     { name = "watchdog", specifier = ">=6.0.0" },
 ]

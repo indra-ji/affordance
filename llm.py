@@ -2,6 +2,12 @@ import os
 
 import openai
 from dotenv import load_dotenv
+from tenacity import (
+    retry,
+    retry_if_exception_type,
+    stop_after_attempt,
+    wait_exponential,
+)
 
 from data_models import Agent, Task
 from utils import clean_code
@@ -9,7 +15,13 @@ from utils import clean_code
 load_dotenv()
 
 
-def generate_openai_answer(agent: Agent, task: Task) -> str:
+@retry(
+    reraise=True,
+    stop=stop_after_attempt(10),
+    wait=wait_exponential(multiplier=1, min=1, max=256),
+    retry=retry_if_exception_type(openai.RateLimitError),
+)
+async def generate_openai_answer(agent: Agent, task: Task) -> str:
     full_prompt = (
         f"{agent.prompt}\n\n"
         f"Task: {task.content}\n\n"
@@ -17,10 +29,10 @@ def generate_openai_answer(agent: Agent, task: Task) -> str:
         f"Language: {task.library.language.name} {task.library.language.version}"
     )
 
-    try:
-        client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+    client = openai.AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-        response = client.responses.create(
+    try:
+        response = await client.responses.create(
             model=agent.model.name,
             input=full_prompt,
         )
@@ -29,18 +41,17 @@ def generate_openai_answer(agent: Agent, task: Task) -> str:
         output = clean_code(output)
 
         return output
-
+    except openai.RateLimitError:
+        raise
     except Exception as e:
-        error_message = f"Error generating answer using OpenAI API: {str(e)}"
-        print(error_message)
-        raise e
+        raise RuntimeError(f"Error generating answer using OpenAI API: {str(e)}") from e
 
 
-def generate_answer(agent: Agent, task: Task) -> str:
+async def generate_answer(agent: Agent, task: Task) -> str:
     provider = agent.model.provider.lower()
 
     match provider:
         case "openai":
-            return generate_openai_answer(agent, task)
+            return await generate_openai_answer(agent, task)
         case _:
             raise ValueError(f"Unsupported model provider: {agent.model.provider}")
