@@ -1,5 +1,5 @@
 {
-  "name": "gpt-4.1-nano",
+  "name": "gpt-5",
   "version": "1.0.0",
   "description": "The new kid on the block, with only a little bit of multiple-personality disorder.",
   "provider": "openai"

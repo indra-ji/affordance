@@ -1,3 +1,4 @@
+import asyncio
 import sys
 
 from data_models import (
@@ -116,9 +117,13 @@ def create_agent(configs_dir: str, model: Model) -> Agent:
     return agent
 
 
-def create_answerset(agent: Agent, taskset: Taskset) -> Answerset:
+async def create_answerset(agent: Agent, taskset: Taskset) -> Answerset:
     tasks = taskset.tasks
 
+    # Run all API calls concurrently, preserving order
+    contents = await asyncio.gather(*[generate_answer(agent, task) for task in tasks])
+
+    # Build answers with results in same order as tasks
     answers = tuple(
         Answer(
             name=f"Answer for {task.name}",
@@ -126,9 +131,9 @@ def create_answerset(agent: Agent, taskset: Taskset) -> Answerset:
             description=f"Answer generated for {task.name} using {agent.name} and {agent.model.name}",
             agent=agent,
             task=task,
-            content=generate_answer(agent, task),
+            content=content,
         )
-        for task in tasks
+        for task, content in zip(tasks, contents)
     )
 
     answerset = Answerset(
@@ -195,7 +200,7 @@ def create_evaluation(configs_dir: str) -> Evaluation:
     agent = create_agent(
         configs_dir=find_config_file(configs_dir, "agent_*.json"), model=model
     )
-    answerset = create_answerset(agent, taskset)
+    answerset = asyncio.run(create_answerset(agent, taskset))
     resultset = create_resultset(taskset, testset, answerset)
 
     evaluation = Evaluation(
@@ -227,7 +232,7 @@ def rerun_evaluation(eval_path: str) -> Evaluation:
     model = evaluation.model
     agent = evaluation.agent
 
-    answerset = create_answerset(agent, taskset)
+    answerset = asyncio.run(create_answerset(agent, taskset))
     resultset = create_resultset(taskset, testset, answerset)
 
     evaluation = Evaluation(
